@@ -4,3 +4,12 @@ ul {
   text-indent: 0;
   list-style-type: none;
 }
+
+h1 {
+  font-size: 78px;
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 32px;
+}

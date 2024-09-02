@@ -1,0 +1,13 @@
+.wrapper {
+  background-image: url(../../assets/hero.jpeg);
+  width: 100%;
+  height: 725px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title {
+  padding: 80px 190px;
+  color: white;
+  max-width: 500px;
+}

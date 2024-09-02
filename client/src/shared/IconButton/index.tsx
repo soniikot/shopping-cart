@@ -4,7 +4,7 @@ interface IconButtonProps {
 
 export const IconButton: React.FC<IconButtonProps> = ({ icon }) => {
   return (
-    <button>
+    <button className="icon-button">
       <img src={icon} />
     </button>
   );

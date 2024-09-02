@@ -4,8 +4,6 @@ import Search from './components/Search/Search';
 import HeaderForm from './components/Header_form/HeaderForm';
 import style from './header.module.css';
 
-// PascalCase camelCase
-
 const Header = () => {
   return (
     <header className={style.header}>
