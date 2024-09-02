@@ -1,0 +1,1 @@
+{"version":3,"file":"content-types.d.ts","sourceRoot":"","sources":["../../../../../../src/types/core/plugins/config/strapi-server/content-types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,kBAAkB,CAAC;AAEpD,MAAM,WAAW,YAAY;IAC3B;;;UAGM;IACN,CAAC,GAAG,EAAE,MAAM,GAAG;QAAE,MAAM,EAAE,WAAW,CAAA;KAAE,CAAC;CACxC"}

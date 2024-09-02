@@ -1,0 +1,1 @@
+{"version":3,"file":"single-type.d.ts","sourceRoot":"","sources":["../../../src/core-api/controller/single-type.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,MAAM,EAAE,OAAO,EAAE,KAAK,EAAU,MAAM,eAAe,CAAC;AAIpE,UAAU,OAAO;IACf,WAAW,EAAE,MAAM,CAAC,UAAU,CAAC;CAChC;AAED;;GAEG;AACH,QAAA,MAAM,0BAA0B,qBAE7B,OAAO,KAAG,MAAM,eAAe,CAAC,QAAQ,UAAU,CAAC,UAAU,CAsD/D,CAAC;AAEF,eAAe,0BAA0B,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"core-api.d.ts","sourceRoot":"","sources":["../../../../server/src/services/core-api.ts"],"names":[],"mappings":"AAuRA,QAAA,MAAM,OAAO;+CAvGqC,GAAG;gDAqCF,GAAG;mCAjLhB,GAAG;8BAqCV,GAAG;oCArBG,GAAG;;mDA6CxB,GAAG,aACJ,GAAG;CA0LhB,CAAC;AAEH,KAAK,cAAc,GAAG,OAAO,OAAO,CAAC;AAErC,eAAe,OAAO,CAAC;AACvB,OAAO,EAAE,cAAc,EAAE,CAAC"}

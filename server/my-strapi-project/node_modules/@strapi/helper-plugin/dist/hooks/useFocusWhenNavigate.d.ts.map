@@ -1,0 +1,1 @@
+{"version":3,"file":"useFocusWhenNavigate.d.ts","sourceRoot":"","sources":["../../src/hooks/useFocusWhenNavigate.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAC/B,UAAU,yBAAyB;IACjC,QAAQ,CAAC,EAAE,MAAM,CAAC;IAClB,YAAY,CAAC,EAAE,KAAK,CAAC,cAAc,CAAC;CACrC;AAED,QAAA,MAAM,oBAAoB,iCAGvB,yBAAyB,SAc3B,CAAC;AAEF,OAAO,EAAE,oBAAoB,EAAE,CAAC"}

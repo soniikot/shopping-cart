@@ -1,0 +1,51 @@
+import { isObject } from "lodash/fp";
+import { errors } from "@strapi/utils";
+import { parseBody } from "./transform.mjs";
+const createSingleTypeController = ({
+  contentType
+}) => {
+  const uid = contentType.uid;
+  return {
+    /**
+     * Retrieve single type content
+     *
+     */
+    async find(ctx) {
+      await this.validateQuery(ctx);
+      const sanitizedQuery = await this.sanitizeQuery(ctx);
+      const entity = await strapi.service(uid).find(sanitizedQuery);
+      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitizedEntity);
+    },
+    /**
+     * create or update single type content.
+     *
+     * @return {Object}
+     */
+    async update(ctx) {
+      const { query } = ctx.request;
+      const body = parseBody(ctx);
+      if (!isObject(body.data)) {
+        throw new errors.ValidationError('Missing "data" payload in the request body');
+      }
+      const sanitizedInputData = await this.sanitizeInput(body.data, ctx);
+      const entity = await strapi.service(uid).createOrUpdate({
+        ...query,
+        data: sanitizedInputData,
+        files: "files" in body ? body.files : void 0
+      });
+      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitizedEntity);
+    },
+    async delete(ctx) {
+      const { query } = ctx;
+      const entity = await strapi.service(uid).delete(query);
+      const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitizedEntity);
+    }
+  };
+};
+export {
+  createSingleTypeController as default
+};
+//# sourceMappingURL=single-type.mjs.map

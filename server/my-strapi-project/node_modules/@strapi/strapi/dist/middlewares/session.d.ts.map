@@ -1,0 +1,1 @@
+{"version":3,"file":"session.d.ts","sourceRoot":"","sources":["../../src/middlewares/session.ts"],"names":[],"mappings":"AACA,OAAO,UAAU,MAAM,aAAa,CAAC;AACrC,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,eAAe,CAAC;AAe5C,eAAO,MAAM,OAAO,EAAE,MAAM,CAAC,iBAAiB,CAAC,OAAO,CAAC,UAAU,CAAC,IAAI,CAAC,CActE,CAAC"}

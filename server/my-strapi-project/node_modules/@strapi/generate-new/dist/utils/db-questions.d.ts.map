@@ -1,0 +1,1 @@
+{"version":3,"file":"db-questions.d.ts","sourceRoot":"","sources":["../../src/utils/db-questions.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,UAAU,CAAC;AACzC,OAAO,KAAK,EAAE,KAAK,EAAE,MAAM,UAAU,CAAC;AAEtC,UAAU,eAAe;IACvB,CAAC,OAAO,EAAE;QAAE,KAAK,EAAE,KAAK,CAAC;QAAC,MAAM,EAAE,UAAU,GAAG,OAAO,GAAG,QAAQ,CAAA;KAAE,GAAG,QAAQ,CAAC;CAChF;;;;;;AA+DD,wBAIE"}

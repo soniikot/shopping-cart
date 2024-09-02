@@ -1,0 +1,1 @@
+{"version":3,"file":"stop-process.mjs","sources":["../../src/utils/stop-process.ts"],"sourcesContent":["export default function stopProcess(message?: string): never {\n  if (message) {\n    console.error(message);\n  }\n\n  process.exit(1);\n}\n"],"names":[],"mappings":"AAAA,SAAwB,YAAY,SAAyB;AAC3D,MAAI,SAAS;AACX,YAAQ,MAAM,OAAO;AAAA,EACvB;AAEA,UAAQ,KAAK,CAAC;AAChB;"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"localizations.d.ts","sourceRoot":"","sources":["../../../../server/src/services/localizations.ts"],"names":[],"mappings":"AAoFA,QAAA,MAAM,aAAa;yCAzE+B,GAAG;+BAmBb,GAAG,aAAa,GAAG;wCA4BV,GAAG,aAAa,GAAG;CA8BlE,CAAC;AAEH,KAAK,oBAAoB,GAAG,OAAO,aAAa,CAAC;AAEjD,eAAe,aAAa,CAAC;AAC7B,YAAY,EAAE,oBAAoB,EAAE,CAAC"}

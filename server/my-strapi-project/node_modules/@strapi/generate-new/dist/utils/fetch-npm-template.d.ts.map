@@ -1,0 +1,1 @@
+{"version":3,"file":"fetch-npm-template.d.ts","sourceRoot":"","sources":["../../src/utils/fetch-npm-template.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,UAAU,CAAC;AAgB5C,wBAAsB,sBAAsB,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,CAAC,CAgBnF;AAED,wBAAsB,mBAAmB,CAAC,EAAE,IAAI,EAAE,OAAO,EAAE,EAAE,WAAW,EAAE,SAAS,EAAE,MAAM,mBAY1F"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"serve-admin-panel.d.ts","sourceRoot":"","sources":["../../../../server/src/routes/serve-admin-panel.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,eAAe,CAAC;AAE5C,QAAA,MAAM,uBAAuB;YAA0B,MAAM;UA4C5D,CAAC;AAoBF,eAAe,uBAAuB,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"constants-q1-_l5GM.mjs","sources":["../../ee/admin/src/content-manager/pages/EditView/components/constants.ts"],"sourcesContent":["export const STAGE_ATTRIBUTE_NAME = 'strapi_stage';\nexport const ASSIGNEE_ATTRIBUTE_NAME = 'strapi_assignee';\n"],"names":[],"mappings":"AAAO,MAAM,uBAAuB;AAC7B,MAAM,0BAA0B;"}

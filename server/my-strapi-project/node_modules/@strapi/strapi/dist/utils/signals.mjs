@@ -1,0 +1,17 @@
+const destroyOnSignal = (strapi) => {
+  let signalReceived = false;
+  const terminateStrapi = async () => {
+    if (!signalReceived) {
+      signalReceived = true;
+      await strapi.destroy();
+      process.exit();
+    }
+  };
+  ["SIGTERM", "SIGINT"].forEach((signal) => {
+    process.on(signal, terminateStrapi);
+  });
+};
+export {
+  destroyOnSignal
+};
+//# sourceMappingURL=signals.mjs.map

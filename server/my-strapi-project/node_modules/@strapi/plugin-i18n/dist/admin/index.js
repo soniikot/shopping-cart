@@ -1,0 +1,22 @@
+"use strict";
+const index = require("../_chunks/index-RIeoTSs3.js");
+require("@strapi/helper-plugin");
+require("lodash/get");
+require("yup");
+require("react/jsx-runtime");
+require("react");
+require("@strapi/design-system");
+require("@strapi/icons");
+require("react-intl");
+require("styled-components");
+require("react-router-dom");
+require("@reduxjs/toolkit");
+require("react-redux");
+require("qs");
+require("lodash/cloneDeep");
+require("lodash/merge");
+require("immer");
+require("lodash/set");
+require("lodash/omit");
+module.exports = index.index;
+//# sourceMappingURL=index.js.map

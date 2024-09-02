@@ -1,0 +1,1 @@
+{"version":3,"file":"serve-static.d.ts","sourceRoot":"","sources":["../../../src/middlewares/public/serve-static.ts"],"names":[],"mappings":"AACA,OAAO,SAAS,MAAM,YAAY,CAAC;AACnC,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,eAAe,CAAC;AAG5C,eAAO,MAAM,WAAW,aAAc,MAAM,qBAAoB,UAAU,OAAO,6BAkBhF,CAAC"}

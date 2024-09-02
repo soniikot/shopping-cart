@@ -1,0 +1,17 @@
+export declare const ADD_ATTRIBUTE = "ContentTypeBuilder/DataManagerProvider/ADD_ATTRIBUTE";
+export declare const ADD_CUSTOM_FIELD_ATTRIBUTE = "ContentTypeBuilder/DataManagerProvider/ADD_CUSTOM_FIELD_ATTRIBUTE";
+export declare const ADD_CREATED_COMPONENT_TO_DYNAMIC_ZONE = "ContentTypeBuilder/DataManagerProvider/ADD_CREATED_COMPONENT_TO_DYNAMIC_ZONE";
+export declare const CHANGE_DYNAMIC_ZONE_COMPONENTS = "ContentTypeBuilder/DataManagerProvider/CHANGE_DYNAMIC_ZONE_COMPONENTS";
+export declare const CREATE_SCHEMA = "ContentTypeBuilder/DataManagerProvider/CREATE_SCHEMA";
+export declare const CREATE_COMPONENT_SCHEMA = "ContentTypeBuilder/DataManagerProvider/CREATE_COMPONENT_SCHEMA";
+export declare const DELETE_NOT_SAVED_TYPE = "ContentTypeBuilder/DataManagerProvider/DELETE_NOT_SAVED_TYPE";
+export declare const EDIT_ATTRIBUTE = "ContentTypeBuilder/DataManagerProvider/EDIT_ATTRIBUTE";
+export declare const EDIT_CUSTOM_FIELD_ATTRIBUTE = "ContentTypeBuilder/DataManagerProvider/EDIT_CUSTOM_FIELD_ATTRIBUTE";
+export declare const GET_DATA_SUCCEEDED = "ContentTypeBuilder/DataManagerProvider/GET_DATA_SUCCEEDED";
+export declare const RELOAD_PLUGIN = "ContentTypeBuilder/DataManagerProvider/RELOAD_PLUGIN";
+export declare const REMOVE_FIELD_FROM_DISPLAYED_COMPONENT = "ContentTypeBuilder/DataManagerProvider/REMOVE_FIELD_FROM_DISPLAYED_COMPONENT";
+export declare const REMOVE_COMPONENT_FROM_DYNAMIC_ZONE = "ContentTypeBuilder/DataManagerProvider/REMOVE_COMPONENT_FROM_DYNAMIC_ZONE";
+export declare const REMOVE_FIELD = "ContentTypeBuilder/DataManagerProvider/REMOVE_FIELD";
+export declare const SET_MODIFIED_DATA = "ContentTypeBuilder/DataManagerProvider/SET_MODIFIED_DATA";
+export declare const UPDATE_SCHEMA = "ContentTypeBuilder/DataManagerProvider/UPDATE_SCHEMA";
+export declare const UPDATE_INITIAL_STATE = "ContentTypeBuilder/DataManagerProvider/UPDATE_INITIAL_STATE";

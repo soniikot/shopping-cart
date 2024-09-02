@@ -1,0 +1,1 @@
+{"version":3,"file":"diagnostic.d.ts","sourceRoot":"","sources":["../../../../src/node/tasks/dts/diagnostic.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,MAAM,YAAY,CAAC;AAE5B,OAAO,EAAE,MAAM,EAAE,MAAM,mBAAmB,CAAC;AAE3C,QAAA,MAAM,eAAe,eACP,GAAG,UAAU;YACE,MAAM;SAAO,MAAM;UAgC/C,CAAC;AAEF,OAAO,EAAE,eAAe,EAAE,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"load.d.ts","sourceRoot":"","sources":["../../../src/node/templates/load.ts"],"names":[],"mappings":"AAIA,OAAO,EAAE,MAAM,EAAE,MAAM,gBAAgB,CAAC;AAExC,OAAO,EAAE,0BAA0B,EAAE,MAAM,SAAS,CAAC;AAErD;;;;GAIG;AACH,QAAA,MAAM,YAAY,SACV,MAAM;YACU,MAAM;MAC3B,0BAA0B,GAAG,SA+B/B,CAAC;AAEF,OAAO,EAAE,YAAY,EAAE,CAAC"}

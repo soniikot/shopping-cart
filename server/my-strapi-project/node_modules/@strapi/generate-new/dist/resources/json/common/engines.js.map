@@ -1,0 +1,1 @@
+{"version":3,"file":"engines.js","sources":["../../../../src/resources/json/common/engines.ts"],"sourcesContent":["export default {\n  node: '>=18.0.0 <=20.x.x',\n  npm: '>=6.0.0',\n};\n"],"names":[],"mappings":";AAAA,MAAe,UAAA;AAAA,EACb,MAAM;AAAA,EACN,KAAK;AACP;;"}

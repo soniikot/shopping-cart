@@ -1,0 +1,1 @@
+{"version":3,"file":"useRBAC.d.ts","sourceRoot":"","sources":["../../src/hooks/useRBAC.ts"],"names":[],"mappings":"AAIA,OAAO,EAAmB,UAAU,EAAE,MAAM,kBAAkB,CAAC;AAM/D,MAAM,MAAM,cAAc,GAAG,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,CAAC;AAErD,eAAO,MAAM,OAAO,wBACE,OAAO,MAAM,EAAE,UAAU,EAAE,CAAC,sBAC5B,UAAU,EAAE;oBACb,cAAc;eAAa,OAAO;kBAAgB,MAAM,IAAI;CA8GhF,CAAC"}

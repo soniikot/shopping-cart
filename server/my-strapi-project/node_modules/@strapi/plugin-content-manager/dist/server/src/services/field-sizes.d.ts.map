@@ -1,0 +1,1 @@
+{"version":3,"file":"field-sizes.d.ts","sourceRoot":"","sources":["../../../../server/src/services/field-sizes.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,YAAY,IAAI,MAAM,EAAE,YAAY,EAAE,MAAM,eAAe,CAAC;AAIrE,KAAK,SAAS,GAAG,YAAY,CAAC,wBAAwB,CAAC,WAAW,CAAC,CAAC;AA+CpE,QAAA,MAAM,uBAAuB;YAA0B,MAAM;;;;;;uBAMtC,MAAM;wBAIL,MAAM;;;;uBAaP,MAAM,QAAQ,SAAS;;CA2B7C,CAAC;AAEF,eAAe,uBAAuB,CAAC"}

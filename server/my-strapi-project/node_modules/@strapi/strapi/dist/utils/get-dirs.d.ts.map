@@ -1,0 +1,1 @@
+{"version":3,"file":"get-dirs.d.ts","sourceRoot":"","sources":["../../src/utils/get-dirs.ts"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,MAAM,EAAE,iBAAiB,EAAE,MAAM,eAAe,CAAC;AAE/D,MAAM,MAAM,OAAO,GAAG;IACpB,GAAG,EAAE,MAAM,CAAC;IACZ,IAAI,EAAE,MAAM,CAAC;CACd,CAAC;AAEF,QAAA,MAAM,OAAO,mCACqB,OAAO;YACjB,MAAM;MAC3B,iBAwBD,CAAC;AAEH,eAAe,OAAO,CAAC"}

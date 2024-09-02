@@ -1,0 +1,12 @@
+.header__menu {
+  display: flex;
+  gap: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  color: grey;
+  margin-inline: 20px;
+}
+
+a:hover {
+  color: black;
+}

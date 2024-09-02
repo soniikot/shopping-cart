@@ -1,0 +1,27 @@
+"use strict";
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const hasNamespace = (name, namespace) => {
+  if (!namespace) {
+    return true;
+  }
+  if (namespace.endsWith("::")) {
+    return name.startsWith(namespace);
+  }
+  return name.startsWith(`${namespace}.`);
+};
+const addNamespace = (name, namespace) => {
+  if (namespace.endsWith("::")) {
+    return `${namespace}${name}`;
+  }
+  return `${namespace}.${name}`;
+};
+const removeNamespace = (name, namespace) => {
+  if (namespace.endsWith("::")) {
+    return name.replace(namespace, "");
+  }
+  return name.replace(`${namespace}.`, "");
+};
+exports.addNamespace = addNamespace;
+exports.hasNamespace = hasNamespace;
+exports.removeNamespace = removeNamespace;
+//# sourceMappingURL=utils.js.map

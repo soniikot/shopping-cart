@@ -1,0 +1,1 @@
+{"version":3,"file":"lifecycles.js","sources":["../../src/utils/lifecycles.ts"],"sourcesContent":["export const LIFECYCLES = {\n  REGISTER: 'register',\n  BOOTSTRAP: 'bootstrap',\n  DESTROY: 'destroy',\n} as const;\n"],"names":[],"mappings":";;AAAO,MAAM,aAAa;AAAA,EACxB,UAAU;AAAA,EACV,WAAW;AAAA,EACX,SAAS;AACX;;"}

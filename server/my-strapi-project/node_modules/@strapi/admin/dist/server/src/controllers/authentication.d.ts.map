@@ -1,0 +1,1 @@
+{"version":3,"file":"authentication.d.ts","sourceRoot":"","sources":["../../../../server/src/controllers/authentication.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAQ,MAAM,KAAK,CAAC;AAGzC,OAAO,eAAe,CAAC;;;oBAoEC,OAAO;0BAkBD,OAAO;kBAcf,OAAO;uBAeF,OAAO;wBAoCN,OAAO;uBAUR,OAAO;gBAepB,OAAO;;AAxJrB,wBA6JE"}

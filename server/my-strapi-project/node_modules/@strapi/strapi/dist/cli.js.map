@@ -1,0 +1,1 @@
+{"version":3,"file":"cli.js","sources":["../src/cli.ts"],"sourcesContent":["import { runStrapiCommand } from './commands';\n\nrunStrapiCommand(process.argv);\n"],"names":["runStrapiCommand"],"mappings":";;AAEAA,MAAAA,iBAAiB,QAAQ,IAAI;"}

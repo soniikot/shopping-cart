@@ -1,0 +1,1 @@
+{"version":3,"file":"ReactSelect.d.ts","sourceRoot":"","sources":["../../src/components/ReactSelect.tsx"],"names":[],"mappings":"AAEA,OAAe,EAIb,KAAK,IAAI,OAAO,EAEjB,MAAM,cAAc,CAAC;AAGtB,MAAM,WAAW,gBAAiB,SAAQ,OAAO;IAC/C,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,gBAAgB,CAAC,EAAE,MAAM,CAAC;CAC3B;AAED,QAAA,MAAM,WAAW,8DAMd,gBAAgB,4CAmBlB,CAAC;AAmKF,OAAO,EAAE,WAAW,EAAE,CAAC"}

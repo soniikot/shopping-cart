@@ -1,0 +1,9 @@
+import { type UnknownApiError } from '../utils/baseQuery';
+declare const adminApi: import("@reduxjs/toolkit/query/react").Api<import("@reduxjs/toolkit/query/react").BaseQueryFn<string | import("../utils/baseQuery").QueryArguments, unknown, import("../utils/baseQuery").BaseQueryError>, {
+    /**
+     * This is here because it's shared between the transfer-token routes & the api-tokens.
+     */
+    regenerateToken: import("@reduxjs/toolkit/query/react").MutationDefinition<string, import("@reduxjs/toolkit/query/react").BaseQueryFn<string | import("../utils/baseQuery").QueryArguments, unknown, import("../utils/baseQuery").BaseQueryError>, "ApiToken" | "LicenseLimits" | "Me" | "ProjectSettings" | "ProvidersOptions" | "ReviewWorkflow" | "ReviewWorkflowStage" | "Role" | "RolePermissions" | "TransferToken" | "User" | "Webhook", import("../../../shared/contracts/transfer").TransferToken, "adminApi">;
+}, "adminApi", "ApiToken" | "LicenseLimits" | "Me" | "ProjectSettings" | "ProvidersOptions" | "ReviewWorkflow" | "ReviewWorkflowStage" | "Role" | "RolePermissions" | "TransferToken" | "User" | "Webhook", typeof import("@reduxjs/toolkit/query/react").coreModuleName | typeof import("@reduxjs/toolkit/query/react").reactHooksModuleName>;
+declare const useRegenerateTokenMutation: import("@reduxjs/toolkit/dist/query/react/buildHooks").UseMutation<import("@reduxjs/toolkit/query/react").MutationDefinition<string, import("@reduxjs/toolkit/query/react").BaseQueryFn<string | import("../utils/baseQuery").QueryArguments, unknown, import("../utils/baseQuery").BaseQueryError>, "ApiToken" | "LicenseLimits" | "Me" | "ProjectSettings" | "ProvidersOptions" | "ReviewWorkflow" | "ReviewWorkflowStage" | "Role" | "RolePermissions" | "TransferToken" | "User" | "Webhook", import("../../../shared/contracts/transfer").TransferToken, "adminApi">>;
+export { adminApi, type UnknownApiError, useRegenerateTokenMutation };

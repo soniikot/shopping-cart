@@ -1,0 +1,23 @@
+import * as yup from 'yup';
+declare const LOCALE_SCHEMA: yup.default<import("yup/lib/object").Assign<import("yup/lib/object").ObjectShape, {
+    code: import("yup/lib/string").RequiredStringSchema<string | undefined, Record<string, any>>;
+    name: import("yup/lib/string").RequiredStringSchema<string | undefined, Record<string, any>>;
+    isDefault: yup.BooleanSchema<boolean | undefined, Record<string, any>, boolean | undefined>;
+}>, Record<string, any>, import("yup/lib/object").TypeOfShape<import("yup/lib/object").Assign<import("yup/lib/object").ObjectShape, {
+    code: import("yup/lib/string").RequiredStringSchema<string | undefined, Record<string, any>>;
+    name: import("yup/lib/string").RequiredStringSchema<string | undefined, Record<string, any>>;
+    isDefault: yup.BooleanSchema<boolean | undefined, Record<string, any>, boolean | undefined>;
+}>>, import("yup/lib/object").AssertsShape<import("yup/lib/object").Assign<import("yup/lib/object").ObjectShape, {
+    code: import("yup/lib/string").RequiredStringSchema<string | undefined, Record<string, any>>;
+    name: import("yup/lib/string").RequiredStringSchema<string | undefined, Record<string, any>>;
+    isDefault: yup.BooleanSchema<boolean | undefined, Record<string, any>, boolean | undefined>;
+}>>>;
+type ModalCreateProps = {
+    onClose: () => void;
+};
+declare const CreateModal: ({ onClose }: ModalCreateProps) => import("react/jsx-runtime").JSX.Element;
+type AdvancedFormProps = {
+    isDefaultLocale?: boolean;
+};
+declare const AdvancedForm: ({ isDefaultLocale }: AdvancedFormProps) => import("react/jsx-runtime").JSX.Element;
+export { CreateModal, AdvancedForm, LOCALE_SCHEMA };

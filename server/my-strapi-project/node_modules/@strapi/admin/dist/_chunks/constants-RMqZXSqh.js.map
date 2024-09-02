@@ -1,0 +1,1 @@
+{"version":3,"file":"constants-RMqZXSqh.js","sources":["../../admin/src/pages/Settings/components/Tokens/constants.ts"],"sourcesContent":["export const API_TOKEN_TYPE = 'api-token';\nexport const TRANSFER_TOKEN_TYPE = 'transfer-token';\n"],"names":[],"mappings":";AAAO,MAAM,iBAAiB;AACvB,MAAM,sBAAsB;;;"}
