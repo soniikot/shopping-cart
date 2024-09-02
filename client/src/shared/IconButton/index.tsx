@@ -1,7 +1,11 @@
-import React from 'react';
+interface IconButtonProps {
+  icon: string;
+}
 
-// icon text
-
-export const IconButton = ({ icon, style }) => {
-  return <div>index</div>;
+export const IconButton: React.FC<IconButtonProps> = ({ icon }) => {
+  return (
+    <button>
+      <img src={icon} />
+    </button>
+  );
 };

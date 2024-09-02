@@ -1,7 +1,7 @@
 import logo from '../../assets/logo.svg';
-import Menu from '../Menu/Menu';
-import Search from '../Search/Search';
-import HeaderForm from '../Header_form/HeaderForm';
+import Menu from './components/Menu/Menu';
+import Search from './components/Search/Search';
+import HeaderForm from './components/Header_form/HeaderForm';
 import style from './header.module.css';
 
 // PascalCase camelCase

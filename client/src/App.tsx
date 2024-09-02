@@ -1,10 +1,10 @@
-import Header from '../src/components/header/Header';
 import './App.css';
+import { Homepage } from './pages/Homepage';
 
 const App = () => {
   return (
-    <>
-      {/* 
+    <Homepage />
+    /* 
       
       RouterProvider
 
@@ -18,9 +18,7 @@ const App = () => {
       </>
       RouteProvider
       
-      */}
-      <Header />;
-    </>
+      */
   );
 };
 
