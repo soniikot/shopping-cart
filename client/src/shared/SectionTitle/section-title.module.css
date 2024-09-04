@@ -1,0 +1,9 @@
+.title {
+}
+
+.wrapper {
+  display: flex;
+  margin-inline: 20px;
+  padding-left: 10px;
+  border-left: 5px solid purple;
+}

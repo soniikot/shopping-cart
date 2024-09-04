@@ -5,5 +5,9 @@ interface SectionTitleProps {
 }
 
 export const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
-  return <h3 className={style.title}>{text}</h3>;
+  return (
+    <div className={style.wrapper}>
+      <h3 className={style.title}>{text}</h3>
+    </div>
+  );
 };
