@@ -1,11 +1,6 @@
 import './App.css';
 import { Homepage } from './pages/HomePage/Homepage';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Outlet,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { Product } from './pages/Product/Product';
 import { Products } from './pages/Products/Products';
 import Header from './components/header/Header';

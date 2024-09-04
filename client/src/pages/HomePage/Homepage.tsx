@@ -6,7 +6,8 @@ import { SectionTitle } from '../../shared/SectionTitle/SectionTitle';
 import { NewArrival } from '../../shared/NewArrival/NewArrival';
 import style from './homepage.module.css';
 import { SavingZone } from '../../components/SavingZone/SavingZone';
-
+import { Banner } from '../../components/Banner/Banner';
+import { Category } from '../../shared/Category/Category';
 export const Homepage = () => {
   return (
     <>
@@ -30,6 +31,9 @@ export const Homepage = () => {
       <NewArrival />
       <SectionTitle text="Big Saving Zone" />
       <SavingZone />
+      <Banner />
+      <SectionTitle text="Categories for Men" />
+      <Category />
     </>
   );
 };

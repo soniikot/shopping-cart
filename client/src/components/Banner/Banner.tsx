@@ -1,0 +1,22 @@
+import style from './banner.module.css';
+import img from '../../assets/banner.jpeg';
+import { TextButton } from '../../shared/TextButton/TextButton';
+export const Banner = () => {
+  return (
+    <div className={style.wrapper}>
+      <div className={style.banner}>
+        <h2>WE MADE YOUR EVERYDAY FASHION BETTER</h2>
+        <p>
+          In our journey to improve everyday fashion, euphoria presents EVERYDAY
+          wear range - Comfortable & Affordable fashion 24/7
+        </p>
+        <div className={style.button}>
+          <TextButton text="Shop Now" />
+        </div>
+      </div>
+      <div className={style.imagewrapper}>
+        <img className={style.img} src={img} alt="group of people" />
+      </div>
+    </div>
+  );
+};

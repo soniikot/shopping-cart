@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  max-height: 640px;
+  margin-inline: 50px;
+}
+.banner {
+  flex-basis: 50%;
+  background-image: url('../../assets/background-leaves.jpeg');
+  background-size: cover;
+  padding: 100px 70px;
+  color: white;
+}
+
+.imagewrapper {
+  flex-basis: 50%;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  margin-top: 100px;
+}

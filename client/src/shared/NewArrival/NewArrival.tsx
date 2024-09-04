@@ -2,7 +2,7 @@ import knittedJoggers from '../../assets/knitted-joggers.png';
 import fullSleeve from '../../assets/full-sleeve.png';
 import active from '../../assets/active.png';
 import urban from '../../assets/urban.png';
-import style from './new-arival.module.css';
+import style from './new-arrival.module.css';
 
 const categories = [
   {
