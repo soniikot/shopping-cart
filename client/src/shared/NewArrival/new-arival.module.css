@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  margin: 50px;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.card {
+}

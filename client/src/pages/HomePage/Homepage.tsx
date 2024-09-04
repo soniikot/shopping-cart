@@ -3,6 +3,7 @@ import { SaleCard } from '../../shared/SaleCard/SaleCard';
 import backgroundImage2 from '../../assets/salecard2.jpeg';
 import backgroundImage1 from '../../assets/salescard1.jpeg';
 import { SectionTitle } from '../../shared/SectionTitle/SectionTitle';
+import { NewArrival } from '../../shared/NewArrival/NewArrival';
 import style from './homepage.module.css';
 
 export const Homepage = () => {
@@ -26,6 +27,8 @@ export const Homepage = () => {
       </div>
 
       <SectionTitle text="New Arrival" />
+      <NewArrival />
+      <SectionTitle text="Big Saving Zone" />
     </>
   );
 };
