@@ -1,0 +1,8 @@
+.sales_card {
+  min-width: 400px;
+  padding: 20px;
+  background-size: cover;
+  border-radius: 10px;
+  color: white;
+  flex-grow: 1;
+}

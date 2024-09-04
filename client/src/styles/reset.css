@@ -13,3 +13,12 @@ h1 {
 h5 {
   font-size: 32px;
 }
+
+a {
+  color: inherit;
+  cursor: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
