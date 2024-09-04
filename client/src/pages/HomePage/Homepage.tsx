@@ -5,6 +5,7 @@ import backgroundImage1 from '../../assets/salescard1.jpeg';
 import { SectionTitle } from '../../shared/SectionTitle/SectionTitle';
 import { NewArrival } from '../../shared/NewArrival/NewArrival';
 import style from './homepage.module.css';
+import { SavingZone } from '../../components/SavingZone/SavingZone';
 
 export const Homepage = () => {
   return (
@@ -19,8 +20,7 @@ export const Homepage = () => {
         />
         <SaleCard
           backgroundImage={backgroundImage2}
-          title="Breezy Summer
-          Style"
+          title="Breezy Summer Style"
           subtitle="Beyond Presents"
           discount="UP TO 50% OFF"
         />
@@ -29,6 +29,7 @@ export const Homepage = () => {
       <SectionTitle text="New Arrival" />
       <NewArrival />
       <SectionTitle text="Big Saving Zone" />
+      <SavingZone />
     </>
   );
 };
