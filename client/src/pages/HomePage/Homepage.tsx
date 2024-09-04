@@ -1,4 +1,3 @@
-import Header from '../../components/header/Header';
 import { Hero } from '../../components/hero/Hero';
 import { SaleCard } from '../../shared/SaleCard/SaleCard';
 import backgroundImage2 from '../../assets/salecard2.jpeg';
@@ -9,7 +8,6 @@ import style from './homepage.module.css';
 export const Homepage = () => {
   return (
     <>
-      <Header />
       <Hero />
       <div className={style.sale_wrapper}>
         <SaleCard
