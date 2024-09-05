@@ -1,12 +1,13 @@
+@import '../../../../styles/variables.scss';
+
 .header-menu {
   display: flex;
-  gap: 20px;
-  font-size: 22px;
+  gap: 40px;
+  font-size: 20px;
   font-weight: 500;
-  color: grey;
-  margin-inline: 20px;
+  margin-inline: 90px;
 }
 
 .link:hover {
-  color: black;
+  color: $--dark-grey-text-color;
 }

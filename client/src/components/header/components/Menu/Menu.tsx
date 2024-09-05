@@ -6,7 +6,7 @@ const Menu = () => {
     <ul className={style['header-menu']}>
       {menuList.map((menuItem) => (
         <li key={menuItem}>
-          <a className={style.link}>{menuItem}</a>
+          h <a className={style.link}>{menuItem}</a>
         </li>
       ))}
     </ul>

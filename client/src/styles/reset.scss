@@ -42,11 +42,6 @@ a:hover {
   width: 1px;
 }
 
-img {
-  max-width: 100%;
-  vertical-align: top;
-}
-
 *,
 *::before,
 *::after {
@@ -101,7 +96,6 @@ a:not([class]) {
 
 img,
 picture {
-  max-width: 100%;
   display: block;
 }
 
