@@ -1,40 +1,9 @@
-import './App.css';
-import { Homepage } from './pages/HomePage/Homepage';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import { Product } from './pages/Product/Product';
-import { Products } from './pages/Products/Products';
-import Header from './components/header/Header';
-import { Footer } from './pages/Footer/Footer';
+import '../src/App.scss';
 
-const Layout = () => {
-  return (
-    <div>
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Homepage />,
-      },
-      {
-        path: '/products/',
-        element: <Products />,
-      },
-      {
-        path: '/products/:id',
-        element: <Product />,
-      },
-    ],
-  },
-]);
+import { RouterProvider } from 'react-router-dom';
+
+import { router } from './router/router';
+
 const App = () => {
   return (
     <div>

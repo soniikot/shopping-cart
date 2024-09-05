@@ -6,14 +6,11 @@ export const Category = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await axios.get(
-          `${import.meta.env.REACT_APP_API_URL + '/products'}`,
-          {
-            headers: {
-              Authorization: `bearer ${import.meta.env.REACT_APP_API_TOKEN}`,
-            },
-          }
-        );
+        const data = await axios.get(`${import.meta.env.VITE_API_URL}`, {
+          headers: {
+            Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
+          },
+        });
         console.log(data);
       } catch (error) {
         console.log(error);

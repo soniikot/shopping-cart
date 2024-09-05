@@ -14,7 +14,7 @@ export const Banner = () => {
           <TextButton text="Shop Now" />
         </div>
       </div>
-      <div className={style.imagewrapper}>
+      <div className={style.image_wrapper}>
         <img className={style.img} src={img} alt="group of people" />
       </div>
     </div>

@@ -1,9 +1,26 @@
+/* 
+
+container
+
+src/styles/base.scss
+
+.container {
+
+}
+
+
+wrapper?
+*/
+
 .wrapper {
   background-image: url(../../assets/hero.jpeg);
   width: 100%;
   height: 725px;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media screen {
+  }
 }
 
 .title {

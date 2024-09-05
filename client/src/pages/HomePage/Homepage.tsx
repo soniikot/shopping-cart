@@ -8,6 +8,29 @@ import style from './homepage.module.css';
 import { SavingZone } from '../../components/SavingZone/SavingZone';
 import { Banner } from '../../components/Banner/Banner';
 import { Category } from '../../shared/Category/Category';
+
+//TODO
+/**
+ *
+ * ./shared
+ *           /components
+ *                     /SaleCard
+ *                     /IconButton
+ *           /
+ *
+ **/
+
+//TODO
+/**
+ *
+ *  src/components/
+ *   independent blocks
+ *
+ *
+ *
+ *
+ **/
+
 export const Homepage = () => {
   return (
     <>
