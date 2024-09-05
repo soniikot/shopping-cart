@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import style from './category.module.css';
+import style from './styles.module.scss';
 import axios from 'axios';
 
 export const Category = () => {

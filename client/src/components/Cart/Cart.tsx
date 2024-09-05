@@ -1,6 +1,9 @@
 import { useMemo } from 'react';
 
-function Cart({ products }) {
+interface Cart {
+  products: string[];
+}
+function Cart: React.FC <Cart>({ products }) {
   const totalPrice = useMemo(() => {
     return products.reduce(
       (total, product) => total + product.price * product.quantity,

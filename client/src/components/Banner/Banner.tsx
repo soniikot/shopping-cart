@@ -1,6 +1,7 @@
-import style from './banner.module.css';
+import style from './styles.module.scss';
 import img from '../../assets/banner.jpeg';
-import { TextButton } from '../../shared/TextButton/TextButton';
+import { TextButton } from '../../shared/components/TextButton/TextButton';
+
 export const Banner = () => {
   return (
     <div className={style.wrapper}>

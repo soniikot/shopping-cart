@@ -1,35 +1,13 @@
 import { Hero } from '../../components/hero/Hero';
-import { SaleCard } from '../../shared/SaleCard/SaleCard';
+import { SaleCard } from '../../shared/components/SaleCard/SaleCard';
 import backgroundImage2 from '../../assets/salecard2.jpeg';
 import backgroundImage1 from '../../assets/salescard1.jpeg';
-import { SectionTitle } from '../../shared/SectionTitle/SectionTitle';
-import { NewArrival } from '../../shared/NewArrival/NewArrival';
+import { SectionTitle } from '../../shared/components/SectionTitle/SectionTitle';
+import { NewArrival } from '../../components/NewArrival/NewArrival';
 import style from './homepage.module.css';
 import { SavingZone } from '../../components/SavingZone/SavingZone';
 import { Banner } from '../../components/Banner/Banner';
-import { Category } from '../../shared/Category/Category';
-
-//TODO
-/**
- *
- * ./shared
- *           /components
- *                     /SaleCard
- *                     /IconButton
- *           /
- *
- **/
-
-//TODO
-/**
- *
- *  src/components/
- *   independent blocks
- *
- *
- *
- *
- **/
+import { Category } from '../../shared/components/Category/Category';
 
 export const Homepage = () => {
   return (

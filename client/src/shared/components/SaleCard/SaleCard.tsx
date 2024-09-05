@@ -1,4 +1,4 @@
-import style from './salecard.module.css';
+import style from './styles.module.scss';
 
 interface SaleCardProps {
   backgroundImage: string;

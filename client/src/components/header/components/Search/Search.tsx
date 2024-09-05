@@ -1,7 +1,13 @@
+import style from './styles.module.scss';
+
 const Search = () => {
   return (
     <form>
-      <input type="search" placeholder="Search"></input>
+      <input
+        className={style.search}
+        type="search"
+        placeholder="Search"
+      ></input>
     </form>
   );
 };

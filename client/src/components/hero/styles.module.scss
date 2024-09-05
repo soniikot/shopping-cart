@@ -1,17 +1,3 @@
-/* 
-
-container
-
-src/styles/base.scss
-
-.container {
-
-}
-
-
-wrapper?
-*/
-
 .wrapper {
   background-image: url(../../assets/hero.jpeg);
   width: 100%;
@@ -27,4 +13,8 @@ wrapper?
   padding: 80px 190px;
   color: white;
   max-width: 500px;
+}
+
+.background {
+  background-color: blue;
 }

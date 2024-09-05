@@ -1,4 +1,4 @@
-import style from './section-title.module.css';
+import style from './styles.module.scss';
 
 interface SectionTitleProps {
   text: string;
