@@ -11,7 +11,7 @@ import user from '../../../../assets/user.svg';
 import shoppingCart from '../../../../assets/shopping-cart.svg';
 import { IconButton } from '../../../../shared/components/IconButton/IconButton';
 
-const HeaderForm = () => {
+const Form = () => {
   return (
     <div className={style.form}>
       <IconButton icon={heart} />
@@ -21,4 +21,4 @@ const HeaderForm = () => {
   );
 };
 
-export default HeaderForm;
+export default Form;

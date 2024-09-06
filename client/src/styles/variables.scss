@@ -1,14 +1,11 @@
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  'small': 480px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
-
 $text-font-stack: 'Causten400', 'Open Sans', 'Helvetica Neue Light',
   'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 $--grey-text-color: rgba(128, 125, 126, 1);
 $--dark-grey-text-color: rgba(60, 66, 66, 1);
+$--background-grey-color: rgba(246, 246, 246, 1);
+
+//breakpoints
+$large: '1024px';
+$medium: '768px';
+$small: '480px';

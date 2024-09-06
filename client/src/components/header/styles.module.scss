@@ -4,7 +4,10 @@
   font-family: $text-font-stack;
   color: $--grey-text-color;
   display: flex;
-  justify-content: space-between;
+  gap: 7.3%;
   align-items: center;
-  margin: 25px 100px;
+  margin: 31px 102px;
+}
+
+@media (max-width: $small) {
 }

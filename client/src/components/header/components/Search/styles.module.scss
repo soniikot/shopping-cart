@@ -1,6 +1,28 @@
+@import '../../../../styles/variables.scss';
+
 .search {
-  padding: 10px;
+  padding: 10px 50px;
   border: none;
   border-radius: 5px;
-  background-color: rgb(222, 231, 240);
+  background-color: $--background-grey-color;
+}
+
+.wrapper {
+  position: relative;
+  margin-right: -1.5%;
+}
+.icon {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+}
+
+@media (max-width: $small) {
+  .search {
+    display: none;
+  }
+
+  .icon {
+    display: none;
+  }
 }
