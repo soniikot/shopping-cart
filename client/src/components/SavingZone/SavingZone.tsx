@@ -1,4 +1,4 @@
-import style from './saving-zone.module.css';
+import style from './styles.module.scss';
 import hawT from '../../assets/hawaian shirts.jpeg';
 import printedT from '../../assets/printed-t.jpeg';
 import cargoJ from '../../assets/cargo-joggers.jpeg';
@@ -55,20 +55,22 @@ const savingZone = [
 
 export const SavingZone = () => {
   return (
-    <div className={style.wrapper}>
-      {savingZone.map((item) => (
-        <div
-          key={item.id}
-          className={item.isBlack ? style.item_black : style.item}
-          style={{ backgroundImage: `url(${item.img})` }}
-        >
-          {item.isLimited && <span>Limited Time Offer!</span>}
-          <h2>{item.title}</h2>
-          <p>{item.subtitle}</p>
-          <p>{item.discount}</p>
-          <button className={style.button}>Shop Now</button>
-        </div>
-      ))}
+    <div className="container">
+      <div className={style.wrapper}>
+        {savingZone.map((item) => (
+          <div
+            key={item.id}
+            className={item.isBlack ? style.item_black : style.item}
+            style={{ backgroundImage: `url(${item.img})` }}
+          >
+            {item.isLimited && <span>Limited Time Offer!</span>}
+            <h2>{item.title}</h2>
+            <p>{item.subtitle}</p>
+            <p>{item.discount}</p>
+            <button className={style.button}>Shop Now</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

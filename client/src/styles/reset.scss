@@ -17,13 +17,6 @@ a:hover {
   display: table;
 }
 
-.container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
 .hide-text {
   overflow: hidden;
   padding: 0;
@@ -105,3 +98,19 @@ textarea,
 select {
   font: inherit;
 }
+
+button {
+  border: none;
+  border-radius: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+$large: '1024px';
+$medium: '768px';
+$small: '480px';

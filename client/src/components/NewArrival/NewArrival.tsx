@@ -2,7 +2,7 @@ import knittedJoggers from '../../assets/knitted-joggers.png';
 import fullSleeve from '../../assets/full-sleeve.png';
 import active from '../../assets/active.png';
 import urban from '../../assets/urban.png';
-import style from './new-arrival.module.css';
+import style from './styles.module.scss';
 
 const categories = [
   {
@@ -29,13 +29,15 @@ const categories = [
 
 export const NewArrival = () => {
   return (
-    <div className={style.wrapper}>
-      {categories.map((category) => (
-        <div key={category.id} className={style.card}>
-          <img src={category.image} alt={category.title} />
-          <h6>{category.title}</h6>
-        </div>
-      ))}
+    <div className="container">
+      <div className={style.wrapper}>
+        {categories.map((category) => (
+          <div key={category.id} className={style.card}>
+            <img src={category.image} alt={category.title} />
+            <h6>{category.title}</h6>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

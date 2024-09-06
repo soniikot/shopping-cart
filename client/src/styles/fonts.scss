@@ -1,17 +1,38 @@
 @font-face {
-  font-family: 'Causten700';
+  font-family: 'Causten';
   src: url('../assets/fonts/Causten/Causten700.ttf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Causten500';
+  font-family: 'Causten';
   src: url('../assets/fonts/Causten/Causten500.ttf') format('truetype');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Causten400';
+  font-family: 'Causten';
   src: url('../assets/fonts/Causten/Causten400.ttf') format('truetype');
   font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Core Sans C';
+  src: url('../assets/fonts/Core-Sans-C/Fontspring-DEMO-coresansc45.otf')
+    format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Core Sans C500';
+  src: url('../assets/fonts/Core-Sans-C/Fontspring-DEMO-coresansc55.otf')
+    format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Core Sans C';
+  src: url('../assets/fonts/Core-Sans-C/Fontspring-DEMO-coresansc75.otf')
+    format('opentype');
+  font-weight: 800;
 }
