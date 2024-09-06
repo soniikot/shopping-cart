@@ -1,17 +1,17 @@
 @font-face {
-  font-family: 'Causten';
+  font-family: 'Causten700';
   src: url('../assets/fonts/Causten/Causten700.ttf') format('truetype');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'Causten';
+  font-family: 'Causten500';
   src: url('../assets/fonts/Causten/Causten500.ttf') format('truetype');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'Causten';
+  font-family: 'Causten400';
   src: url('../assets/fonts/Causten/Causten400.ttf') format('truetype');
   font-weight: 400;
 }
@@ -35,4 +35,11 @@
   src: url('../assets/fonts/Core-Sans-C/Fontspring-DEMO-coresansc75.otf')
     format('opentype');
   font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
 }

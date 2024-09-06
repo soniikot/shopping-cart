@@ -18,12 +18,12 @@ export const SaleCard: React.FC<SaleCardProps> = ({
       className={style.sales_card}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <h6>{subtitle}</h6>
-      <h2>{title}</h2>
+      <h5 className={style.subtitle}>{subtitle}</h5>
+      <h2 className={style.title}>{title}</h2>
       <p>{discount}</p>
-      <h6>
+      <h5 className={style.link}>
         <a href="">Explore Items</a>
-      </h6>
+      </h5>
     </div>
   );
 };

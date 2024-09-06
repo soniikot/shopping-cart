@@ -1,8 +1,21 @@
 .sales_card {
   min-width: 400px;
-  padding: 20px;
+  height: 360px;
+  width: 610px;
+  padding: 73px 250px 30px 30px;
   background-size: cover;
   border-radius: 10px;
   color: white;
-  flex-grow: 1;
+}
+
+.subtitle {
+  margin-bottom: 27px;
+}
+
+.title {
+  margin-bottom: 13px;
+}
+
+.link {
+  margin-top: 44px;
 }

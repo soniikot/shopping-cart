@@ -15,28 +15,32 @@ export const Homepage = () => {
       <Hero />
       <div className="container">
         <div className={style.wrapper}>
-          <SaleCard
-            backgroundImage={backgroundImage1}
-            title="High Coziness"
-            subtitle="Low Price"
-            discount="UP TO 50% OFF"
-          />
-          <SaleCard
-            backgroundImage={backgroundImage2}
-            title="Breezy Summer Style"
-            subtitle="Beyond Presents"
-            discount="UP TO 50% OFF"
-          />
+          <div className={style.card_wrapper}>
+            <SaleCard
+              backgroundImage={backgroundImage1}
+              title="High Coziness"
+              subtitle="Low Price"
+              discount="UP TO 50% OFF"
+            />{' '}
+          </div>
+          <div className={style.card_wrapper}>
+            <SaleCard
+              backgroundImage={backgroundImage2}
+              title="Breezy Summer Style"
+              subtitle="Beyond Presents"
+              discount="UP TO 50% OFF"
+            />{' '}
+          </div>
         </div>
-      </div>
 
-      <SectionTitle text="New Arrival" />
-      <NewArrival />
-      <SectionTitle text="Big Saving Zone" />
-      <SavingZone />
-      <Banner />
-      <SectionTitle text="Categories for Men" />
-      <Category />
+        <SectionTitle text="New Arrival" />
+        <NewArrival />
+        <SectionTitle text="Big Saving Zone" />
+        <SavingZone />
+        <Banner />
+        <SectionTitle text="Categories for Men" />
+        <Category />
+      </div>
     </>
   );
 };
