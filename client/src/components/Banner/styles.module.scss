@@ -1,8 +1,9 @@
+@import '../../styles/variables.scss';
 .wrapper {
   display: flex;
   justify-content: center;
   max-height: 640px;
-  margin-inline: 50px;
+  margin: 50px 100px;
 }
 
 .banner {
@@ -13,12 +14,6 @@
   color: white;
 }
 
-/* image-wrapper */
-
-.imagewrapper {
-  flex-basis: 50%;
-}
-
 .img {
   height: 100%;
   width: 100%;
@@ -26,4 +21,13 @@
 
 .button {
   margin-top: 100px;
+}
+@media (max-width: $large) {
+  .img {
+    display: none;
+  }
+  .banner {
+    flex: 1;
+    justify-content: center;
+  }
 }

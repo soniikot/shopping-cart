@@ -18,12 +18,14 @@ export const SavingZone = () => {
             })}
             style={{ backgroundImage: `url(${item.img})` }}
           >
-            {item.isLimited && <LimitedStock />}
-            <h3 className={style.title}>{item.title}</h3>
-            <h6 className={style.subtitle}>{item.subtitle}</h6>
-            <p>{item.discount}</p>
-            <img className={style.arrow} src={arrow} alt="" />
-            <button className={style.button}>Shop Now</button>
+            <div className={style.text}>
+              {item.isLimited && <LimitedStock />}
+              <h3 className={style.title}>{item.title}</h3>
+              <h6 className={style.subtitle}>{item.subtitle}</h6>
+              <p>{item.discount}</p>
+              <img className={style.arrow} src={arrow} alt="" />
+              <button className={style.button}>Shop Now</button>
+            </div>
           </div>
         ))}
       </div>

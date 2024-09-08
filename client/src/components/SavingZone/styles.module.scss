@@ -11,7 +11,7 @@
   min-width: 30px;
   background-size: cover;
   border-radius: 10px;
-  padding-top: 60px;
+
   padding-left: 22px;
   flex-grow: 1;
 }
@@ -19,7 +19,6 @@
 .title {
   font-size: 28px;
   font-weight: 600;
-  margin-right: 200px;
 }
 
 .subtitle {
@@ -35,24 +34,20 @@
   color: white;
 }
 
-.item_right {
-  width: 400px;
-  min-width: 30px;
-  background-size: cover;
-  border-radius: 10px;
-  padding-left: 22px;
-  flex-grow: 1;
-  text-align: left;
+.item_right .text {
+  float: right;
+  padding: 20px;
 }
 
 .item_regular {
   color: white;
+  padding-right: 200px;
+  padding-top: 60px;
 }
 .button {
   background-color: rgba(0, 0, 0, 0);
   border: white solid 1px;
   color: inherit;
-
   width: 100px;
   border-radius: 3px;
   padding: 5px 10px;
