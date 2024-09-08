@@ -1,0 +1,14 @@
+@import '../../../styles/variables.scss';
+
+.limited {
+  background: $--black-color;
+  width: 104px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: $text-font-stack;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+}

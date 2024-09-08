@@ -1,5 +1,5 @@
-import style from './menu.module.scss';
-import { menuList } from '../..//../../constants/menuList';
+import style from './styles.module.scss';
+import { menuList } from '../../../../constants/menuList';
 
 const Menu = () => {
   return (

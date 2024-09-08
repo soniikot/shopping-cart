@@ -34,7 +34,7 @@ export const NewArrival = () => {
         {categories.map((category) => (
           <div key={category.id} className={style.card}>
             <img src={category.image} alt={category.title} />
-            <h6>{category.title}</h6>
+            <h5 className={style.title}>{category.title}</h5>
           </div>
         ))}
       </div>

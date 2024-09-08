@@ -9,5 +9,8 @@
   margin: 31px 102px;
 }
 
-@media (max-width: $small) {
+@media (max-width: $medium) {
+  .header {
+    margin: 10px;
+  }
 }

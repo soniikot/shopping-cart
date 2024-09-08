@@ -1,52 +1,71 @@
-/*  
-
-styles.module.scss 
-
-saving-zone.jpg
-saving-zone.png
-
-PasacalCase
-
-camelCase.module.scss
-camelCase.ts
-
-
-*/
-
+@import '../../styles/variables.scss';
 .wrapper {
   display: flex;
-
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 50px;
+  gap: 20px;
+  margin: 40px 50px 10px 80px;
 }
 
 .item {
-  min-height: 400px;
-  min-width: 400px;
+  width: 400px;
+  min-width: 30px;
+  background-size: cover;
+  border-radius: 10px;
+  padding-top: 60px;
+  padding-left: 22px;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 200px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.item_white {
   background-size: cover;
   border-radius: 10px;
   flex-grow: 1;
   padding-top: 30px;
   color: white;
-  padding-left: 10px;
 }
 
-.item_black {
-  min-height: 400px;
-  min-width: 400px;
+.item_right {
+  width: 400px;
+  min-width: 30px;
   background-size: cover;
   border-radius: 10px;
+  padding-left: 22px;
   flex-grow: 1;
-  padding-top: 30px;
-  color: black;
-  padding-left: 10px;
+  text-align: left;
 }
 
+.item_regular {
+  color: white;
+}
 .button {
   background-color: rgba(0, 0, 0, 0);
   border: white solid 1px;
   color: inherit;
-  margin: 20px;
+
   width: 100px;
+  border-radius: 3px;
+  padding: 5px 10px;
+  width: 110px;
+}
+
+.arrow {
+  margin-bottom: 10px;
+  padding: 27px 40px;
+}
+
+@media (max-width: $large) {
+  .item {
+    padding-top: 20px;
+  }
 }

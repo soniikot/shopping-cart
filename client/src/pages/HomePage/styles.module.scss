@@ -2,15 +2,19 @@
 
 .wrapper {
   display: flex;
-
   justify-content: space-between;
   gap: 30px;
   margin: 100px;
-  margin-top: 120px;
 }
 
 @media (max-width: $large) {
   .wrapper {
     flex-direction: column;
+  }
+}
+
+@media (max-width: $medium) {
+  .wrapper {
+    margin: 10px;
   }
 }

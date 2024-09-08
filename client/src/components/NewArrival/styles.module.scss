@@ -1,6 +1,21 @@
+@import '../../styles/variables.scss';
+
 .wrapper {
   display: flex;
-  margin: 50px;
-  justify-content: space-evenly;
-  gap: 20px;
+  flex-wrap: wrap;
+  margin: 55px 80px 90px 90px;
+}
+
+.title {
+  margin: 40px 0;
+}
+
+.card {
+  flex-grow: 1;
+}
+
+@media (max-width: $medium) {
+  .wrapper {
+    margin: 10px;
+  }
 }

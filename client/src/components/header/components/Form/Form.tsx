@@ -1,14 +1,7 @@
-// how to setup vite  project aliases
-// viteConfig???
-
-// @image/sdf
-// @pages//
-// @components
-//
 import style from './styles.module.scss';
 import heart from '../../../../assets/heart.svg';
 import user from '../../../../assets/user.svg';
-import shoppingCart from '../../../../assets/shopping-cart.svg';
+import shoppingCart from '../../../../assets/user.svg';
 import { IconButton } from '../../../../shared/components/IconButton/IconButton';
 
 const Form = () => {
