@@ -1,12 +1,13 @@
 @import '../../../styles/variables.scss';
 .wrapper {
   display: flex;
-  margin-inline: 105px;
+  margin-inline: 96px;
   padding-left: 20px;
   border-left: 5px solid $--purple-color;
 }
 
 .title {
+  margin-top: 10px;
   font-family: sans-serif;
   font-weight: 600;
   letter-spacing: 2.5px;

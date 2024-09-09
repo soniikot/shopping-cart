@@ -39,7 +39,9 @@ export const Homepage = () => {
         <SavingZone />
         <Banner />
         <SectionTitle text="Categories for Men" />
-        <Category />
+        <Category numberOfCategories={8} />
+        <SectionTitle text="Categories for Women" />
+        <Category numberOfCategories={4} />
       </div>
     </>
   );
