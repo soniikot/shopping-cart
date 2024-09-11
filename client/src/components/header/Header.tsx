@@ -1,4 +1,4 @@
-import logo from '../../assets/logo.svg';
+import logo from '@/assets/logo.svg';
 import Menu from './components/Menu/Menu';
 import Search from './components/Search/Search';
 import Form from './components/Form/Form';

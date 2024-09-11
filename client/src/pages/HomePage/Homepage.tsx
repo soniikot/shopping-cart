@@ -1,13 +1,13 @@
-import { Hero } from '../../components/Hero/Hero';
+import { Hero } from '@/components/Hero/Hero';
 import { SaleCard } from '../../shared/components/SaleCard/SaleCard';
-import backgroundImage2 from '../../assets/salecard2.jpeg';
-import backgroundImage1 from '../../assets/salescard1.jpeg';
+import backgroundImage2 from '@/assets/salecard2.jpeg';
+import backgroundImage1 from '@/assets/salescard1.jpeg';
 import { SectionTitle } from '../../shared/components/SectionTitle/SectionTitle';
-import { NewArrival } from '../../components/NewArrival/NewArrival';
+import { NewArrival } from '@/components/NewArrival/NewArrival';
 import style from './styles.module.scss';
-import { SavingZone } from '../../components/SavingZone/SavingZone';
-import { Banner } from '../../components/Banner/Banner';
-import { Category } from '../../shared/components/Category/Category';
+import { SavingZone } from '@/components/SavingZone/SavingZone';
+import { Banner } from '@/components/Banner/Banner';
+import { Category } from '@/shared/components/Category/Category';
 
 export const Homepage = () => {
   return (

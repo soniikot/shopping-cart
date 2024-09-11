@@ -1,17 +1,28 @@
 @import '../../styles/variables.scss';
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 40px 50px 10px 80px;
+  margin: 75px 0px 10px 0px;
 }
 
+.first_row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.second_row {
+  display: flex;
+  gap: 20px;
+}
+
+.second_row .item {
+  padding-inline: 250px 100px;
+}
 .item {
-  width: 400px;
-  min-width: 30px;
+  padding-top: 60px;
+  height: 400px;
+  flex-basis: 33%;
   background-size: cover;
   border-radius: 10px;
-
   padding-left: 22px;
   flex-grow: 1;
 }
@@ -27,26 +38,18 @@
 }
 
 .item_white {
-  background-size: cover;
-  border-radius: 10px;
-  flex-grow: 1;
-  padding-top: 30px;
   color: white;
 }
 
 .item_right .text {
-  float: right;
+  text-align: right;
   padding: 20px;
+  position: relative;
 }
 
-.item_regular {
-  color: white;
-  padding-right: 200px;
-  padding-top: 60px;
-}
 .button {
   background-color: rgba(0, 0, 0, 0);
-  border: white solid 1px;
+  border: solid 1px;
   color: inherit;
   width: 100px;
   border-radius: 3px;
@@ -59,8 +62,20 @@
   padding: 27px 40px;
 }
 
+.limited {
+  position: absolute;
+  top: -25px;
+  left: 250px;
+}
+
 @media (max-width: $large) {
   .item {
     padding-top: 20px;
+  }
+}
+
+@media (max-width: $medium) {
+  * {
+    flex-wrap: wrap;
   }
 }
