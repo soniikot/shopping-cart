@@ -2,6 +2,9 @@
  * Basic typography style for copy text
  */
 //hero-title
+
+@import './variables.scss';
+
 h1,
 .h1 {
   font-family: $h1-font-stack;
@@ -14,7 +17,7 @@ h1,
 //title for mini-banners
 h2,
 .h2 {
-  font-family: $text-font-stack;
+  font-family: $h2-font-stack;
   font-size: 34px;
   line-height: 45.1px;
   margin-block-start: 0;
@@ -49,6 +52,7 @@ h5,
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
 p {
   font-weight: 500;
   font-size: 18px;
@@ -56,7 +60,7 @@ p {
 
 p,
 ul {
-  font-weight: normal;
+  font-weight: 400;
   font-family: $text-font-stack;
   margin-block-start: 0;
   margin-block-end: 0;

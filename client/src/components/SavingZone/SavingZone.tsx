@@ -8,6 +8,9 @@ export const SavingZone = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>
+        {/* slice 3 */}
+        {/* slice 2 */}
+
         {SAVING_ZONE.map((item) => (
           <div
             key={item.id}

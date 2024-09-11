@@ -1,12 +1,22 @@
-$text-font-stack: 'Causten', 'Open Sans', 'Helvetica Neue Light',
+:root {
+  --text-font-stack: 'Causten400', 'Open Sans', 'Helvetica Neue Light',
+    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+$text-font-stack: 'Causten400', 'Open Sans', 'Helvetica Neue Light',
   'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
 $h1-font-stack: 'Core Sans C', 'Open Sans', 'Helvetica Neue Light',
   'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+$h2-font-stack: 'Causten500', 'Open Sans', 'Helvetica Neue Light',
+  'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
 $h5-font-stack: 'Montserrat';
 
 $h3-font-stack: 'Core Sans C500', 'Open Sans', 'Helvetica Neue Light',
   'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
 $--grey-text-color: rgba(128, 125, 126, 1);
 $--dark-grey-text-color: rgba(60, 66, 66, 1);
 $--background-grey-color: rgba(246, 246, 246, 1);

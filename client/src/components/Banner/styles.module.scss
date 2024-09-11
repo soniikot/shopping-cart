@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -7,6 +8,7 @@
 }
 
 .banner {
+  flex: 1;
   flex-basis: 50%;
   background-image: url('../../assets/background-leaves.jpeg');
   background-size: cover;
@@ -14,14 +16,23 @@
   color: white;
 }
 
+.image_wrapper {
+  display: flex;
+  flex-basis: 50%;
+  flex: 1;
+  background-color: blueviolet;
+}
+
 .img {
-  height: 100%;
-  width: 100%;
+  display: inline-block;
+  flex: 1;
+  object-fit: scale-down;
 }
 
 .button {
   margin-top: 100px;
 }
+
 @media (max-width: $large) {
   .img {
     display: none;
