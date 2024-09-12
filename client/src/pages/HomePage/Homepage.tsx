@@ -46,7 +46,7 @@ export const Homepage = () => {
         <Category numberOfCategories={4} />
         <Brands />
         <SectionTitle text="In The LimeLight " />
-        <Products />
+        <Products numberOfProducts={12} flexWrap="no-wrap" />
         <SectionTitle text="Feedback" />
         <Feedback />
       </div>

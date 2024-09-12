@@ -17,7 +17,11 @@ interface ProductData {
     };
   };
 }
-export const Products = () => {
+
+interface Products {
+  numberOfProducts: number;
+}
+export const Products: React.FC<Products> = ({ numberOfProducts }) => {
   const [products, setProducts] = useState<ProductData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +45,7 @@ export const Products = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {products.slice(0, 4).map((product) => (
+        {products.slice(0, numberOfProducts).map((product) => (
           <div key={product.id} className={style.card}>
             <img
               className={style.img}

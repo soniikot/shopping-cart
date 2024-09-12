@@ -6,7 +6,9 @@
   font-weight: 500;
   margin-right: 13.5%;
 }
-
+.link {
+  color: $--grey-text-color;
+}
 .link:hover {
   color: $--dark-grey-text-color;
 }
