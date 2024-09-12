@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  border-radius: 10px;
+  background-color: $--dark-grey-text-color;
+  text-align: center;
+  color: white;
+
+  padding-top: 30px;
+}
+
+.title {
+  font-size: 49px;
+  letter-spacing: 5px;
+  margin-bottom: 35px;
+}
+
+p {
+  letter-spacing: 3px;
+}
+
+.yellow {
+  color: $--yellow-color;
+}
+
+.brands_container {
+  padding-top: 65px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 65px;
+}

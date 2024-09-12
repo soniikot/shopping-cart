@@ -1,9 +1,9 @@
 @import '../../../styles/variables.scss';
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 55px 50px 90px 90px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
+  margin: 55px 0px 90px -40px;
 }
 
 .title {

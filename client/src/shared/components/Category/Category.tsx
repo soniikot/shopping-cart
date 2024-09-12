@@ -6,6 +6,7 @@ interface Category {
   numberOfCategories: number;
 }
 
+interface categories {}
 export const Category: React.FC<Category> = ({ numberOfCategories }) => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {

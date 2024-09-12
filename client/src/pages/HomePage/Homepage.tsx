@@ -8,6 +8,7 @@ import style from './styles.module.scss';
 import { SavingZone } from '@/components/SavingZone/SavingZone';
 import { Banner } from '@/components/Banner/Banner';
 import { Category } from '@/shared/components/Category/Category';
+import { Brands } from '@/components/Brands/Brands';
 
 export const Homepage = () => {
   return (
@@ -42,6 +43,7 @@ export const Homepage = () => {
         <Category numberOfCategories={8} />
         <SectionTitle text="Categories for Women" />
         <Category numberOfCategories={4} />
+        <Brands />
       </div>
     </>
   );
