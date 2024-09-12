@@ -3,7 +3,6 @@
   display: flex;
   margin-top: 40px;
   background-color: $--dark-grey-text-color;
-  color: white;
   padding: 60px 90px;
   font-size: 18px;
   gap: 60px;
@@ -16,8 +15,31 @@
 
 .background {
   background-color: $--dark-grey-text-color;
+  color: white;
 }
 
 .wrapper li {
   margin-top: 10px;
+}
+
+.social_media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 170px 0px 90px;
+}
+
+.apps {
+  display: flex;
+}
+
+.title {
+  padding: 40px 90px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.text {
+  text-align: center;
+  padding-bottom: 40px;
 }

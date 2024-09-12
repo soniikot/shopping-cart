@@ -1,4 +1,7 @@
 import style from './styles.module.scss';
+import socialMedia from '@/assets/social_media.png';
+import google from '@/assets/google.png';
+import app_store from '@/assets/appstore.png';
 
 export const Footer = () => {
   return (
@@ -46,6 +49,21 @@ export const Footer = () => {
             <li>NH 8- Near Mahadev Hotel, Udaipur, India- 313002</li>
           </ul>
         </div>
+        <div className={style.social_media}>
+          <img src={socialMedia} alt="social media" />{' '}
+          <div>
+            <span className={style.bold}>Download The App </span>
+            <div className={style.apps}>
+              <img src={google} alt="" />
+              <img src={app_store} alt="" />
+            </div>
+          </div>
+        </div>
+
+        <h3 className={style.title}>Popular Categories</h3>
+        <p className={style.text}>
+          Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.
+        </p>
       </div>
     </div>
   );
