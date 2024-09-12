@@ -1,5 +1,5 @@
 import style from './styles.module.scss';
-import search from '../../../../assets/search.svg';
+import search from '@/assets/search.svg';
 const Search = () => {
   return (
     <form className={style.wrapper}>

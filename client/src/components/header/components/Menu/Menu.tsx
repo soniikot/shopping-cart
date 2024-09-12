@@ -1,7 +1,6 @@
 import style from './styles.module.scss';
 import { menuList } from '../../../../constants/menuList';
 import { Link } from 'react-router-dom';
-import { ProductsPage } from '@/pages/ProductsPage/ProductsPage';
 
 const Menu = () => {
   return (
