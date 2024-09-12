@@ -3,42 +3,43 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  max-height: 640px;
-  margin: 50px 100px;
+  margin: 85px -20px;
 }
 
 .banner {
-  flex: 1;
   flex-basis: 50%;
   background-image: url('../../assets/background-leaves.jpeg');
   background-size: cover;
-  padding: 100px 70px;
   color: white;
+  border-radius: 10px;
+  padding: 180px 70px 10px 70px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
 }
 
 .image_wrapper {
-  display: flex;
   flex-basis: 50%;
-  flex: 1;
-  background-color: blueviolet;
 }
 
 .img {
-  display: inline-block;
-  flex: 1;
-  object-fit: scale-down;
+  border-radius: 10px;
+  max-width: 639px;
 }
 
 .button {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
-@media (max-width: $large) {
+@media (max-width: $medium) {
   .img {
     display: none;
   }
+
   .banner {
-    flex: 1;
-    justify-content: center;
+    flex-basis: 100%;
+    padding: 180px 0px 80px 70px;
   }
 }
