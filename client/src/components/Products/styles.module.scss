@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin: 55px 0px 90px -40px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 1;
+}
+
+.subtitle {
+  color: $--grey-text-color;
+}
+.link {
+  color: $--grey-text-color;
+  font-size: 13px;
+}
+.card {
+  flex-grow: 1;
+}
+
+.img {
+  width: 270px;
+  height: 393px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.arrow {
+  float: right;
+}
+
+.price {
+  background-color: $--background-grey-color;
+  width: fit-content;
+  padding-inline: 10px;
+  border-radius: 10px;
+}
+
+.text_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

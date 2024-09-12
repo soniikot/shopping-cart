@@ -6,9 +6,22 @@ interface Category {
   numberOfCategories: number;
 }
 
-interface categories {}
+interface CategoryData {
+  id: number;
+  attributes: {
+    title: string;
+    img: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+}
+
 export const Category: React.FC<Category> = ({ numberOfCategories }) => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<CategoryData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {

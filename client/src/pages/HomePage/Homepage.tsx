@@ -9,7 +9,8 @@ import { SavingZone } from '@/components/SavingZone/SavingZone';
 import { Banner } from '@/components/Banner/Banner';
 import { Category } from '@/shared/components/Category/Category';
 import { Brands } from '@/components/Brands/Brands';
-
+import { Products } from '@/components/Products/Products';
+import { Feedback } from '@/components/Feedback/Feedback';
 export const Homepage = () => {
   return (
     <>
@@ -44,6 +45,10 @@ export const Homepage = () => {
         <SectionTitle text="Categories for Women" />
         <Category numberOfCategories={4} />
         <Brands />
+        <SectionTitle text="In The LimeLight " />
+        <Products />
+        <SectionTitle text="Feedback" />
+        <Feedback />
       </div>
     </>
   );

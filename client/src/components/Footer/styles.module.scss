@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+.wrapper {
+  display: flex;
+  margin-top: 40px;
+  background-color: $--dark-grey-text-color;
+  color: white;
+  padding: 60px 90px;
+  font-size: 18px;
+  gap: 60px;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.background {
+  background-color: $--dark-grey-text-color;
+}
+
+.wrapper li {
+  margin-top: 10px;
+}

@@ -7,7 +7,7 @@ export const Brands = () => {
       <div className={style.wrapper}>
         <h2 className={style.title}>Top Brands Deal</h2>
         <p>
-          Up To <span className={style.yellow}>60%</span>off on brands
+          Up To <span className={style.yellow}>60% </span>off on brands
         </p>
         <div className={style.brands_container}>
           <img src={brands} alt="brands" />
