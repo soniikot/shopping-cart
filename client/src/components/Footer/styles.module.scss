@@ -19,14 +19,14 @@
 }
 
 .wrapper li {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .social_media {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 170px 0px 90px;
+  padding: 0px 170px 30px 90px;
 }
 
 .apps {
@@ -42,4 +42,13 @@
 .text {
   text-align: center;
   padding-bottom: 40px;
+}
+
+.app_container {
+  position: relative;
+}
+
+.app_title {
+  position: absolute;
+  top: -55px;
 }

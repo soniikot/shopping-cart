@@ -3,7 +3,7 @@
 .wrapper {
   display: flex;
   justify-content: center;
-  margin: 85px -20px;
+  margin: 85px 0px;
 }
 
 .banner {
@@ -25,8 +25,8 @@
 }
 
 .img {
+  height: 640px;
   border-radius: 10px;
-  max-width: 639px;
 }
 
 .button {

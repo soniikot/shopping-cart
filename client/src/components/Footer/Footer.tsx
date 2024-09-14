@@ -2,7 +2,7 @@ import style from './styles.module.scss';
 import socialMedia from '@/assets/social_media.png';
 import google from '@/assets/google.png';
 import app_store from '@/assets/appstore.png';
-
+import clsx from 'clsx';
 export const Footer = () => {
   return (
     <div className={style.background}>
@@ -50,9 +50,11 @@ export const Footer = () => {
           </ul>
         </div>
         <div className={style.social_media}>
-          <img src={socialMedia} alt="social media" />{' '}
-          <div>
-            <span className={style.bold}>Download The App </span>
+          <img className={style.icons} src={socialMedia} alt="social media" />{' '}
+          <div className={style.app_container}>
+            <span className={clsx(style.bold, style.app_title)}>
+              Download The App{' '}
+            </span>
             <div className={style.apps}>
               <img src={google} alt="" />
               <img src={app_store} alt="" />

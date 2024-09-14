@@ -2,25 +2,10 @@ import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
 import axios from 'axios';
 import arrow from '@/assets/arrow-left.svg';
-interface Category {
-  numberOfCategories: number;
-}
+import { CategoryData } from '@/types/interfaces';
+import { CategoryType } from '@/types/interfaces';
 
-interface CategoryData {
-  id: number;
-  attributes: {
-    title: string;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
-export const Category: React.FC<Category> = ({ numberOfCategories }) => {
+export const Category: React.FC<CategoryType> = ({ numberOfCategories }) => {
   const [categories, setCategories] = useState<CategoryData[]>([]);
   useEffect(() => {
     const fetchData = async () => {

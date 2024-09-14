@@ -1,8 +1,5 @@
 import style from './styles.module.scss';
-
-interface IconButtonProps {
-  icon: string;
-}
+import { IconButtonProps } from '@/types/interfaces';
 
 export const IconButton: React.FC<IconButtonProps> = ({ icon }) => {
   return (

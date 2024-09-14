@@ -46,7 +46,7 @@ export const Homepage = () => {
         <Category numberOfCategories={4} />
         <Brands />
         <SectionTitle text="In The LimeLight " />
-        <Products numberOfProducts={12} />
+        <Products numberOfProducts={4} />
         <SectionTitle text="Feedback" />
         <Feedback />
       </div>

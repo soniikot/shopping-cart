@@ -1,8 +1,5 @@
 import style from './styles.module.scss';
-
-interface SectionTitleProps {
-  text: string;
-}
+import { SectionTitleProps } from '@/types/interfaces';
 
 export const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
   return (
