@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  width: 295px;
+  height: 1708px;
+  border: 1px solid $--grey-border-color;
+  margin: 50px;
+  color: $--grey-text-color;
+}
+
+.header {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $--grey-border-color;
+}
+
+.subcategory_wrapper {
+  margin: 10px;
+}
+
+.subcategory {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 40px;
+}

@@ -14,7 +14,7 @@ export interface ProductData {
   };
 }
 
-export interface Products {
+export interface ProductsType {
   numberOfProducts: number;
 }
 

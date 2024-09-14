@@ -1,27 +1,10 @@
 import style from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ProductData } from '@/types/interfaces';
+import { ProductsType } from '@/types/interfaces';
 
-interface ProductData {
-  id: number;
-  attributes: {
-    title: string;
-    disc: string;
-    price: number;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
-interface Products {
-  numberOfProducts: number;
-}
-export const Products: React.FC<Products> = ({ numberOfProducts }) => {
+export const Products: React.FC<ProductsType> = ({ numberOfProducts }) => {
   const [products, setProducts] = useState<ProductData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
