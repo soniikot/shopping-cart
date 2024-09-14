@@ -12,13 +12,16 @@ export const Category: React.FC<CategoryType> = ({ numberOfCategories }) => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL + '/subcategories?populate=*'}`,
+
           {
             headers: {
               Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
             },
           }
         );
+
         setCategories(response.data.data);
+        console.log(categories);
       } catch (error) {
         console.error(error);
       }

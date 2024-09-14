@@ -8,7 +8,7 @@ export const ProductsPage = () => {
     <div className="container">
       <div className={style.wrapper}>
         <Filter />
-        <Products numberOfProducts={9} />
+        <Products numberOfProducts={9} filter={'/products?populate=*'} />
       </div>
       <SectionTitle text="Clothing for Women Online in India" />
       <SectionTitle text="Buy Womens Clothing at Best Price" />

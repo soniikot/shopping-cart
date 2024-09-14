@@ -16,10 +16,12 @@ export interface ProductData {
 
 export interface ProductsType {
   numberOfProducts: number;
+  filter: string;
 }
 
 export interface CategoryType {
   numberOfCategories: number;
+  filter: string;
 }
 
 export interface CategoryData {

@@ -3,11 +3,15 @@ import filter from '@assets/filter.svg';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import linkArrow from '@/assets/link-arrow.svg';
-import arrorUp from '@/assets/arrow-up.svg';
+import arrowUp from '@/assets/arrow-up.svg';
+import Slider from '@mui/material/Slider';
 
 export const Filter = () => {
   const [subcategories, setSubcategories] = useState([]);
-
+  const [range, setRange] = useState([0, 900]);
+  function handleChanges(event, newValue) {
+    setRange(newValue);
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,7 +53,20 @@ export const Filter = () => {
 
         <div className={style.header}>
           <h4>Price </h4>
-          <img src={arrorUp} alt="" />
+          <img src={arrowUp} alt="" />
+        </div>
+        <div className={style.slider}>
+          <div style={{ width: '225px', padding: '5px' }}>
+            <Slider
+              value={range}
+              onChange={handleChanges}
+              valueLabelDisplay="auto"
+            />
+            <div className={style.range}>
+              <button>{range[0]}</button>
+              <button>{range[1]}</button>
+            </div>
+          </div>
         </div>
       </div>
     </aside>

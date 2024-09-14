@@ -4,13 +4,16 @@ import axios from 'axios';
 import { ProductData } from '@/types/interfaces';
 import { ProductsType } from '@/types/interfaces';
 
-export const Products: React.FC<ProductsType> = ({ numberOfProducts }) => {
+export const Products: React.FC<ProductsType> = ({
+  numberOfProducts,
+  filter,
+}) => {
   const [products, setProducts] = useState<ProductData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL + '/products?populate=*'}`,
+          `${import.meta.env.VITE_API_URL + filter}`,
           {
             headers: {
               Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
