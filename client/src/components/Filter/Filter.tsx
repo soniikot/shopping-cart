@@ -5,6 +5,17 @@ import { useEffect, useState } from 'react';
 import linkArrow from '@/assets/link-arrow.svg';
 import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
+import { ColorFilter } from './components/ColorFilter';
+import { Sizes } from './components/Sizes/Sizes';
+
+const DRESS_STYLES = [
+  'Classic',
+  'Casual',
+  'Business',
+  'Sport',
+  'Elegant',
+  'Formal(evening',
+];
 
 export const Filter = () => {
   const [subcategories, setSubcategories] = useState([]);
@@ -60,13 +71,40 @@ export const Filter = () => {
             <Slider
               value={range}
               onChange={handleChanges}
-              valueLabelDisplay="auto"
+              color="secondary"
+              min={0}
+              max={900}
             />
             <div className={style.range}>
               <button>{range[0]}</button>
               <button>{range[1]}</button>
             </div>
           </div>
+        </div>
+        <div className={style.header}>
+          <h4>Colors </h4>
+          <img src={arrowUp} alt="" />
+        </div>
+        <ColorFilter />
+        <div className={style.header}>
+          <h4>Size </h4>
+          <img src={arrowUp} alt="" />
+        </div>
+        <Sizes />
+        <div className={style.header}>
+          <h4>Dress Style </h4>
+          <img src={arrowUp} alt="" />
+        </div>
+
+        <div className={style.categories}>
+          <ul className={style.subcategory_wrapper}>
+            {DRESS_STYLES.map((item) => (
+              <li className={style.subcategory}>
+                {item}
+                <img src={linkArrow} alt="" />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </aside>

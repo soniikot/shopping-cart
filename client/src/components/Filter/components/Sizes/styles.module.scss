@@ -1,0 +1,15 @@
+@import '../../../../styles/variables.scss';
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  margin: 35px;
+}
+
+.button {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid $--grey-border-color;
+  padding: 5px 10px;
+}

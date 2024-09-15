@@ -2,7 +2,7 @@
 
 .wrapper {
   width: 295px;
-  height: 1708px;
+
   border: 1px solid $--grey-border-color;
   margin: 50px;
   color: $--grey-text-color;
@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid $--grey-border-color;
+  border-top: 1px solid $--grey-border-color;
 }
 
 .subcategory_wrapper {
@@ -29,6 +30,7 @@
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .range {
