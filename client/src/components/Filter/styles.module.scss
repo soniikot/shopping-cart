@@ -2,28 +2,28 @@
 
 .wrapper {
   width: 295px;
-
   border: 1px solid $--grey-border-color;
   margin: 50px;
   color: $--grey-text-color;
 }
 
 .header {
-  padding: 20px 30px;
+  padding: 30px 30px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid $--grey-border-color;
   border-top: 1px solid $--grey-border-color;
 }
 
-.subcategory_wrapper {
-  margin: 10px;
+.categories {
+  margin-top: 30px;
+  font-size: 16px;
 }
 
 .subcategory {
   display: flex;
   justify-content: space-between;
-  margin: 20px 40px;
+  margin: 13px 30px;
 }
 
 .slider {
@@ -36,4 +36,11 @@
 .range {
   display: flex;
   justify-content: space-between;
+}
+
+.button {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid $--grey-border-color;
+  padding: 3px 30px;
 }

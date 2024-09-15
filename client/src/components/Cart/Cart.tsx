@@ -1,9 +1,7 @@
 import { useMemo } from 'react';
+import { CartProps } from '@/types/interfaces';
 
-interface Cart {
-  products: string[];
-}
-function Cart: React.FC <Cart>({ products }) {
+const Cart: React.FC<CartProps> = ({ products }) => {
   const totalPrice = useMemo(() => {
     return products.reduce(
       (total, product) => total + product.price * product.quantity,
@@ -16,11 +14,11 @@ function Cart: React.FC <Cart>({ products }) {
       {/* Some other content in the cart */}
       {/* Products to display */}
       <p>
-        Total Price: <strong>${totalPrice}</strong>
+        Total Price: <strong>${totalPrice.toFixed(2)}</strong>
       </p>
       {/* Some button to checkout */}
     </div>
   );
-}
+};
 
 export default Cart;

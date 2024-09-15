@@ -1,9 +1,9 @@
 @import '../../../../styles/variables.scss';
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-
   margin: 35px;
 }
 

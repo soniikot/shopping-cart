@@ -1,4 +1,41 @@
+@import '../../styles/variables.scss';
+
 .wrapper {
   display: flex;
-  width: 1220px;
+  max-width: 1220px;
+}
+
+.filter {
+  margin-top: -130px;
+  margin-left: -50px;
+}
+
+.products {
+  margin-top: 50px;
+  width: 895px;
+}
+
+.purple_text {
+  color: $--purple-color;
+}
+
+.product_header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 350px;
+  padding-top: 50px;
+}
+
+.left {
+  display: flex;
+  gap: 10px;
+}
+
+.text {
+  color: $--grey-text-color;
+  line-height: 33.5px;
+}
+
+.subheader {
+  margin: 20px 0;
 }

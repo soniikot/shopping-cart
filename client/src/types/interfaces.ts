@@ -56,3 +56,13 @@ export interface SectionTitleProps {
 export interface TextButtonProps {
   text: string;
 }
+
+export interface Product {
+  id: string;
+  price: number;
+  quantity: number;
+}
+
+export interface CartProps {
+  products: Product[];
+}

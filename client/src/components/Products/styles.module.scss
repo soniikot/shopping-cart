@@ -2,8 +2,9 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, 215px);
+  column-gap: 90px;
+  row-gap: 10px;
   margin: 55px 0px 90px 0px;
 }
 

@@ -7,20 +7,13 @@ import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
 import { ColorFilter } from './components/ColorFilter';
 import { Sizes } from './components/Sizes/Sizes';
-
-const DRESS_STYLES = [
-  'Classic',
-  'Casual',
-  'Business',
-  'Sport',
-  'Elegant',
-  'Formal(evening',
-];
+import { DRESS_STYLES } from '@/constants/dressStyle';
+import { CategoryData } from '@/types/interfaces';
 
 export const Filter = () => {
-  const [subcategories, setSubcategories] = useState([]);
+  const [subcategories, setSubcategories] = useState<CategoryData[]>([]);
   const [range, setRange] = useState([0, 900]);
-  function handleChanges(event, newValue) {
+  function handleChanges(event, newValue: number[]) {
     setRange(newValue);
   }
   useEffect(() => {
@@ -53,7 +46,7 @@ export const Filter = () => {
 
         <div className={style.categories}>
           <ul className={style.subcategory_wrapper}>
-            {subcategories.map((subcategory) => (
+            {subcategories.slice(0, 9).map((subcategory) => (
               <li className={style.subcategory}>
                 {subcategory.attributes.title}
                 <img src={linkArrow} alt="" />
@@ -76,8 +69,8 @@ export const Filter = () => {
               max={900}
             />
             <div className={style.range}>
-              <button>{range[0]}</button>
-              <button>{range[1]}</button>
+              <button className={style.button}>{range[0]}</button>
+              <button className={style.button}>{range[1]}</button>
             </div>
           </div>
         </div>
