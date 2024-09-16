@@ -13,6 +13,7 @@ import { CategoryData } from '@/types/interfaces';
 export const Filter = () => {
   const [subcategories, setSubcategories] = useState<CategoryData[]>([]);
   const [range, setRange] = useState([0, 900]);
+
   function handleChanges(event, newValue: number[]) {
     setRange(newValue);
   }
@@ -27,8 +28,7 @@ export const Filter = () => {
             },
           }
         );
-
-        setSubcategories(response.data.data);
+        response.data.data && setSubcategories(response.data.data);
       } catch (error) {
         console.error(error);
       }
