@@ -2,8 +2,9 @@ import style from './styles.module.scss';
 import socialMedia from '@/assets/social_media.png';
 import google from '@/assets/google.png';
 import app_store from '@/assets/appstore.png';
+import { FC } from 'react';
 
-export const Footer = () => {
+export const Footer: FC = () => {
   return (
     <div className={style.background}>
       <div className="container">

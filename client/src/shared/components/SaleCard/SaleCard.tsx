@@ -1,4 +1,5 @@
 import style from './styles.module.scss';
+import { FC } from 'react';
 
 interface SaleCardProps {
   backgroundImage: string;
@@ -7,7 +8,7 @@ interface SaleCardProps {
   discount: string;
 }
 
-export const SaleCard: React.FC<SaleCardProps> = ({
+export const SaleCard: FC<SaleCardProps> = ({
   backgroundImage,
   title,
   subtitle,

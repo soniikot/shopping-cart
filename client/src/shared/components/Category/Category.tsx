@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
 import axios from 'axios';
 import arrow from '@/assets/arrow-left.svg';
+import { FC } from 'react';
+
 interface Category {
   numberOfCategories: number;
 }
@@ -20,7 +22,7 @@ interface CategoryData {
   };
 }
 
-export const Category: React.FC<Category> = ({ numberOfCategories }) => {
+export const Category: FC<Category> = ({ numberOfCategories }) => {
   const [categories, setCategories] = useState<CategoryData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +35,7 @@ export const Category: React.FC<Category> = ({ numberOfCategories }) => {
             },
           }
         );
+
         setCategories(response.data.data);
       } catch (error) {
         console.error(error);

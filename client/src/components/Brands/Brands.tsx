@@ -1,7 +1,8 @@
 import style from './styles.module.scss';
 import brands from '@/assets/brands.png';
+import { FC } from 'react';
 
-export const Brands = () => {
+export const Brands: FC = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>

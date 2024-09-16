@@ -1,7 +1,8 @@
 import style from './styles.module.scss';
 import { TextButton } from '../../shared/components/TextButton/TextButton.tsx';
+import { FC } from 'react';
 
-export const Hero = () => {
+export const Hero: FC = () => {
   return (
     <div className={style.background}>
       <div className="container">

@@ -2,8 +2,9 @@ import style from './styles.module.scss';
 import { SAVING_ZONE } from '../../constants/savingZone';
 import { LimitedStock } from '../../shared/components/LimitedStock/LimitedStock';
 import clsx from 'clsx';
+import { FC } from 'react';
 
-export const SavingZone = () => {
+export const SavingZone: FC = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>

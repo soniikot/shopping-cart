@@ -1,7 +1,8 @@
 import style from './styles.module.scss';
 import { REVIEWS } from '@/constants/reviews';
+import { FC } from 'react';
 
-export const Feedback = () => {
+export const Feedback: FC = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>

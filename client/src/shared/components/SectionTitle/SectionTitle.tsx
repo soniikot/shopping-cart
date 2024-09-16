@@ -1,10 +1,11 @@
 import style from './styles.module.scss';
+import { FC } from 'react';
 
 interface SectionTitleProps {
   text: string;
 }
 
-export const SectionTitle: React.FC<SectionTitleProps> = ({ text }) => {
+export const SectionTitle: FC<SectionTitleProps> = ({ text }) => {
   return (
     <div className={style.wrapper}>
       <h3 className={style.title}>{text}</h3>
