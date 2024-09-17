@@ -1,9 +1,11 @@
-import { useMemo } from 'react';
+import { useMemo, FC } from 'react';
+
+
 
 interface Cart {
   products: string[];
 }
-function Cart: React.FC <Cart>({ products }) {
+export function Cart: FC <Cart>({ products }) {
   const totalPrice = useMemo(() => {
     return products.reduce(
       (total, product) => total + product.price * product.quantity,
@@ -23,4 +25,4 @@ function Cart: React.FC <Cart>({ products }) {
   );
 }
 
-export default Cart;
+

@@ -6,22 +6,8 @@ interface Category {
   numberOfCategories: number;
 }
 
-interface CategoryData {
-  id: number;
-  attributes: {
-    title: string;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
 export const Category: React.FC<Category> = ({ numberOfCategories }) => {
-  const [categories, setCategories] = useState<CategoryData[]>([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -58,7 +44,7 @@ export const Category: React.FC<Category> = ({ numberOfCategories }) => {
             <a className={style.link} href="">
               Explore Now!
             </a>
-            <img className={style.arrow} src={arrow} alt="" />
+            <img className={style.arrow} src={arrow} alt="arrow_down" />
           </div>
         ))}
       </div>

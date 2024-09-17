@@ -1,6 +1,7 @@
 import style from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FC } from 'react';
 
 interface ProductData {
   id: number;
@@ -21,8 +22,11 @@ interface ProductData {
 interface Products {
   numberOfProducts: number;
 }
-export const Products: React.FC<Products> = ({ numberOfProducts }) => {
+
+export const Products: FC<Products> = ({ numberOfProducts }) => {
   const [products, setProducts] = useState<ProductData[]>([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,13 +38,22 @@ export const Products: React.FC<Products> = ({ numberOfProducts }) => {
             },
           }
         );
-        setProducts(response.data.data);
+
+        if (response.data.data) {
+          setProducts(response.data.data);
+          setLoading(false);
+        }
       } catch (error) {
         console.error(error);
+        setLoading(false);
       }
     };
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container">

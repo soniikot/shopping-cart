@@ -1,8 +1,9 @@
 import style from './styles.module.scss';
 import img from '../../assets/banner.jpeg';
 import { TextButton } from '../../shared/components/TextButton/TextButton';
+import { FC } from 'react';
 
-export const Banner = () => {
+export const Banner: FC = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>
