@@ -12,7 +12,7 @@ export const ProductsPage: FC = () => {
         <Products numberOfProducts={8} />
       </div>
       <SectionTitle text="Clothing for Women Online in India" />
-      <SectionTitle text="Buy Womens Clothing at Best Price" />
+      <SectionTitle text="Buy Women's Clothing at Best Price" />
     </div>
   );
 };

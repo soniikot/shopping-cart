@@ -1,10 +1,11 @@
-import hawT from '../assets/hawaian_shirts.jpeg';
-import printedT from '../assets/printed-t.jpeg';
-import cargoJ from '../assets/cargo-joggers.jpeg';
-import urbanS from '../assets/urban-shirts.jpeg';
-import OversizedT from '../assets/oversized-t.jpeg';
+import hawT from '@/assets/hawaian_shirts.jpeg';
+import printedT from '@/assets/printed-t.jpeg';
+import cargoJ from '@/assets/cargo-joggers.jpeg';
+import urbanS from '@/assets/urban-shirts.jpeg';
+import OversizedT from '@/assets/oversized-t.jpeg';
+import { SavingZoneItem } from '@/types/interfaces';
 
-export const SAVING_ZONE = [
+export const SAVING_ZONE: SavingZoneItem[] = [
   {
     id: 1,
     title: 'Hawaiian Shirts',

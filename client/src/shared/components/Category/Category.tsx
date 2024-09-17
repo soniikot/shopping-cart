@@ -2,28 +2,12 @@ import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
 import axios from 'axios';
 import arrow from '@/assets/arrow-left.svg';
-import { FC } from 'react';
-
 interface Category {
   numberOfCategories: number;
 }
 
-interface CategoryData {
-  id: number;
-  attributes: {
-    title: string;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
-export const Category: FC<Category> = ({ numberOfCategories }) => {
-  const [categories, setCategories] = useState<CategoryData[]>([]);
+export const Category: React.FC<Category> = ({ numberOfCategories }) => {
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -35,8 +19,7 @@ export const Category: FC<Category> = ({ numberOfCategories }) => {
             },
           }
         );
-
-        response.data.data && setCategories(response.data.data);
+        setCategories(response.data.data);
       } catch (error) {
         console.error(error);
       }
@@ -61,7 +44,7 @@ export const Category: FC<Category> = ({ numberOfCategories }) => {
             <a className={style.link} href="">
               Explore Now!
             </a>
-            <img className={style.arrow} src={arrow} alt="" />
+            <img className={style.arrow} src={arrow} alt="arrow_down" />
           </div>
         ))}
       </div>

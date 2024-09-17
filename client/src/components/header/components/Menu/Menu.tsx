@@ -1,5 +1,5 @@
 import style from './styles.module.scss';
-import { menuList } from '../../../../constants/menuList';
+import { menuList } from './constants';
 import { Link } from 'react-router-dom';
 import { FC } from 'react';
 
