@@ -36,7 +36,7 @@ export const Category: FC<Category> = ({ numberOfCategories }) => {
           }
         );
 
-        setCategories(response.data.data);
+        response.data.data && setCategories(response.data.data);
       } catch (error) {
         console.error(error);
       }
