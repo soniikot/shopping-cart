@@ -5,7 +5,7 @@ import shoppingCart from '@/assets/user.svg';
 import { IconButton } from '@/shared/components/IconButton/IconButton';
 import { FC } from 'react';
 
-const Form: FC = () => {
+export const Form: FC = () => {
   return (
     <div className={style.form}>
       <IconButton icon={heart} />
@@ -14,5 +14,3 @@ const Form: FC = () => {
     </div>
   );
 };
-
-export default Form;
