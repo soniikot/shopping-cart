@@ -3,6 +3,7 @@ import fullSleeve from '../../assets/full-sleeve.png';
 import active from '../../assets/active.png';
 import urban from '../../assets/urban.png';
 import style from './styles.module.scss';
+import { FC } from 'react';
 
 const categories = [
   {
@@ -27,7 +28,7 @@ const categories = [
   },
 ];
 
-export const NewArrival = () => {
+export const NewArrival: FC = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>

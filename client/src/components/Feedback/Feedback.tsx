@@ -9,8 +9,8 @@ export const Feedback: FC = () => {
         {REVIEWS.map((review) => (
           <div className={style.card}>
             <div className={style.header}>
-              <img src={review.img} alt="" />
-              <img src={review.stars} alt="" />
+              <img src={review.img} alt="person_photo" />
+              <img src={review.stars} alt="stars" />
             </div>
             <div className={style.body}>
               <h4>{review.name}</h4>

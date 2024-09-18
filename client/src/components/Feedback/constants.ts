@@ -3,8 +3,9 @@ import review2 from '@/assets/review2.png';
 import review3 from '@/assets/review3.png';
 import threeStars from '@/assets/3and5stars.png';
 import fourStars from '@/assets/4stars.png';
+import { ReviewItem } from '@/types/interfaces';
 
-export const REVIEWS = [
+export const REVIEWS: ReviewItem[] = [
   {
     img: review1,
     name: 'Floyd Miles',

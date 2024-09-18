@@ -1,11 +1,11 @@
 import style from './styles.module.scss';
-import { menuList } from '@/components/Header/components/Menu/constants';
+import { menuList } from './constants';
 import { Link } from 'react-router-dom';
 import { FC } from 'react';
 
-const Menu: FC = () => {
+export const Menu: FC = () => {
   return (
-    <ul className={style['header-menu']}>
+    <ul className={style.header_menu}>
       {menuList.map((menuItem) => (
         <li key={menuItem}>
           <Link to={'/products'} className={style.link}>
@@ -16,5 +16,3 @@ const Menu: FC = () => {
     </ul>
   );
 };
-
-export default Menu;

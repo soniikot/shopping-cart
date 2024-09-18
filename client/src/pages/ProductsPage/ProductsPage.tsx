@@ -3,8 +3,9 @@ import { Products } from '@/components/Products/Products';
 import { Filter } from '@/components/Filter/Filter';
 import { Table } from '@/components/Filter/components/Table/Table';
 import style from './styles.module.scss';
+import { FC } from 'react';
 
-export const ProductsPage = () => {
+export const ProductsPage: FC = () => {
   return (
     <div className="container">
       <div className={style.product_header}>

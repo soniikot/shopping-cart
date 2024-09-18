@@ -1,11 +1,11 @@
 import logo from '@/assets/logo.svg';
-import Menu from '@/components/Header/components/Menu/Menu';
-import Search from '@/components/Header/components/Search/Search';
-import Form from '@/components/Header/components/Form/Form';
+import { Menu } from '@/components/Header/components/Menu/Menu';
+import { Search } from '@/components/Header/components/Search/Search';
+import { Form } from '@/components/Header/components/Form/Form';
 import style from './styles.module.scss';
 import { FC } from 'react';
 
-const Header: FC = () => {
+export const Header: FC = () => {
   return (
     <div className="container">
       <header className={style.header}>
@@ -17,5 +17,3 @@ const Header: FC = () => {
     </div>
   );
 };
-
-export default Header;
