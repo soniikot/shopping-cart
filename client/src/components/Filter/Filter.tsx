@@ -7,10 +7,11 @@ import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
 import { ColorFilter } from './components/ColorFilter';
 import { Sizes } from './components/Sizes/Sizes';
-import { DRESS_STYLES } from '@/constants/dressStyle';
+import { DRESS_STYLES } from '@/components/Filter/constants';
 import { CategoryData } from '@/types/interfaces';
+import { FC } from 'react';
 
-export const Filter = () => {
+export const Filter: FC = () => {
   const [subcategories, setSubcategories] = useState<CategoryData[]>([]);
   const [range, setRange] = useState([0, 900]);
 

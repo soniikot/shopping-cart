@@ -1,6 +1,6 @@
 import style from './styles.module.scss';
-
-export const Sizes = () => {
+import { FC } from 'react';
+export const Sizes: FC = () => {
   return (
     <div className={style.wrapper}>
       <button className={style.button}>XXS</button>

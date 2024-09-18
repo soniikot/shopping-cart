@@ -1,5 +1,5 @@
 import style from './styles.module.scss';
-import { SAVING_ZONE } from '../../constants/savingZone';
+import { SAVING_ZONE } from './constants';
 import { LimitedStock } from '../../shared/components/LimitedStock/LimitedStock';
 import clsx from 'clsx';
 

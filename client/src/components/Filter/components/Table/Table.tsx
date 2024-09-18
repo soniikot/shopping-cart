@@ -1,6 +1,7 @@
 import style from './style.module.scss';
+import { FC } from 'react';
 
-export const Table = () => {
+export const Table: FC = () => {
   return (
     <table className={style.table}>
       <tr>

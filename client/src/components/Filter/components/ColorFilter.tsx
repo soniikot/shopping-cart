@@ -1,7 +1,8 @@
 import style from './styles.module.scss';
-import { COLORS } from '@/constants/colors';
+import { COLORS } from '@/components/Filter/components/constants';
+import { FC } from 'react';
 
-export const ColorFilter = () => {
+export const ColorFilter: FC = () => {
   return (
     <div className={style.wrapper}>
       {COLORS.map((color) => (

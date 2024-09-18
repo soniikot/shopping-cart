@@ -3,8 +3,9 @@ import heart from '@/assets/heart.svg';
 import user from '@/assets/user.svg';
 import shoppingCart from '@/assets/user.svg';
 import { IconButton } from '@/shared/components/IconButton/IconButton';
+import { FC } from 'react';
 
-const Form = () => {
+const Form: FC = () => {
   return (
     <div className={style.form}>
       <IconButton icon={heart} />
