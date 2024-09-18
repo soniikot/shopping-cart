@@ -16,7 +16,6 @@ export interface ProductData {
 
 export interface ProductsType {
   numberOfProducts: number;
-  filter: string;
 }
 
 export interface CategoryType {
@@ -82,4 +81,8 @@ export interface ReviewItem {
   name: string;
   text: string;
   stars: string;
+}
+
+export interface SectionTitleProps {
+  text: string;
 }

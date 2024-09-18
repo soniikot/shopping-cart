@@ -23,7 +23,7 @@ export const ProductsPage: FC = () => {
           <Filter />
         </div>
 
-        <Products numberOfProducts={12} filter={'/products?populate=*'} />
+        <Products numberOfProducts={12} />
       </div>
       <div className={style.text}>
         <SectionTitle text="Clothing for Women Online in India" />
