@@ -1,0 +1,78 @@
+@import '../../../../styles/variables.scss';
+
+.details {
+  padding: 30px 100px;
+}
+.title {
+  font-weight: 600;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  font-size: 34px;
+}
+
+.rating {
+  display: flex;
+  gap: 20px;
+}
+
+.dark_text {
+  color: $--dark-grey-text-color;
+}
+.comments {
+  margin-left: 10px;
+}
+
+.size_guide {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+.sizes {
+  display: flex;
+  justify-content: flex-start;
+  gap: 22px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.size_button {
+  border: 1px solid $--grey-text-color;
+  background-color: white;
+  width: 38px;
+  height: 38px;
+}
+
+.size_button_black {
+  background-color: black;
+  color: white;
+}
+
+.colors {
+  margin-top: 10px;
+}
+
+.color {
+  margin: 30px 0px 30px 0px;
+  padding-right: 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $--grey-border-color;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+}

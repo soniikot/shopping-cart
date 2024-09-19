@@ -67,16 +67,6 @@ export const ProductsDescription = () => {
         <Feature icon={shipping} text="Free shipping" />
         <Feature icon={returns} text="Free returns" />
       </div>
-
-      <div className="product-description">
-        <div className="description-title">Product Description</div>
-        <div className="description-text">
-          100% Bio-washed Cotton - makes the fabric extra soft & silky. Flexible
-          ribbed crew neck. Precisely stitched with no pilling & no fading.
-          Provide all-time comfort. Anytime, anywhere. Infinite range of
-          matte-finish HD prints.
-        </div>
-      </div>
     </div>
   );
 };

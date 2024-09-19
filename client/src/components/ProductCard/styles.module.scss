@@ -3,6 +3,8 @@
 .wrapper {
   display: flex;
   border-top: 1px solid $--grey-border-color;
+  margin-inline: auto;
+  max-width: 1440px;
 }
 
 .side_images {
