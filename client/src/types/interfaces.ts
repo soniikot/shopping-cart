@@ -48,12 +48,19 @@ export interface IconButtonProps {
   icon: string;
 }
 
+export interface IconButtonWithTextProps {
+  icon: string;
+  text: string;
+  buttonColor: 'purple' | 'white';
+}
+
 export interface SectionTitleProps {
   text: string;
 }
 
 export interface TextButtonProps {
   text: string;
+  buttonColor: 'purple' | 'white';
 }
 
 export interface Product {
@@ -84,5 +91,10 @@ export interface ReviewItem {
 }
 
 export interface SectionTitleProps {
+  text: string;
+}
+
+export interface FeatureWithProps {
+  icon: string;
   text: string;
 }

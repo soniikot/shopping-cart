@@ -12,7 +12,7 @@ export const Hero: FC = () => {
             <h1 className={style.title}>Summer Value Pack</h1>
             <h3>cool / colorful / comfy</h3>
             <div className={style.button}>
-              <TextButton text="Shop Now" />
+              <TextButton text="Shop Now" buttonColor="white" />
             </div>
           </div>
         </div>
