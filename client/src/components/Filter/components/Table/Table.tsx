@@ -30,11 +30,11 @@ export const Table: FC = () => {
           <td>₹799</td>
         </tr>
         <tr>
-          <td>Blue Floral Anarkali Kurti</td>
+          <td>Blue Floral Shirts</td>
           <td>₹599</td>
         </tr>
         <tr>
-          <td>Jade Black Narrow Cut Flexible Women Jeggings</td>
+          <td>Jade Black Narrow Cut Flexible Women Leggings</td>
           <td>₹998</td>
         </tr>
         <tr>
@@ -46,11 +46,11 @@ export const Table: FC = () => {
           <td>₹800</td>
         </tr>
         <tr>
-          <td>Pista Green Solid Boxy Casual Shirts for Women</td>
+          <td> Green Solid Boxy Casual Shirts for Women</td>
           <td>₹449</td>
         </tr>
         <tr>
-          <td>Plain Burgundy Womens Boxer</td>
+          <td>Plain Burgundy Women's Boxer</td>
           <td>₹349</td>
         </tr>
         <tr>

@@ -3,7 +3,8 @@ import socialMedia from '@/assets/social_media.png';
 import google from '@/assets/google.png';
 import app_store from '@/assets/appstore.png';
 import clsx from 'clsx';
-export const Footer = () => {
+import { FC } from 'react';
+export const Footer: FC = () => {
   return (
     <div className={style.background}>
       <div className="container">
@@ -50,10 +51,10 @@ export const Footer = () => {
           </ul>
         </div>
         <div className={style.social_media}>
-          <img className={style.icons} src={socialMedia} alt="social media" />{' '}
+          <img className={style.icons} src={socialMedia} alt="social media" />
           <div className={style.app_container}>
             <span className={clsx(style.bold, style.app_title)}>
-              Download The App{' '}
+              Download The App
             </span>
             <div className={style.apps}>
               <img src={google} alt="" />

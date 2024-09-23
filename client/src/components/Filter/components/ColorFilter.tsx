@@ -11,9 +11,7 @@ export const ColorFilter: FC = () => {
             key={color.id}
             className={style.color}
             style={{ backgroundColor: color.color }}
-          >
-            {' '}
-          </div>
+          ></div>
           <span>{color.title}</span>
         </div>
       ))}
