@@ -8,8 +8,26 @@ import Slider from '@mui/material/Slider';
 import { ColorFilter } from './components/ColorFilter';
 import { Sizes } from './components/Sizes/Sizes';
 import { DRESS_STYLES } from '@/components/Filter/constants';
-import { CategoryData } from '@/types/interfaces';
 import { FC } from 'react';
+
+export interface CategoryType {
+  numberOfCategories: number;
+  filter: string;
+}
+
+export interface CategoryData {
+  id: number;
+  attributes: {
+    title: string;
+    img: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+}
 
 export const Filter: FC = () => {
   const [subcategories, setSubcategories] = useState<CategoryData[]>([]);

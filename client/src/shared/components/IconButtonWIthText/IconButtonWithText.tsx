@@ -1,13 +1,17 @@
 import style from './styles.module.scss';
-import clsx from 'clsx';
 import { FC } from 'react';
+import clsx from 'clsx';
 
-export interface TextButtonProps {
+export interface IconButtonWithTextProps {
+  icon: string;
   text: string;
   buttonColor: 'purple' | 'white';
 }
-
-export const TextButton: FC<TextButtonProps> = ({ text, buttonColor }) => {
+export const IconButtonWithText: FC<IconButtonWithTextProps> = ({
+  icon,
+  text,
+  buttonColor,
+}) => {
   return (
     <button
       className={clsx(style.button, {
@@ -15,7 +19,9 @@ export const TextButton: FC<TextButtonProps> = ({ text, buttonColor }) => {
         [style.white]: buttonColor === 'white',
       })}
     >
-      {text}
+      <div className={style.inner}>
+        <img src={icon} alt="" /> {text}
+      </div>
     </button>
   );
 };

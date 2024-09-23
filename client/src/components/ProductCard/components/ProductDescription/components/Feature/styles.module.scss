@@ -1,0 +1,9 @@
+@import '../../../../../../styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+  color: $--grey-text-color;
+}

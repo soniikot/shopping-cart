@@ -1,9 +1,27 @@
 import style from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { ProductData } from '@/types/interfaces';
-import { ProductsType } from '@/types/interfaces';
 import { FC } from 'react';
+
+export interface ProductData {
+  id: number;
+  attributes: {
+    title: string;
+    disc: string;
+    price: number;
+    img: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+}
+
+export interface ProductsType {
+  numberOfProducts: number;
+}
 
 export const Products: FC<ProductsType> = ({ numberOfProducts }) => {
   const [products, setProducts] = useState<ProductData[]>([]);

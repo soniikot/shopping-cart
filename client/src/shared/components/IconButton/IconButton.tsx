@@ -1,6 +1,10 @@
 import style from './styles.module.scss';
-import { IconButtonProps } from '@/types/interfaces';
+
 import { FC } from 'react';
+
+interface IconButtonProps {
+  icon: string;
+}
 
 export const IconButton: FC<IconButtonProps> = ({ icon }) => {
   return (

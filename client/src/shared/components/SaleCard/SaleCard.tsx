@@ -1,6 +1,13 @@
 import style from './styles.module.scss';
-import { SaleCardProps } from '@/types/interfaces';
 import { FC } from 'react';
+
+interface SaleCardProps {
+  backgroundImage: string;
+  title: string;
+  subtitle: string;
+  discount: string;
+}
+
 export const SaleCard: FC<SaleCardProps> = (props) => {
   const { backgroundImage, title, subtitle, discount } = props;
   return (

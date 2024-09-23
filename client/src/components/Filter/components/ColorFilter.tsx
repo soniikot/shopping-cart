@@ -1,5 +1,5 @@
 import style from './styles.module.scss';
-import { COLORS } from '@/components/Filter/components/constants';
+import { COLORS } from '@/shared/constants/constants';
 import { FC } from 'react';
 
 export const ColorFilter: FC = () => {

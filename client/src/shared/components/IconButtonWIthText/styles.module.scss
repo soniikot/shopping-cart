@@ -1,0 +1,20 @@
+@import '../../../styles/variables.scss';
+.button {
+  padding: 15px;
+  padding-inline: 50px;
+}
+
+.purple {
+  color: white;
+  background-color: $--purple-color;
+}
+
+.white {
+  color: black;
+  background-color: white;
+}
+
+.inner {
+  display: flex;
+  gap: 2px;
+}

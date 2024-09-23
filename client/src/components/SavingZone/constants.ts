@@ -3,7 +3,17 @@ import printedT from '@/assets/printed-t.jpeg';
 import cargoJ from '@/assets/cargo-joggers.jpeg';
 import urbanS from '@/assets/urban-shirts.jpeg';
 import OversizedT from '@/assets/oversized-t.jpeg';
-import { SavingZoneItem } from '@/types/interfaces';
+
+interface SavingZoneItem {
+  id: number;
+  title: string;
+  subtitle: string;
+  discount: string;
+  isLimited: boolean;
+  img: string;
+  isBlack: boolean;
+  isRightAlignment: boolean;
+}
 
 export const SAVING_ZONE: SavingZoneItem[] = [
   {
