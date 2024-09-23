@@ -1,0 +1,29 @@
+@import '../../../../styles/variables.scss';
+
+.table {
+  width: 100%;
+  margin: 30px;
+  padding: 20px;
+  font-size: 24px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  border-bottom: 1px solid $--grey-border-color;
+  padding: 40px 80px;
+}
+
+td {
+  color: $--grey-text-color;
+  padding: 20px 80px;
+}
+
+tr {
+  background-color: $--background-grey-color;
+}
+th:first-child,
+td:first-child {
+  border-right: 1px solid $--grey-border-color;
+}

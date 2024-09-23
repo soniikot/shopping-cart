@@ -1,5 +1,5 @@
 import style from './styles.module.scss';
-import { REVIEWS } from './constants';
+import { REVIEWS } from '@/components/Feedback/constants';
 import { FC } from 'react';
 
 export const Feedback: FC = () => {

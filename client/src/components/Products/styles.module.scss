@@ -2,9 +2,10 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin: 55px 0px 90px -40px;
+  grid-template-columns: repeat(auto-fit, 215px);
+  column-gap: 90px;
+  row-gap: 10px;
+  margin: 55px 0px 90px 0px;
 }
 
 .title {

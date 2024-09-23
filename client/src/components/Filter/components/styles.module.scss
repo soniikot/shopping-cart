@@ -1,0 +1,12 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 35px;
+  gap: 18px;
+}
+
+.color {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+}

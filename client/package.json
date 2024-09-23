@@ -15,6 +15,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.0",
     "@reduxjs/toolkit": "^2.0.1",
     "@types/module-alias": "^2.0.4",
     "@types/npm": "^7.19.3",

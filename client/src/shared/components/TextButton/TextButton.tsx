@@ -1,8 +1,5 @@
 import style from './style.module.css';
-
-interface TextButtonProps {
-  text: string;
-}
+import { TextButtonProps } from '@/types/interfaces';
 
 export const TextButton: React.FC<TextButtonProps> = ({ text }) => {
   return <button className={style.button}> {text}</button>;

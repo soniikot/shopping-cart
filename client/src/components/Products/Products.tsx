@@ -1,31 +1,12 @@
 import style from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ProductData } from '@/types/interfaces';
+import { ProductsType } from '@/types/interfaces';
 import { FC } from 'react';
 
-interface ProductData {
-  id: number;
-  attributes: {
-    title: string;
-    disc: string;
-    price: number;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
-interface Products {
-  numberOfProducts: number;
-}
-
-export const Products: FC<Products> = ({ numberOfProducts }) => {
+export const Products: FC<ProductsType> = ({ numberOfProducts }) => {
   const [products, setProducts] = useState<ProductData[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,21 +20,13 @@ export const Products: FC<Products> = ({ numberOfProducts }) => {
           }
         );
 
-        if (response.data.data) {
-          setProducts(response.data.data);
-          setLoading(false);
-        }
+        response.data.data && setProducts(response.data.data);
       } catch (error) {
         console.error(error);
-        setLoading(false);
       }
     };
     fetchData();
   }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="container">
