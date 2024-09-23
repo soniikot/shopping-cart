@@ -3,7 +3,13 @@ import review2 from '@/assets/review2.png';
 import review3 from '@/assets/review3.png';
 import threeStars from '@/assets/3and5stars.png';
 import fourStars from '@/assets/4stars.png';
-import { ReviewItem } from '@/types/interfaces';
+
+export interface ReviewItem {
+  img: string;
+  name: string;
+  text: string;
+  stars: string;
+}
 
 export const REVIEWS: ReviewItem[] = [
   {

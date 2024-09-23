@@ -1,7 +1,11 @@
 import style from './styles.module.scss';
-import { TextButtonProps } from '@/types/interfaces';
 import clsx from 'clsx';
 import { FC } from 'react';
+
+export interface TextButtonProps {
+  text: string;
+  buttonColor: 'purple' | 'white';
+}
 
 export const TextButton: FC<TextButtonProps> = ({ text, buttonColor }) => {
   return (

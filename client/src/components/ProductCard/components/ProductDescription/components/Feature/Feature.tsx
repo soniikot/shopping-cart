@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import style from './styles.module.scss';
-import { FeatureWithProps } from '@/types/interfaces';
+
+export interface FeatureWithProps {
+  icon: string;
+  text: string;
+}
 
 export const Feature: FC<FeatureWithProps> = ({ icon, text }) => {
   return (

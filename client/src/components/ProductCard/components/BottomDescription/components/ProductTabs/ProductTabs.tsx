@@ -7,7 +7,7 @@ import product_table from '@assets/product_table.png';
 export const ProductTabs: FC = () => {
   const [value, setValue] = useState('1');
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleTabChange = (event: MouseEvent, newValue: string) => {
     setValue(newValue);
   };
   return (
@@ -16,7 +16,7 @@ export const ProductTabs: FC = () => {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1 }}>
           <TabList
-            onChange={handleChange}
+            onChange={handleTabChange}
             textColor="secondary"
             indicatorColor="secondary"
           >

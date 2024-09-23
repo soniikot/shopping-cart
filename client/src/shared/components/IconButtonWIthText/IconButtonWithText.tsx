@@ -1,8 +1,12 @@
 import style from './styles.module.scss';
 import { FC } from 'react';
-import { IconButtonWithTextProps } from '@/types/interfaces';
 import clsx from 'clsx';
 
+export interface IconButtonWithTextProps {
+  icon: string;
+  text: string;
+  buttonColor: 'purple' | 'white';
+}
 export const IconButtonWithText: FC<IconButtonWithTextProps> = ({
   icon,
   text,

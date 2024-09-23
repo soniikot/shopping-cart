@@ -3,7 +3,8 @@ import socialMedia from '@/assets/social_media.png';
 import google from '@/assets/google.png';
 import app_store from '@/assets/appstore.png';
 import clsx from 'clsx';
-export const Footer = () => {
+import { FC } from 'react';
+export const Footer: FC = () => {
   return (
     <div className={style.background}>
       <div className="container">

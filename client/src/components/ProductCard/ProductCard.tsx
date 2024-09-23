@@ -2,7 +2,7 @@ import style from './styles.module.scss';
 import img1 from '@/assets/product_p.png';
 import button_up from '@/assets/button_up.svg';
 import button_down from '@/assets/button_down.svg';
-import { ProductsDescription } from './components/ProductDescription/ProductsDescribtion';
+import { ProductsDescription } from './components/ProductDescription/ProductsDescription';
 import { BottomDescription } from './components/BottomDescription/BottomDescription';
 import { SectionTitle } from '@/shared/components/SectionTitle/SectionTitle';
 import { Products } from '../Products/Products';
