@@ -1,0 +1,16 @@
+@import './../../../../../../styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  text-align: center;
+  gap: 5px;
+  background-color: $--background-grey-color;
+  width: 80px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+}

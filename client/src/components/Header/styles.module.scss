@@ -5,8 +5,10 @@
   display: flex;
   gap: 7.3%;
   align-items: center;
-  margin: 31px 0;
+  margin: 31px 0 51px 0px;
+  padding-bottom: 30px;
   flex-wrap: no-wrap;
+  border-bottom: 1px solid $--grey-border-color;
 }
 
 @media (max-width: $medium) {

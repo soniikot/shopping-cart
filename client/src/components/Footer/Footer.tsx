@@ -4,6 +4,7 @@ import google from '@/assets/google.png';
 import app_store from '@/assets/appstore.png';
 import clsx from 'clsx';
 import { FC } from 'react';
+
 export const Footer: FC = () => {
   return (
     <div className={style.background}>
