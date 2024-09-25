@@ -11,7 +11,7 @@ import shipping from '@assets/shipping.svg';
 import returns from '@assets/return.svg';
 import { Feature } from './components/Feature/Feature';
 
-export const ProductsDescription = () => {
+export const ProductsDescription = ({ handleAddToCart }) => {
   return (
     <div className={style.details}>
       <h5>Shop &gt; Women &gt; Top </h5>
@@ -52,7 +52,7 @@ export const ProductsDescription = () => {
         </div>
       </div>
 
-      <div className={style.buttons}>
+      <div className={style.buttons} onClick={handleAddToCart}>
         <IconButtonWithText
           text="Add to cart"
           icon={cart}

@@ -1,50 +1,14 @@
 import style from './styles.module.scss';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
 import { FC } from 'react';
+import { RootState } from '@/app/store';
 
-export interface ProductData {
-  id: number;
-  attributes: {
-    title: string;
-    disc: string;
-    price: number;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
-export interface ProductsType {
+export interface ProductsTypeProps {
   numberOfProducts: number;
 }
 
-export const Products: FC<ProductsType> = ({ numberOfProducts }) => {
-  const [products, setProducts] = useState<ProductData[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL + '/products?populate=*'}`,
-          {
-            headers: {
-              Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
-            },
-          }
-        );
-
-        response.data.data && setProducts(response.data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
+export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
+  const { products } = useSelector((state: RootState) => state.products);
 
   return (
     <div className="container">

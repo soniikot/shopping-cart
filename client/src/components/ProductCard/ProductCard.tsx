@@ -6,7 +6,24 @@ import { ProductsDescription } from './components/ProductDescription/ProductsDes
 import { BottomDescription } from './components/BottomDescription/BottomDescription';
 import { SectionTitle } from '@/shared/components/SectionTitle/SectionTitle';
 import { Products } from '../Products/Products';
+
 export const ProductCard = () => {
+  //TODO
+  /**
+   * id ???
+   *
+   *
+   *
+   *   const { id } = useParams();
+   *
+   *
+   **/
+
+  const handleAddToCart = () => {
+    // cartSlice
+    // dispatch(id)
+  };
+
   return (
     <>
       <div className={style.wrapper}>
@@ -24,7 +41,7 @@ export const ProductCard = () => {
             <img src={img1} alt="Raven Hoodie" className={style.image} />
           </div>
         </div>
-        <ProductsDescription />
+        <ProductsDescription onAddToCart={handleAddToCart} />
       </div>
 
       <BottomDescription />
