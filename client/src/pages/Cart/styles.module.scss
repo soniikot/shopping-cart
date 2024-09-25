@@ -7,3 +7,37 @@
 .text {
   margin-top: 30px;
 }
+
+.bottom {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  padding-inline: 50px;
+  color: white;
+  background-color: $--purple-color;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.form {
+  padding: 20px 30px 37px 0px;
+  display: flex;
+}
+.form input[type='text'] {
+  padding-inline: 20px;
+  width: 300px;
+  height: 60px;
+  border: 1px solid $--grey-text-color;
+  border-radius: 10px 0 0px 10px;
+}
+
+.sub_total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  margin-bottom: 37px;
+}

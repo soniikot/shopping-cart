@@ -2,6 +2,8 @@ import { useMemo, FC } from 'react';
 import { NavigationBar } from './components/NavigationBar/NavigationBar';
 import style from './styles.module.scss';
 import { ProductsInCart } from './components/ProductsInCart/ProductsInCart';
+import { TextButton } from '@/shared/components/TextButton/TextButton';
+import clsx from 'clsx';
 
 interface ProductsType {
   price: number;
@@ -37,9 +39,37 @@ export const Cart: FC<{ products: ProductsType[] }> = ({ products }) => {
 
       <ProductsInCart />
 
-      <div className="container">
-        Total Price: <strong>${totalPrice}</strong>
-        {/* Some button to checkout */}
+      <div className={clsx(style.bottom, 'container')}>
+        <div className={style.discount_wrapper}>
+          <h4>Discount Codes</h4>
+          <p className={style.grey}>Enter your coupon code if you have one</p>
+          <form className={style.form} action="">
+            <input type="text" />
+            <input
+              type="button"
+              className={style.button}
+              value="Apply Coupon"
+            />
+          </form>
+          <TextButton text="Continue Shopping" buttonColor="white" />
+        </div>
+        <div className={style.total}>
+          <div className={style.text}>
+            <h4 className={style.sub_total}>
+              <span>Sub Total:</span>
+              <span className={style.price}>$43</span>
+            </h4>
+            <h4 className={style.sub_total}>
+              <span>Shipping</span>
+              <span className={style.price}>$123</span>
+            </h4>
+            <h4 className={style.sub_total}>
+              <span>Grand Total:</span>
+              <span className={style.price}>$88</span>
+            </h4>
+          </div>
+          <TextButton text="Proceed To Checkout" buttonColor="purple" />
+        </div>
       </div>
     </>
   );

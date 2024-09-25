@@ -1,60 +1,9 @@
 import style from './styles.module.scss';
 import { FC } from 'react';
 import clsx from 'clsx';
-import img1 from '@/assets/cart_img1.png';
-import img2 from '@/assets/cart_img2.png';
-import img3 from '@/assets/cart_img3.png';
-import iconDelete from '@/assets/deleteicon.svg';
+import iconDelete from '@/assets/deletecon.svg';
 import { PlusMinusButton } from './components/PlusMinusButton/PlusMinusButton';
-
-interface Product {
-  id: number;
-  productName: string;
-  color: string;
-  img: string;
-  size: string;
-  price: number;
-  quantity: number;
-  shipping: string | number;
-  subtotal: number;
-}
-
-const PRODUCT_SAMPLE: Product[] = [
-  {
-    id: 1,
-    img: img1,
-    color: 'blue',
-    productName: 'Blue Flower Print Crop Top',
-    size: 'M',
-    price: 29.0,
-    quantity: 1,
-    shipping: 'FREE',
-    subtotal: 29.0,
-  },
-  {
-    id: 2,
-    img: img2,
-    color: 'lavender',
-    productName: 'Lavender Hoodie',
-    size: 'XXL',
-    price: 119.0,
-    quantity: 2,
-    shipping: 'FREE',
-    subtotal: 119.0,
-  },
-  {
-    id: 3,
-    img: img3,
-    color: 'black',
-    productName: 'Black Sweatshirt',
-    size: 'XXL',
-    price: 123.0,
-    quantity: 2,
-    shipping: 5.0,
-    subtotal: 123.0,
-  },
-];
-
+import { PRODUCT_SAMPLE } from './constants';
 export const ProductsInCart: FC = () => {
   return (
     <div className={style.container}>
