@@ -4,7 +4,11 @@ import clsx from 'clsx';
 import iconDelete from '@/assets/deletecon.svg';
 import { PlusMinusButton } from './components/PlusMinusButton/PlusMinusButton';
 import { PRODUCT_SAMPLE } from './constants';
+import { useSelector } from 'react-redux';
+
 export const ProductsInCart: FC = () => {
+  const products = useSelector((state) => state.cart.products);
+
   return (
     <div className={style.container}>
       <div className={clsx(style.grid_row_header, 'container')}>

@@ -12,7 +12,6 @@ export const ProductsPage: FC = () => {
         <h4>Women's Clothing</h4>
         <div className={style.left}>
           <h4>
-            {' '}
             <span className={style.purple_text}>New</span>
           </h4>
           <h4>Recommended</h4>

@@ -26,11 +26,6 @@ export const fetchProducts = createAsyncThunk(
       }
     );
 
-    console.log(
-      `products/productsSlice.ts - line: 28 ->> response.data.data`,
-      response.data.data
-    );
-
     return response.data.data;
   }
 );

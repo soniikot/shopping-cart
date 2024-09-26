@@ -10,12 +10,18 @@ import fit from '@assets/fit.svg';
 import shipping from '@assets/shipping.svg';
 import returns from '@assets/return.svg';
 import { Feature } from './components/Feature/Feature';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/store';
 
 export const ProductsDescription = ({ handleAddToCart }) => {
+  const { products } = useSelector((state: RootState) => state.products);
+  console.log(products[1]);
   return (
     <div className={style.details}>
       <h5>Shop &gt; Women &gt; Top </h5>
-      <h2 className={style.title}>Raven Hoodie With Black colored Design</h2>
+      <h2 className={style.title}>
+        {products.length > 0 && products[1].attributes.title}
+      </h2>
       <div className={style.rating}>
         <img src={stars} alt="stars" />
         <h5 className={style.comments}> 3.5 </h5>
@@ -58,7 +64,10 @@ export const ProductsDescription = ({ handleAddToCart }) => {
           icon={cart}
           buttonColor="purple"
         />
-        <TextButton text="$63.00" buttonColor="white" />
+        <TextButton
+          text={`$${products.length > 0 && products[1].attributes.price}`}
+          buttonColor="white"
+        />
       </div>
 
       <div className={style.features}>
