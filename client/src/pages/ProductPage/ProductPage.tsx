@@ -9,17 +9,24 @@ import { Products } from '@/components/Products/Products';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import { addToCart } from '@/features/cart/cartSlice';
 
 export const ProductPage = () => {
   const id = useParams().id;
-  const dispatch = useDispatch();
-  const { products } = useSelector((state: RootState) => state.products);
 
+  const { products } = useSelector((state: RootState) => state.products);
+  const dispatch = useDispatch();
   const handleAddToCart = () => {
-    dispatch(addToCart({ id: id, quantity: 1 }));
+    dispatch(
+      addToCart({
+        id: id,
+        quantity: 1,
+        title: products[id].attributes.title,
+        price: products[id].attributes.price,
+        img: products[id].attributes.img.data.attributes.url,
+      })
+    );
   };
 
   return (

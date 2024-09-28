@@ -1,24 +1,33 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { increaseCount, decreaseCount } from '@/features/cart/cartSlice';
 import style from './styles.module.scss';
 
-export const PlusMinusButton = () => {
-  let [count, setCount] = useState(0);
+export const PlusMinusButton = ({ id, count }) => {
+  const dispatch = useDispatch();
 
   function incrementCount() {
-    count = count + 1;
-    setCount(count);
+    dispatch(increaseCount({ id }));
   }
   function decrementCount() {
-    count = count - 1;
-    setCount(count);
+    dispatch(decreaseCount({ id }));
   }
   return (
     <div className={style.wrapper}>
-      <button className={style.button} onClick={decrementCount}>
+      <button
+        className={style.button}
+        onClick={() => {
+          decrementCount(id);
+        }}
+      >
         -
       </button>
       <div>{count}</div>
-      <button className={style.button} onClick={incrementCount}>
+      <button
+        className={style.button}
+        onClick={() => {
+          incrementCount(id);
+        }}
+      >
         +
       </button>
     </div>
