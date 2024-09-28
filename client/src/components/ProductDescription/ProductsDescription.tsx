@@ -12,8 +12,16 @@ import returns from '@assets/return.svg';
 import { Feature } from './components/Feature/Feature';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
+import { FC } from 'react';
+interface ProductDescriptionProps {
+  id: number;
+  onAddToCart: () => void;
+}
 
-export const ProductsDescription = ({ id, onAddToCart }) => {
+export const ProductsDescription: FC<ProductDescriptionProps> = ({
+  id,
+  onAddToCart,
+}) => {
   const { products } = useSelector((state: RootState) => state.products);
 
   return (

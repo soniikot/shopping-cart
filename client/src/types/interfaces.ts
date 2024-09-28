@@ -4,6 +4,9 @@ export interface ProductData {
     title: string;
     disc: string;
     price: number;
+    color: string;
+    quantity: number;
+
     img: {
       data: {
         attributes: {

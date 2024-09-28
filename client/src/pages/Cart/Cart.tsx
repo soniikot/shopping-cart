@@ -1,32 +1,25 @@
-import { useMemo, FC } from 'react';
 import { NavigationBar } from './components/NavigationBar/NavigationBar';
 import style from './styles.module.scss';
-import { PlusMinusButton } from './components/ProductsInCart/components/PlusMinusButton/PlusMinusButton';
+import { PlusMinusButton } from './components/PlusMinusButton/PlusMinusButton';
 import iconDelete from '@/assets/deletecon.svg';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { useDispatch } from 'react-redux';
-import {
-  removeItem,
-  resetCart,
-  increaseCount,
-  decreaseCount,
-} from '../../features/cart/cartSlice';
+import { removeItem } from '../../features/cart/cartSlice';
+import { FC } from 'react';
+import { ProductData } from '@/types/interfaces';
 
-interface ProductsType {
-  price: number;
-  quantity: number;
-}
+export const Cart: FC = () => {
+  const cart: ProductData[] = useSelector(
+    (state: RootState) => state.cart.cart
+  );
 
-export const Cart: FC<{ products: ProductsType[] }> = () => {
-  const cart = useSelector((state: RootState) => state.cart.cart);
-  console.log(cart);
   const dispatch = useDispatch();
 
-  const handleDeleteItem = (id) => {
-    console.log('hello');
+  const handleDeleteItem = (id: number) => {
+    console.log('Deleting item with id:', id);
     dispatch(removeItem(id));
   };
 
