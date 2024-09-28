@@ -4,13 +4,16 @@ import style from './styles.module.scss';
 import { ProductsInCart } from './components/ProductsInCart/ProductsInCart';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
 
 interface ProductsType {
   price: number;
   quantity: number;
 }
 
-export const Cart: FC<{ products: ProductsType[] }> = ({ products }) => {
+export const Cart: FC<{ products: ProductsType[] }> = () => {
+  const products = useSelector(state.cart.products);
+
   const totalPrice = useMemo(() => {
     if (products)
       return products.reduce(

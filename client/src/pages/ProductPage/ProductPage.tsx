@@ -6,27 +6,22 @@ import { ProductsDescription } from '@/components/ProductDescription/ProductsDes
 import { BottomDescription } from '@/components/BottomDescription/BottomDescription';
 import { SectionTitle } from '@/shared/components/SectionTitle/SectionTitle';
 import { Products } from '@/components/Products/Products';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
+import { useParams } from 'react-router-dom';
+import { addToCart } from '@/features/cart/cartSlice';
+import { ButtonGroupButtonContext } from '@mui/material';
 
 export const ProductPage = () => {
-  //const id = useParams().id;
-
+  const id = useParams().id;
+  const dispatch = useDispatch();
   const { products } = useSelector((state: RootState) => state.products);
-
-  //TODO
-  /**
-   * id ???
-   *
-   *
-   *
-   *
-   *
-   **/
+  const { cart } = useSelector((state: RootState) => state.cart);
 
   const handleAddToCart = () => {
-    // cartSlice
-    // dispatch(id)
+    console.log('hello');
+    dispatch(addToCart({ id: id }));
+    console.log('Cart state:', cart);
   };
 
   return (
@@ -47,7 +42,7 @@ export const ProductPage = () => {
               <img
                 src={
                   import.meta.env.VITE_API_UPLOAD_URL +
-                  products[4].attributes.img.data.attributes.url
+                  products[id].attributes.img.data.attributes.url
                 }
                 alt="Raven Hoodie"
                 className={style.image}
@@ -55,8 +50,10 @@ export const ProductPage = () => {
             )}
           </div>
         </div>
-        <ProductsDescription onAddToCart={handleAddToCart} />
+        <ProductsDescription id={id} onAddToCart={handleAddToCart} />
       </div>
+
+      <ProductsDescription id={id} onAddToCart={handleAddToCart} />
 
       <BottomDescription />
       <div className="container">

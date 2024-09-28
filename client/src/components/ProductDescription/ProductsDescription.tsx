@@ -13,14 +13,14 @@ import { Feature } from './components/Feature/Feature';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 
-export const ProductsDescription = ({ handleAddToCart }) => {
+export const ProductsDescription = ({ id, onAddToCart }) => {
   const { products } = useSelector((state: RootState) => state.products);
-  console.log(products[1]);
+
   return (
     <div className={style.details}>
       <h5>Shop &gt; Women &gt; Top </h5>
       <h2 className={style.title}>
-        {products.length > 0 && products[1].attributes.title}
+        {products.length > 0 && products[id].attributes.title}
       </h2>
       <div className={style.rating}>
         <img src={stars} alt="stars" />
@@ -58,14 +58,16 @@ export const ProductsDescription = ({ handleAddToCart }) => {
         </div>
       </div>
 
-      <div className={style.buttons} onClick={handleAddToCart}>
+      <div className={style.buttons}>
+        <button onClick={onAddToCart}>Test</button>
         <IconButtonWithText
+          onClick={onAddToCart}
           text="Add to cart"
           icon={cart}
           buttonColor="purple"
         />
         <TextButton
-          text={`$${products.length > 0 && products[1].attributes.price}`}
+          text={`$${products.length > 0 && products[id].attributes.price}`}
           buttonColor="white"
         />
       </div>
