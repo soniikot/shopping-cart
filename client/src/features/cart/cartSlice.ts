@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
       if (item) {
         item.quantity += action.payload.quantity;
       } else {
-        state.push(action.payload);
+        state.cart.push(action.payload);
       }
     },
     //add decrement count

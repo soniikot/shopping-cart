@@ -5,22 +5,22 @@ import { ProductsInCart } from './components/ProductsInCart/ProductsInCart';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
-
+import { RootState } from '@/app/store';
 interface ProductsType {
   price: number;
   quantity: number;
 }
 
 export const Cart: FC<{ products: ProductsType[] }> = () => {
-  const products = useSelector(state.cart.products);
+  const cart = useSelector((state: RootState) => state.cart);
 
   const totalPrice = useMemo(() => {
-    if (products)
-      return products.reduce(
+    if (cart.length > 0)
+      return cart.reduce(
         (total, product) => total + product.price * product.quantity,
         0
       );
-  }, [products]);
+  }, [cart]);
 
   return (
     <>

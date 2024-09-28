@@ -9,19 +9,17 @@ import { Products } from '@/components/Products/Products';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+
 import { addToCart } from '@/features/cart/cartSlice';
-import { ButtonGroupButtonContext } from '@mui/material';
 
 export const ProductPage = () => {
   const id = useParams().id;
   const dispatch = useDispatch();
   const { products } = useSelector((state: RootState) => state.products);
-  const { cart } = useSelector((state: RootState) => state.cart);
 
   const handleAddToCart = () => {
-    console.log('hello');
-    dispatch(addToCart({ id: id }));
-    console.log('Cart state:', cart);
+    dispatch(addToCart({ id: id, quantity: 1 }));
   };
 
   return (
