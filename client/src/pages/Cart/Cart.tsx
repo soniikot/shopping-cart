@@ -19,8 +19,15 @@ export const Cart: FC = () => {
   const dispatch = useDispatch();
 
   const handleDeleteItem = (id: number) => {
-    console.log('Deleting item with id:', id);
     dispatch(removeItem(id));
+  };
+
+  const totalPrice = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.quantity * item.price;
+    });
+    return total;
   };
 
   return (
@@ -72,7 +79,9 @@ export const Cart: FC = () => {
                 <PlusMinusButton id={product.id} count={product.quantity} />
               </div>
               <div className={style.shipping}>FREE</div>
-              <div className={style.subtotal}>22</div>
+              <div className={style.subtotal}>
+                {product.quantity * product.price}
+              </div>
               <div className={style.action}>
                 <button
                   onClick={() => {
@@ -104,7 +113,7 @@ export const Cart: FC = () => {
           <div className={style.text}>
             <h4 className={style.sub_total}>
               <span>Sub Total:</span>
-              <span className={style.price}>$43</span>
+              <span className={style.price}>${totalPrice()}</span>
             </h4>
             <h4 className={style.sub_total}>
               <span>Shipping</span>

@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { FC } from 'react';
 interface ProductDescriptionProps {
-  id: number;
+  id?: string;
   onAddToCart: () => void;
 }
 
