@@ -9,7 +9,8 @@ import { Products } from '@/components/Products/Products';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { useParams } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { addToCart } from '@/features/cart/cartSlice';
 
 export const ProductPage = () => {
@@ -27,6 +28,7 @@ export const ProductPage = () => {
         img: products[id].attributes.img.data.attributes.url,
       })
     );
+    toast.success('Product added to cart!');
   };
 
   return (
@@ -65,6 +67,7 @@ export const ProductPage = () => {
         <SectionTitle text="Similar Products" />
         <Products numberOfProducts={8} />
       </div>
+      <ToastContainer />
     </>
   );
 };
