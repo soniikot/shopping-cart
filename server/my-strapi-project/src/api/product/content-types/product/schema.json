@@ -43,6 +43,21 @@
       "relation": "manyToMany",
       "target": "api::subcategory.subcategory",
       "mappedBy": "products"
+    },
+    "color": {
+      "type": "string"
+    },
+    "size": {
+      "type": "customField",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XLL"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }

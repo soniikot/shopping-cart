@@ -6,6 +6,7 @@ export interface ProductData {
     price: number;
     color: string;
     quantity: number;
+    size: string;
 
     img: {
       data: {

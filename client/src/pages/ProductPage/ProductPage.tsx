@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { addToCart } from '@/features/cart/cartSlice';
 
 export const ProductPage = () => {
-  const id = useParams().id;
+  const id: number = Number(useParams().id);
 
   const { products } = useSelector((state: RootState) => state.products);
   const dispatch = useDispatch();
@@ -26,6 +26,8 @@ export const ProductPage = () => {
         title: products[id].attributes.title,
         price: products[id].attributes.price,
         img: products[id].attributes.img.data.attributes.url,
+        color: products[id].attributes.color,
+        size: products[id].attributes.size,
       })
     );
     toast.success('Product added to cart!');
@@ -59,8 +61,6 @@ export const ProductPage = () => {
         </div>
         <ProductsDescription id={id} onAddToCart={handleAddToCart} />
       </div>
-
-      <ProductsDescription id={id} onAddToCart={handleAddToCart} />
 
       <BottomDescription />
       <div className="container">

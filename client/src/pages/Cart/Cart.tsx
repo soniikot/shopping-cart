@@ -9,12 +9,19 @@ import { RootState } from '@/app/store';
 import { useDispatch } from 'react-redux';
 import { removeItem } from '../../features/cart/cartSlice';
 import { FC } from 'react';
-import { ProductData } from '@/types/interfaces';
+
+export interface CartData {
+  id: number;
+  title: string;
+  price: number;
+  img: string;
+  color: string;
+  size: string;
+  quantity: number;
+}
 
 export const Cart: FC = () => {
-  const cart: ProductData[] = useSelector(
-    (state: RootState) => state.cart.cart
-  );
+  const cart: CartData[] = useSelector((state: RootState) => state.cart.cart);
 
   const dispatch = useDispatch();
 
@@ -22,7 +29,7 @@ export const Cart: FC = () => {
     dispatch(removeItem(id));
   };
 
-  const totalPrice = () => {
+  const subTotalPrice = () => {
     let total = 0;
     cart.forEach((item) => {
       total += item.quantity * item.price;
@@ -80,7 +87,7 @@ export const Cart: FC = () => {
               </div>
               <div className={style.shipping}>FREE</div>
               <div className={style.subtotal}>
-                {product.quantity * product.price}
+                ${product.quantity * product.price}
               </div>
               <div className={style.action}>
                 <button
@@ -113,15 +120,15 @@ export const Cart: FC = () => {
           <div className={style.text}>
             <h4 className={style.sub_total}>
               <span>Sub Total:</span>
-              <span className={style.price}>${totalPrice()}</span>
+              <span className={style.price}>${subTotalPrice()}</span>
             </h4>
             <h4 className={style.sub_total}>
               <span>Shipping</span>
-              <span className={style.price}>$123</span>
+              <span className={style.price}>Free</span>
             </h4>
             <h4 className={style.sub_total}>
               <span>Grand Total:</span>
-              <span className={style.price}>$88</span>
+              <span className={style.price}>${subTotalPrice()}</span>
             </h4>
           </div>
           <TextButton text="Proceed To Checkout" buttonColor="purple" />

@@ -855,6 +855,12 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::subcategory.subcategory'
     >;
+    color: Attribute.String;
+    size: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        ['XS', 'S', 'M', 'L', 'XL', 'XLL']
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
