@@ -13,16 +13,34 @@ import { Feature } from './components/Feature/Feature';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { FC } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/features/cart/cartSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 interface ProductDescriptionProps {
   id: number;
-  onAddToCart: () => void;
 }
 
-export const ProductsDescription: FC<ProductDescriptionProps> = ({
-  id,
-  onAddToCart,
-}) => {
+export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
   const { products } = useSelector((state: RootState) => state.products);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: id,
+        quantity: 1,
+        title: products[id].attributes.title,
+        price: products[id].attributes.price,
+        img: products[id].attributes.img.data.attributes.url,
+        color: products[id].attributes.color,
+        size: products[id].attributes.size,
+      })
+    );
+    toast.success('Product added to cart!');
+  };
 
   return (
     <div className={style.details}>
@@ -54,22 +72,22 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({
       <div className={style.colors}>
         <h5>Colors Available</h5>
         <div>
-          {COLORS.slice(0, 4).map((color) => (
-            <button
-              key={color.id}
-              className={style.color}
-              style={{ backgroundColor: color.color }}
-            >
-              &nbsp;
-            </button>
-          ))}
+          {COLORS &&
+            COLORS.slice(0, 4).map((color) => (
+              <button
+                key={color.id}
+                className={style.color}
+                style={{ backgroundColor: color.color }}
+              >
+                &nbsp;
+              </button>
+            ))}
         </div>
       </div>
 
       <div className={style.buttons}>
-        <button onClick={onAddToCart}>Test</button>
         <IconButtonWithText
-          onClick={onAddToCart}
+          onClick={handleAddToCart}
           text="Add to cart"
           icon={cart}
           buttonColor="purple"
@@ -86,6 +104,7 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({
         <Feature icon={shipping} text="Free shipping" />
         <Feature icon={returns} text="Free returns" />
       </div>
+      <ToastContainer />
     </div>
   );
 };

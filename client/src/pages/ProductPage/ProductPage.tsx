@@ -6,32 +6,16 @@ import { ProductsDescription } from '@/components/ProductDescription/ProductsDes
 import { BottomDescription } from '@/components/BottomDescription/BottomDescription';
 import { SectionTitle } from '@/shared/components/SectionTitle/SectionTitle';
 import { Products } from '@/components/Products/Products';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { addToCart } from '@/features/cart/cartSlice';
 
 export const ProductPage = () => {
-  const id: number = Number(useParams().id);
+  const { id: idString } = useParams();
+
+  const id = Number(idString);
 
   const { products } = useSelector((state: RootState) => state.products);
-  const dispatch = useDispatch();
-  const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        id: id,
-        quantity: 1,
-        title: products[id].attributes.title,
-        price: products[id].attributes.price,
-        img: products[id].attributes.img.data.attributes.url,
-        color: products[id].attributes.color,
-        size: products[id].attributes.size,
-      })
-    );
-    toast.success('Product added to cart!');
-  };
 
   return (
     <>
@@ -59,7 +43,7 @@ export const ProductPage = () => {
             )}
           </div>
         </div>
-        <ProductsDescription id={id} onAddToCart={handleAddToCart} />
+        <ProductsDescription id={id} />
       </div>
 
       <BottomDescription />
@@ -67,7 +51,6 @@ export const ProductPage = () => {
         <SectionTitle text="Similar Products" />
         <Products numberOfProducts={8} />
       </div>
-      <ToastContainer />
     </>
   );
 };

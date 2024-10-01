@@ -1,7 +1,7 @@
 import { NavigationBar } from './components/NavigationBar/NavigationBar';
 import style from './styles.module.scss';
 import { PlusMinusButton } from './components/PlusMinusButton/PlusMinusButton';
-import iconDelete from '@/assets/deletecon.svg';
+import iconDelete from '@/assets/deleteicon.svg';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
