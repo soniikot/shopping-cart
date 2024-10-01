@@ -5,10 +5,10 @@ import { COLORS } from '@/shared/constants/constants';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import { IconButtonWithText } from '@/shared/components/IconButtonWIthText/IconButtonWithText';
 import cart from '@/assets/shopping-cart-white.svg';
-import cc from '@assets/cc.svg';
-import fit from '@assets/fit.svg';
-import shipping from '@assets/shipping.svg';
-import returns from '@assets/return.svg';
+import cc from '@/assets/cc.svg';
+import fit from '@/assets/fit.svg';
+import shipping from '@/assets/shipping.svg';
+import returns from '@/assets/return.svg';
 import { Feature } from './components/Feature/Feature';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
@@ -43,6 +43,7 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
   };
 
   return (
+  <>
     <div className={style.details}>
       <h5>Shop &gt; Women &gt; Top </h5>
       <h2 className={style.title}>
@@ -106,5 +107,6 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
       </div>
       <ToastContainer />
     </div>
+    </>
   );
 };
