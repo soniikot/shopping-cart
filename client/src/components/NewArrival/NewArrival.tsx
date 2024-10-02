@@ -1,43 +1,32 @@
-import knittedJoggers from '../../assets/knitted-joggers.png';
-import fullSleeve from '../../assets/full-sleeve.png';
-import active from '../../assets/active.png';
-import urban from '../../assets/urban.png';
 import style from './styles.module.scss';
 import { FC } from 'react';
-
-const categories = [
-  {
-    id: 1,
-    title: 'Knitted Joggers',
-    image: knittedJoggers,
-  },
-  {
-    id: 2,
-    title: 'Full Sleeve',
-    image: fullSleeve,
-  },
-  {
-    id: 3,
-    title: 'Active T-Shirts',
-    image: active,
-  },
-  {
-    id: 4,
-    title: 'Urban Shirts',
-    image: urban,
-  },
-];
-
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/store';
+import { Link } from 'react-router-dom';
 export const NewArrival: FC = () => {
+  const { categories } = useSelector((state: RootState) => state.categories);
+
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {categories.map((category) => (
-          <div key={category.id} className={style.card}>
-            <img src={category.image} alt={category.title} />
-            <h5 className={style.title}>{category.title}</h5>
-          </div>
-        ))}
+        {categories.length > 0 &&
+          categories.slice(0, 4).map((category) => (
+            <Link to="/products/">
+              <div key={category.id} className={style.card}>
+                <div className={style.img_wrapper}>
+                  <img
+                    className={style.img}
+                    src={
+                      import.meta.env.VITE_API_UPLOAD_URL +
+                      category.attributes.img.data.attributes.url
+                    }
+                    alt={category.attributes.title}
+                  />
+                </div>
+                <h5 className={style.title}>{category.attributes.title}</h5>
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   );

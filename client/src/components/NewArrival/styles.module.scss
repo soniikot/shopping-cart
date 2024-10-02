@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 70px 0px 30px 40px;
+  gap: 30px;
 }
 
 .title {
@@ -14,6 +15,12 @@
   flex-grow: 1;
 }
 
+.img {
+  width: 262px;
+  height: 262px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 @media (max-width: $medium) {
   .wrapper {
     margin: 10px;

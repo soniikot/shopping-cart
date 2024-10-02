@@ -4,6 +4,7 @@ import { LimitedStock } from '../../shared/components/LimitedStock/LimitedStock'
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { Arrow } from './components/Arrow/Arrow';
 
 export const SavingZone: FC = () => {
   return (
@@ -26,7 +27,9 @@ export const SavingZone: FC = () => {
                 <h3 className={style.title}>{item.title}</h3>
                 <h6 className={style.subtitle}>{item.subtitle}</h6>
                 <p>{item.discount}</p>
-
+                <div className={style.arrow}>
+                  <Arrow />
+                </div>
                 <Link to="/products">
                   <button className={style.button}>Shop Now</button>
                 </Link>
@@ -51,23 +54,9 @@ export const SavingZone: FC = () => {
                 <h3 className={style.title}>{item.title}</h3>
                 <h6 className={style.subtitle}>{item.subtitle}</h6>
                 <p>{item.discount}</p>
-
-                <svg
-                  className={style.arrow}
-                  width="23"
-                  height="26"
-                  viewBox="0 0 23 26"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.5678 1.28613L11.5678 23.8893M22 15.1958L12.7972 24.3985C12.1182 25.0775 11.0173 25.0775 10.3383 24.3985L1.13557 15.1958"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-
+                <div className={style.arrow}>
+                  <Arrow />
+                </div>
                 <Link to="/products">
                   <button className={style.button}>Shop Now</button>
                 </Link>

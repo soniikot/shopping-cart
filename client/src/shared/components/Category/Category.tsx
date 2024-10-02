@@ -9,7 +9,7 @@ interface CategoryProps {
 }
 export const Category: FC<CategoryProps> = ({ numberOfCategories }) => {
   const { categories } = useSelector((state: RootState) => state.categories);
-  console.log(categories);
+
   return (
     <div className="container">
       <div className={style.wrapper}>
