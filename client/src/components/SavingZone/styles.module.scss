@@ -83,7 +83,10 @@
 }
 
 @media (max-width: $medium) {
-  * {
-    flex-wrap: wrap;
+  .first_row {
+    display: grid;
+  }
+  .second_row {
+    display: grid;
   }
 }

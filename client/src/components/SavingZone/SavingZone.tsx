@@ -36,7 +36,7 @@ export const SavingZone: FC = () => {
               </div>
             </div>
           ))}
-        </div>{' '}
+        </div>
         <div className={style.second_row}>
           {SAVING_ZONE.slice(3, 5).map((item) => (
             <div
@@ -63,7 +63,7 @@ export const SavingZone: FC = () => {
               </div>
             </div>
           ))}
-        </div>{' '}
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { Link } from 'react-router-dom';
+
 export const NewArrival: FC = () => {
   const { categories } = useSelector((state: RootState) => state.categories);
 
@@ -11,21 +12,23 @@ export const NewArrival: FC = () => {
       <div className={style.wrapper}>
         {categories.length > 0 &&
           categories.slice(0, 4).map((category) => (
-            <Link to="/products/">
-              <div key={category.id} className={style.card}>
-                <div className={style.img_wrapper}>
-                  <img
-                    className={style.img}
-                    src={
-                      import.meta.env.VITE_API_UPLOAD_URL +
-                      category.attributes.img.data.attributes.url
-                    }
-                    alt={category.attributes.title}
-                  />
+            <div key={category.id} className={style.gridItem}>
+              <Link to="/products/">
+                <div className={style.card}>
+                  <div className={style.img_wrapper}>
+                    <img
+                      className={style.img}
+                      src={
+                        import.meta.env.VITE_API_UPLOAD_URL +
+                        category.attributes.img.data.attributes.url
+                      }
+                      alt={category.attributes.title}
+                    />
+                  </div>
+                  <h5 className={style.title}>{category.attributes.title}</h5>
                 </div>
-                <h5 className={style.title}>{category.attributes.title}</h5>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
       </div>
     </div>
