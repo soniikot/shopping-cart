@@ -21,12 +21,9 @@ export const Homepage = () => {
         <SavingZone />
         <Banner />
         <SectionTitle text="Categories for Men" />
-        <Category numberOfCategories={8} filter={'/subcategories?populate=*'} />
+        <Category numberOfCategories={8} />
         <SectionTitle text="Categories for Women" />
-        <Category
-          numberOfCategories={4}
-          filter={'/categories/1/?populate[0]=subcategories'}
-        />
+        <Category numberOfCategories={4} />
         <Brands />
         <SectionTitle text="In The LimeLight " />
         <Products numberOfProducts={4} />

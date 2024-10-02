@@ -1,56 +1,36 @@
-import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
-import axios from 'axios';
 import arrow from '@/assets/arrow-left.svg';
-import { CategoryData } from '@/types/interfaces';
-import { CategoryType } from '@/types/interfaces';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/store';
 import { FC } from 'react';
 
-export const Category: FC<CategoryType> = ({ numberOfCategories }) => {
-  const [categories, setCategories] = useState<CategoryData[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL + '/subcategories?populate=*'}`,
-
-          {
-            headers: {
-              Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
-            },
-          }
-        );
-
-        response.data.data && setCategories(response.data.data);
-        console.log(categories);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
-
+interface CategoryProps {
+  numberOfCategories: number;
+}
+export const Category: FC<CategoryProps> = ({ numberOfCategories }) => {
+  const { categories } = useSelector((state: RootState) => state.categories);
+  console.log(categories);
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {categories.slice(0, numberOfCategories).map((category) => (
-          <div key={category.id} className={style.card}>
-            <img
-              className={style.img}
-              src={
-                import.meta.env.VITE_API_UPLOAD_URL +
-                category.attributes.img.data.attributes.url
-              }
-              alt={category.attributes.title}
-            />
-            <p className={style.title}>{category.attributes.title}</p>
-            <a className={style.link} href="">
-              Explore Now!
-            </a>
-            <img className={style.arrow} src={arrow} alt="" />
-          </div>
-        ))}
+        {categories.length > 0 &&
+          categories.slice(0, numberOfCategories).map((category) => (
+            <div key={category.id} className={style.card}>
+              <img
+                className={style.img}
+                src={
+                  import.meta.env.VITE_API_UPLOAD_URL +
+                  category.attributes.img.data.attributes.url
+                }
+                alt={category.attributes.title}
+              />
+              <p className={style.title}>{category.attributes.title}</p>
+              <a className={style.link} href="">
+                Explore Now!
+              </a>
+              <img className={style.arrow} src={arrow} alt="arrow" />
+            </div>
+          ))}
       </div>
     </div>
   );
