@@ -2,8 +2,11 @@ import style from './styles.module.scss';
 import img from '../../assets/banner.jpeg';
 import { TextButton } from '../../shared/components/TextButton/TextButton';
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Banner: FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div className={style.wrapper}>
@@ -15,7 +18,13 @@ export const Banner: FC = () => {
               EVERYDAY wear range - Comfortable & Affordable fashion 24/7
             </p>
             <div className={style.button}>
-              <TextButton text="Shop Now" />
+              <Link to={'/products'}>
+                <TextButton
+                  text="Shop Now"
+                  buttonColor="white"
+                  link="/products/"
+                />
+              </Link>
             </div>
           </div>
         </div>

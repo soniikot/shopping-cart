@@ -3,6 +3,7 @@ import { SAVING_ZONE } from './constants';
 import { LimitedStock } from '../../shared/components/LimitedStock/LimitedStock';
 import clsx from 'clsx';
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 export const SavingZone: FC = () => {
   return (
@@ -26,7 +27,9 @@ export const SavingZone: FC = () => {
                 <h6 className={style.subtitle}>{item.subtitle}</h6>
                 <p>{item.discount}</p>
 
-                <button className={style.button}>Shop Now</button>
+                <Link to="/products">
+                  <button className={style.button}>Shop Now</button>
+                </Link>
               </div>
             </div>
           ))}
@@ -65,7 +68,9 @@ export const SavingZone: FC = () => {
                   />
                 </svg>
 
-                <button className={style.button}>Shop Now</button>
+                <Link to="/products">
+                  <button className={style.button}>Shop Now</button>
+                </Link>
               </div>
             </div>
           ))}

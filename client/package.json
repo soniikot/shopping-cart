@@ -52,7 +52,7 @@
     "sass-embedded": "^1.78.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2",
+    "vite": "^5.4.8",
     "vitest": "^1.2.0"
   },
   "description": "Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)",

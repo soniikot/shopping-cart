@@ -1,6 +1,6 @@
 import style from './styles.module.scss';
 import { FC } from 'react';
-
+import { Link } from 'react-router-dom';
 interface SaleCardProps {
   backgroundImage: string;
   title: string;
@@ -15,12 +15,12 @@ export const SaleCard: FC<SaleCardProps> = (props) => {
       className={style.sales_card}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <h5 className={style.subtitle}>{subtitle}</h5>
+      <h4 className={style.subtitle}>{subtitle}</h4>
       <h2 className={style.title}>{title}</h2>
       <p>{discount}</p>
-      <h5 className={style.link}>
-        <a href="">Explore Items</a>
-      </h5>
+      <h4 className={style.link}>
+        <Link to="/products">Explore items</Link>
+      </h4>
     </div>
   );
 };
