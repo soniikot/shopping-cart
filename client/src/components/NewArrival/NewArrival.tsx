@@ -10,26 +10,25 @@ export const NewArrival: FC = () => {
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {categories.length > 0 &&
-          categories.slice(0, 4).map((category) => (
-            <div key={category.id} className={style.gridItem}>
-              <Link to="/products/">
-                <div className={style.card}>
-                  <div className={style.img_wrapper}>
-                    <img
-                      className={style.img}
-                      src={
-                        import.meta.env.VITE_API_UPLOAD_URL +
-                        category.attributes.img.data.attributes.url
-                      }
-                      alt={category.attributes.title}
-                    />
-                  </div>
-                  <h5 className={style.title}>{category.attributes.title}</h5>
+        {categories?.men.slice(0, 4).map((category) => (
+          <div key={category.id} className={style.gridItem}>
+            <Link to="/products/">
+              <div className={style.card}>
+                <div className={style.img_wrapper}>
+                  <img
+                    className={style.img}
+                    src={
+                      import.meta.env.VITE_API_UPLOAD_URL +
+                      category.attributes.img.data.attributes.url
+                    }
+                    alt={category.attributes.title}
+                  />
                 </div>
-              </Link>
-            </div>
-          ))}
+                <h5 className={style.title}>{category.attributes.title}</h5>
+              </div>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

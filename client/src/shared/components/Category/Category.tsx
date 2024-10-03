@@ -3,22 +3,21 @@ import arrow from '@/assets/arrow-left.svg';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { FC } from 'react';
+import { CategoryData } from '@/components/Filter/Filter';
 
 interface CategoryProps {
   numberOfCategories: number;
+  type: any;
 }
 export const Category: FC<CategoryProps> = ({ numberOfCategories, type }) => {
   const { categories } = useSelector((state: RootState) => state.categories);
 
-  //categories men , women
-
-  // const selectedTypeCategory = categories.filter(category => category.attribute === 'type' ).slice(0, numberOfCategories )
-
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {categories.length > 0 &&
-          categories.slice(0, numberOfCategories).map((category) => (
+        {categories[type]
+          ?.slice(0, numberOfCategories)
+          .map((category: CategoryData) => (
             <div key={category.id} className={style.card}>
               <img
                 className={style.img}

@@ -1,36 +1,40 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ProductData } from '@/types/interfaces';
 
 export interface CategoriesState {
-  categories: ProductData[];
+  categories: {
+    men: CategoryData[];
+    women: CategoryData[];
+  };
   loading: boolean;
   error: null | string;
 }
 
+interface CategoryData {
+  id: string;
+  attributes: {
+    title: string;
+    img: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+}
+
 const initialState: CategoriesState = {
-  categories: [],
+  categories: { men: [], women: [] },
   loading: false,
   error: null,
 };
-
-//REST API
-
-('root/categories/category/subcategories/products');
-
-// 'root/category' => '[men, women, children, teen]'
-
-('.../categories/men/shirts');
-('.../categories/women/');
-
-// APP route
-// root/categories/
 
 export const fetchCategories = createAsyncThunk(
   'categories/fetchCategories',
   async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL + '/subcategories?populate=*'}`,
+      `${import.meta.env.VITE_API_URL + '/categories?populate=subcategories.img'}`,
       {
         headers: {
           Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
@@ -41,52 +45,6 @@ export const fetchCategories = createAsyncThunk(
     return response.data.data;
   }
 );
-
-export const fetchCategoriesMen = createAsyncThunk(
-  'categories/fetchCategoriesMen',
-  async () => {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_URL + 'men/subcategories?populate=*'}`,
-      {
-        headers: {
-          Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
-        },
-      }
-    );
-
-    return response.data.data;
-  }
-);
-
-export const fetchCategoriesWomen = createAsyncThunk(
-  'categories/fetchCategoriesMen',
-  async () => {
-    const response = await axios.get(
-      `${import.meta.env.VITE_API_URL + 'women/subcategories?populate=*'}`,
-      {
-        headers: {
-          Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
-        },
-      }
-    );
-
-    return response.data.data;
-  }
-);
-
-//TODO
-/**
- * 1. in component
- *
- * all => filter
- *
- * 2. state
- *
- * categories: {men: [], women: [] }
- *
- * 3. state.categories.women = allCategories.filter(... === women);
- *
- **/
 
 const categoriesSlice = createSlice({
   name: 'categories',
@@ -99,12 +57,9 @@ const categoriesSlice = createSlice({
       })
       .addCase(fetchCategories.fulfilled, (state, action) => {
         state.loading = false;
-        // categories: {men: [], women: [] }
-        const allCategories = action.payload;
-
-        // 2
-        // state.categories.men = allCategories.filter(...=== men);
-        // state.categories.women = allCategories.filter(... === women);
+        state.categories.men = action.payload[1].attributes.subcategories.data;
+        state.categories.women =
+          action.payload[0].attributes.subcategories.data;
       })
       .addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false;
@@ -112,38 +67,6 @@ const categoriesSlice = createSlice({
       });
   },
 });
-
-// 3
-// const categoriesSlice = createSlice({
-//   name: 'categories',
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(fetchCategoriesMen.pending, (state) => {
-//         state.loading = true;
-//       })
-//       .addCase(fetchCategoriesMen.fulfilled, (state, action) => {
-//         state.loading = false;
-//         state.categories.men = action.payload;
-//       })
-//       .addCase(fetchCategoriesMen.rejected, (state, action) => {
-//         state.loading = false;
-//         state.error = action.error.message || 'Failed to fetch';
-//       });
-//       .addCase(fetchCategoriesMen.pending, (state) => {
-//         state.loading = true;
-//       })
-//       .addCase(fetchCategoriesMen.fulfilled, (state, action) => {
-//         state.loading = false;
-//         state.categories.men = action.payload;
-//       })
-//       .addCase(fetchCategoriesMen.rejected, (state, action) => {
-//         state.loading = false;
-//         state.error = action.error.message || 'Failed to fetch';
-//       });
-//   },
-// });
 
 export default categoriesSlice.reducer;
 
