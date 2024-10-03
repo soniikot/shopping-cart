@@ -20,5 +20,6 @@
 @media (max-width: $medium) {
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
+    place-items: center;
   }
 }

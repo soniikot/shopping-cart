@@ -18,6 +18,9 @@
   font-size: 13px;
 }
 
+.card {
+  width: 270px;
+}
 .img {
   width: 270px;
   height: 393px;
@@ -32,9 +35,6 @@
 @media (max-width: $medium) {
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .arrow {
-    margin-right: 120px;
+    place-items: center;
   }
 }

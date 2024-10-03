@@ -7,22 +7,18 @@ import { FC } from 'react';
 export const ExploreSection: FC = () => {
   return (
     <div className={style.wrapper}>
-      <div>
-        <SaleCard
-          backgroundImage={backgroundImage1}
-          title="High Coziness"
-          subtitle="Low Price"
-          discount="UP TO 50% OFF"
-        />
-      </div>
-      <div>
-        <SaleCard
-          backgroundImage={backgroundImage2}
-          title="Breezy Summer Style"
-          subtitle="Beyond Presents"
-          discount="UP TO 50% OFF"
-        />
-      </div>
+      <SaleCard
+        backgroundImage={backgroundImage1}
+        title="High Coziness"
+        subtitle="Low Price"
+        discount="UP TO 50% OFF"
+      />
+      <SaleCard
+        backgroundImage={backgroundImage2}
+        title="Breezy Summer Style"
+        subtitle="Beyond Presents"
+        discount="UP TO 50% OFF"
+      />
     </div>
   );
 };
