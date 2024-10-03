@@ -1,5 +1,9 @@
 .container {
-  width: 1240px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 0px;
+}
+
+* {
+  outline: 1px solid black;
 }

@@ -38,8 +38,17 @@
     display: none;
   }
 
+  .image_wrapper {
+    flex-basis: 0%;
+  }
+
   .banner {
     flex-basis: 100%;
     padding: 180px 0px 80px 70px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
   }
 }

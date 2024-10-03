@@ -1,6 +1,7 @@
 import style from './styles.module.scss';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+
 interface SaleCardProps {
   backgroundImage: string;
   title: string;

@@ -1,18 +1,13 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 70px 0px 30px 40px;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
 }
 
 .title {
   margin: 40px 0;
-}
-
-.card {
-  flex-grow: 1;
 }
 
 .img {
@@ -21,8 +16,10 @@
   object-fit: cover;
   border-radius: 5px;
 }
+
 @media (max-width: $medium) {
   .wrapper {
-    margin: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
   }
 }

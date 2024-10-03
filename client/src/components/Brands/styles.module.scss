@@ -25,3 +25,13 @@
   justify-content: center;
   padding-bottom: 65px;
 }
+
+.brands_container img {
+  width: 40px;
+}
+
+@media (max-width: $medium) {
+  .brands_container img {
+    width: 100px;
+  }
+}

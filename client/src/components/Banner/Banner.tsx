@@ -3,10 +3,8 @@ import img from '../../assets/banner.jpeg';
 import { TextButton } from '../../shared/components/TextButton/TextButton';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 export const Banner: FC = () => {
-  const navigate = useNavigate();
   return (
     <div className="container">
       <div className={style.wrapper}>

@@ -24,6 +24,7 @@ export const Category: FC<CategoryProps> = ({ numberOfCategories }) => {
                 }
                 alt={category.attributes.title}
               />
+
               <p className={style.title}>{category.attributes.title}</p>
               <a className={style.link} href="">
                 Explore Now!

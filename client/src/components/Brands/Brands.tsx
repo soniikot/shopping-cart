@@ -1,5 +1,9 @@
 import style from './styles.module.scss';
-import brands from '@/assets/brands.png';
+import nike from '@/assets/nike.png';
+import handm from '@/assets/handm.png';
+import levi from '@/assets/levi.png';
+import polo from '@/assets/polo.png';
+import puma from '@/assets/puma.png';
 import { FC } from 'react';
 
 export const Brands: FC = () => {
@@ -11,7 +15,11 @@ export const Brands: FC = () => {
           Up To <span className={style.yellow}>60% </span>off on brands
         </p>
         <div className={style.brands_container}>
-          <img src={brands} alt="brands" />
+          <img src={nike} alt="" />
+          <img src={handm} alt="" />
+          <img src={levi} alt="" />
+          <img src={polo} alt="" />
+          <img src={puma} alt="" />
         </div>
       </div>
     </div>
