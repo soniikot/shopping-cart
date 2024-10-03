@@ -4,13 +4,14 @@ import { ProductData } from '@/types/interfaces';
 
 export interface ProductsState {
   products: ProductData[];
-  //filteredProducts: ProductData[];
+  filteredProducts: ProductData[];
   loading: boolean;
   error: null | string;
 }
 
 const initialState: ProductsState = {
   products: [],
+  filteredProducts: [],
   loading: false,
   error: null,
 };
@@ -47,20 +48,13 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
+      })
+      .addCase('search/setSearch', (state, action) => {
+        const searchQuery = action.payload;
+        state.filteredProducts = state.products.filter(
+          (product) => product.attributes.title === searchQuery
+        );
       });
-    /*
-      .addMatcher(
-        (action) => action.type === 'search/setSearch',
-        (state, action) => {
-          const searchQuery = action.payload // string
-          state.filteredProduct = () => {
-
-            return state.pruducts.filter((product) => product.attr.title === searchQuery)
-          }
-        } 
-    ),
-      
-      */
   },
 });
 

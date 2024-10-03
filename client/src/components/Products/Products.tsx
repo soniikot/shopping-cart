@@ -9,15 +9,22 @@ export interface ProductsTypeProps {
 }
 
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
-  // params search
-
-  // const { products } = useSelector((state: RootState) => state.filteredProduct);
+  const search = useSelector((state: RootState) => state.search);
   const { products } = useSelector((state: RootState) => state.products);
-
+  console.log(search);
+  const filteredProducts =
+    search.searchQuery.length !== 0
+      ? products.filter((product) => {
+          const title = product.attributes.title.toLowerCase();
+          const searchQuery = search.searchQuery.toLowerCase();
+          return title.includes(searchQuery);
+        })
+      : products;
+  console.log(filteredProducts);
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {products.slice(0, numberOfProducts).map((product) => (
+        {filteredProducts.slice(0, numberOfProducts).map((product) => (
           <Link to={`/product/${product.id - 1}`} key={product.id}>
             <div key={product.id} className={style.card}>
               <img

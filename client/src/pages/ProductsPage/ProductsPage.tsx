@@ -4,10 +4,10 @@ import { Filter } from '@/components/Filter/Filter';
 import { Table } from '@/components/Filter/components/Table/Table';
 import style from './styles.module.scss';
 import { FC } from 'react';
+import { useParams } from 'react-router-dom';
 
 export const ProductsPage: FC = () => {
-  // params search ???
-  // dispatch(setSearch())
+  const { search } = useParams();
 
   return (
     <div className="container">
@@ -25,7 +25,7 @@ export const ProductsPage: FC = () => {
           <Filter />
         </div>
 
-        <Products numberOfProducts={12} />
+        <Products numberOfProducts={12} search={search} />
       </div>
       <div className={style.text}>
         <SectionTitle text="Clothing for Women Online in India" />

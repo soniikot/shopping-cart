@@ -69,23 +69,3 @@ const categoriesSlice = createSlice({
 });
 
 export default categoriesSlice.reducer;
-
-// //TODO
-/**
- *
- * searchSlice
- *
- *  state
- *
- *
- * {
- *   searchString: string
- *
- * }
- *
- * initialstate ''
- *
- *
- *
- *
- **/
