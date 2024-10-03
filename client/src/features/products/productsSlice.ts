@@ -2,8 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { ProductData } from '@/types/interfaces';
 
+
+
 export interface ProductsState {
   products: ProductData[];
+  //filteredProducts: ProductData[];
   loading: boolean;
   error: null | string;
 }
@@ -33,7 +36,9 @@ export const fetchProducts = createAsyncThunk(
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -46,7 +51,19 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
-      });
+      })
+      .addMatcher(
+        (action) => action.type === 'search/setSearch',
+        (state, action) => {
+          const searchQuery = action.payload // string
+          state.filteredProduct = () => {
+
+            return state.pruducts.filter((pruduct) => product.attr.title === searchQuery)
+          }
+        } 
+    ),
+      
+      
   },
 });
 

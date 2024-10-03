@@ -6,6 +6,9 @@ import style from './styles.module.scss';
 import { FC } from 'react';
 
 export const ProductsPage: FC = () => {
+  // params search ???
+  // dispatch(setSearch())
+
   return (
     <div className="container">
       <div className={style.product_header}>

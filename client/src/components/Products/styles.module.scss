@@ -22,7 +22,6 @@
 }
 .card {
   flex-grow: 1;
-  max-width: 270px;
 }
 
 .img {
@@ -47,11 +46,4 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-@media (max-width: $medium) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-  }
 }

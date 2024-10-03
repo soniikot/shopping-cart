@@ -12,6 +12,7 @@ export const App: FC = () => {
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);

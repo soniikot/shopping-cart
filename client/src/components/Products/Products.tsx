@@ -9,6 +9,9 @@ export interface ProductsTypeProps {
 }
 
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
+  // params search
+
+  // const { products } = useSelector((state: RootState) => state.filteredProduct);
   const { products } = useSelector((state: RootState) => state.products);
 
   return (

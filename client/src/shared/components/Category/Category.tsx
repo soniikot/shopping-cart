@@ -7,8 +7,12 @@ import { FC } from 'react';
 interface CategoryProps {
   numberOfCategories: number;
 }
-export const Category: FC<CategoryProps> = ({ numberOfCategories }) => {
+export const Category: FC<CategoryProps> = ({ numberOfCategories, type }) => {
   const { categories } = useSelector((state: RootState) => state.categories);
+
+  //categories men , women
+
+  // const selectedTypeCategory = categories.filter(category => category.attribute === 'type' ).slice(0, numberOfCategories )
 
   return (
     <div className="container">
