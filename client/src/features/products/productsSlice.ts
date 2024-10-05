@@ -49,12 +49,17 @@ const productsSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
       })
-      .addCase('search/setSearch', (state, action) => {
-        const searchQuery = action.payload;
-        state.filteredProducts = state.products.filter(
-          (product) => product.attributes.title === searchQuery
-        );
-      });
+      .addMatcher(
+        (action) => action.type === 'filter/setCategory',
+        (state, action) => {
+          state.filteredProducts = state.products.filter((product) => {
+            const subcategories = product.attributes.subcategories.data;
+            return subcategories.some(
+              (subcategory) => subcategory.attributes.title === action.payload
+            );
+          });
+        }
+      );
   },
 });
 
