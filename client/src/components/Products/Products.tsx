@@ -2,7 +2,6 @@ import style from './styles.module.scss';
 import { useSelector } from 'react-redux';
 import { FC } from 'react';
 import { RootState } from '@/app/store';
-import { Link } from 'react-router-dom';
 
 export interface ProductsTypeProps {
   numberOfProducts: number;
@@ -13,7 +12,7 @@ export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
   const filteredProducts = useSelector(
     (state: RootState) => state.products.filteredProducts
   );
-  console.log(filteredProducts);
+
   const productsToDisplay =
     filteredProducts.length > 0 ? filteredProducts : products;
 

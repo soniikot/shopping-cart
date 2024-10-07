@@ -62,11 +62,32 @@ const productsSlice = createSlice({
         }
       )
       .addMatcher(
+        (action) => action.type === 'filter/setPriceRange',
+        (state, action) => {
+          const [min, max] = action.payload; // assuming action.payload is an object with min and max prices
+          state.filteredProducts = state.products.filter((product) => {
+            const price = product.attributes.price;
+            return price >= min && price <= max; // filter products within the price range
+          });
+        }
+      )
+
+      .addMatcher(
         (action) => action.type === 'search/setSearch',
         (state, action) => {
           state.filteredProducts = state.products.filter((product) => {
             const title = product.attributes.title;
             return title.includes(action.payload);
+          });
+        }
+      )
+
+      .addMatcher(
+        (action) => action.type === 'filter/setColor',
+        (state, action) => {
+          state.filteredProducts = state.products.filter((product) => {
+            const color = product.attributes.color;
+            return color.includes(action.payload);
           });
         }
       );

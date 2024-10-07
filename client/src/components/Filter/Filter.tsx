@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
 import { setCategory } from '@/features/filter/filterSlice';
+import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
 
 export interface CategoryType {
@@ -34,7 +35,9 @@ export interface CategoryData {
 }
 
 export const Filter: FC = () => {
-  const [range, setRange] = useState([0, 900]);
+  const priceRange = useSelector((state: RootState) => state.filter.price);
+
+  const [range, setRange] = useState(priceRange);
 
   const filteredCategory = useSelector(
     (state: RootState) => state.filter.category
@@ -45,10 +48,11 @@ export const Filter: FC = () => {
   const handleCategoryChange = (category: string) => {
     dispatch(setCategory(category));
   };
-  console.log(filteredCategory);
-  function handleChanges(event, newValue: number[]) {
+
+  const handlePriceChanges = (event, newValue: number[]) => {
     setRange(newValue);
-  }
+    dispatch(setPriceRange(newValue));
+  };
 
   const categories = [
     'All',
@@ -95,10 +99,10 @@ export const Filter: FC = () => {
           <div style={{ width: '225px', padding: '5px' }}>
             <Slider
               value={range}
-              onChange={handleChanges}
+              onChange={handlePriceChanges}
               color="secondary"
               min={0}
-              max={900}
+              max={200}
             />
             <div className={style.range}>
               <button className={style.button}>{range[0]}</button>
@@ -108,7 +112,7 @@ export const Filter: FC = () => {
         </div>
         <div className={style.header}>
           <h4>Colors </h4>
-          <img src={arrowUp} alt="" />
+          <img src={arrowUp} alt="arrowUp" />
         </div>
         <ColorFilter />
         <div className={style.header}>

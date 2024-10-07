@@ -4,6 +4,7 @@ import cartReducer from '../features/cart/cartSlice';
 import categoryReducer from '../features/categories/categoriesSlice';
 import searchReducer from '../features/Search/SearchSlice';
 import filterReducer from '../features/filter/filterSlice';
+
 export const store = configureStore({
   reducer: {
     products: productReducer,
