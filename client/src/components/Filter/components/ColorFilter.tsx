@@ -7,8 +7,6 @@ import { useDispatch } from 'react-redux';
 import { setColor } from '@/features/filter/filterSlice';
 
 export const ColorFilter: FC = () => {
-  const selectedColor = useSelector((state: RootState) => state.filter.color);
-  console.log(selectedColor);
   const dispatch = useDispatch();
   const handleColorChange = (color) => {
     dispatch(setColor(color));

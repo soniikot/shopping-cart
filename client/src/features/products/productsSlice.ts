@@ -64,10 +64,10 @@ const productsSlice = createSlice({
       .addMatcher(
         (action) => action.type === 'filter/setPriceRange',
         (state, action) => {
-          const [min, max] = action.payload; // assuming action.payload is an object with min and max prices
+          const [min, max] = action.payload;
           state.filteredProducts = state.products.filter((product) => {
             const price = product.attributes.price;
-            return price >= min && price <= max; // filter products within the price range
+            return price >= min && price <= max;
           });
         }
       )
@@ -87,7 +87,7 @@ const productsSlice = createSlice({
         (state, action) => {
           state.filteredProducts = state.products.filter((product) => {
             const color = product.attributes.color;
-            return color.includes(action.payload);
+            return color === action.payload.toLowerCase();
           });
         }
       );

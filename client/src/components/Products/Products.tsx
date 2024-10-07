@@ -12,7 +12,7 @@ export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
   const filteredProducts = useSelector(
     (state: RootState) => state.products.filteredProducts
   );
-
+  console.log(filteredProducts);
   const productsToDisplay =
     filteredProducts.length > 0 ? filteredProducts : products;
 
