@@ -49,6 +49,7 @@ const productsSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
       })
+
       .addMatcher(
         (action) => action.type === 'filter/setCategory',
         (state, action) => {
@@ -57,6 +58,15 @@ const productsSlice = createSlice({
             return subcategories.some(
               (subcategory) => subcategory.attributes.title === action.payload
             );
+          });
+        }
+      )
+      .addMatcher(
+        (action) => action.type === 'search/setSearch',
+        (state, action) => {
+          state.filteredProducts = state.products.filter((product) => {
+            const title = product.attributes.title;
+            return title.includes(action.payload);
           });
         }
       );

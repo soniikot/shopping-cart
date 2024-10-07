@@ -33,7 +33,7 @@ export interface CategoryData {
   };
 }
 
-export const Filter: FC = ({ products }) => {
+export const Filter: FC = () => {
   const [range, setRange] = useState([0, 900]);
 
   const filteredCategory = useSelector(
@@ -51,6 +51,7 @@ export const Filter: FC = ({ products }) => {
   }
 
   const categories = [
+    'All',
     'Printed T-Shirts',
     'Plain T-shirt',
     'Polo T-Shirt,',

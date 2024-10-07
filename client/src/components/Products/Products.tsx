@@ -9,26 +9,19 @@ export interface ProductsTypeProps {
 }
 
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
-  const search = useSelector((state: RootState) => state.search);
-
+  const products = useSelector((state: RootState) => state.products.products);
   const filteredProducts = useSelector(
     (state: RootState) => state.products.filteredProducts
   );
-
-  /* const filteredProducts =
-    search.searchQuery.length !== 0
-      ? products.filter((product) => {
-          const title = product.attributes.title.toLowerCase();
-          const searchQuery = search.searchQuery.toLowerCase();
-          return title.includes(searchQuery);
-        })
-      : products;*/
+  console.log(filteredProducts);
+  const productsToDisplay =
+    filteredProducts.length > 0 ? filteredProducts : products;
 
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {filteredProducts.length > 0 &&
-          filteredProducts.slice(0, numberOfProducts).map((product) => (
+        {productsToDisplay.length > 0 &&
+          productsToDisplay.slice(0, numberOfProducts).map((product) => (
             <div key={product.id} className={style.card}>
               <img
                 className={style.img}
