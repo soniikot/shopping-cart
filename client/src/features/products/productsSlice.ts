@@ -49,7 +49,15 @@ const productsSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
       })
-
+      .addMatcher(
+        (action) => action.type === 'search/setSearch',
+        (state, action) => {
+          state.filteredProducts = state.products.filter((product) => {
+            const title = product.attributes.title;
+            return title.includes(action.payload);
+          });
+        }
+      )
       .addMatcher(
         (action) => action.type === 'filter/setCategory',
         (state, action) => {
@@ -73,21 +81,20 @@ const productsSlice = createSlice({
       )
 
       .addMatcher(
-        (action) => action.type === 'search/setSearch',
-        (state, action) => {
-          state.filteredProducts = state.products.filter((product) => {
-            const title = product.attributes.title;
-            return title.includes(action.payload);
-          });
-        }
-      )
-
-      .addMatcher(
         (action) => action.type === 'filter/setColor',
         (state, action) => {
           state.filteredProducts = state.products.filter((product) => {
             const color = product.attributes.color;
             return color === action.payload.toLowerCase();
+          });
+        }
+      )
+      .addMatcher(
+        (action) => action.type === 'filter/setSizes',
+        (state, action) => {
+          state.filteredProducts = state.products.filter((product) => {
+            const sizeArray = product.attributes.size;
+            return sizeArray.includes(action.payload);
           });
         }
       );

@@ -4,11 +4,13 @@ interface FilterState {
   category: string;
   price: number[];
   color: string;
+  size: string[];
 }
 const initialState: FilterState = {
   category: '',
   price: [0, 200],
   color: '',
+  size: [],
 };
 
 const filterSlice = createSlice({
@@ -24,9 +26,13 @@ const filterSlice = createSlice({
     setColor(state, action) {
       state.color = action.payload;
     },
+    setSizes(state, action) {
+      state.size = action.payload;
+    },
   },
 });
 
-export const { setCategory, setPriceRange, setColor } = filterSlice.actions;
+export const { setCategory, setPriceRange, setColor, setSizes } =
+  filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -120,21 +120,6 @@ export const Filter: FC = () => {
           <img src={arrowUp} alt="" />
         </div>
         <Sizes />
-        <div className={style.header}>
-          <h4>Dress Style </h4>
-          <img src={arrowUp} alt="" />
-        </div>
-
-        <div className={style.categories}>
-          <ul className={style.subcategory_wrapper}>
-            {DRESS_STYLES.map((item) => (
-              <li className={style.subcategory}>
-                {item}
-                <img src={linkArrow} alt="" />
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </aside>
   );
