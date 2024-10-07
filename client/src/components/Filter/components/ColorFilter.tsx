@@ -7,7 +7,7 @@ import { setColor } from '@/features/filter/filterSlice';
 export const ColorFilter: FC = () => {
   const dispatch = useDispatch();
 
-  const handleColorChange = (color) => {
+  const handleColorChange = (color: string) => {
     dispatch(setColor(color));
   };
   return (

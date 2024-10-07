@@ -6,7 +6,6 @@ import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
 import { ColorFilter } from './components/ColorFilter';
 import { Sizes } from './components/Sizes/Sizes';
-import { DRESS_STYLES } from '@/components/Filter/constants';
 import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -14,6 +13,7 @@ import { RootState } from '@/app/store';
 import { setCategory } from '@/features/filter/filterSlice';
 import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
+import { categories } from './constants';
 
 export interface CategoryType {
   numberOfCategories: number;
@@ -49,23 +49,10 @@ export const Filter: FC = () => {
     dispatch(setCategory(category));
   };
 
-  const handlePriceChanges = (event, newValue: number[]) => {
+  const handlePriceChanges = (newValue: number[]) => {
     setRange(newValue);
     dispatch(setPriceRange(newValue));
   };
-
-  const categories = [
-    'All',
-    'Printed T-Shirts',
-    'Plain T-shirt',
-    'Polo T-Shirt,',
-    'Hoodie & Sweetshirt',
-    'Jeans',
-    'Activewear',
-    'Boxers',
-    'Coats & Parkas',
-    'Shirts',
-  ];
 
   return (
     <aside>
@@ -77,7 +64,7 @@ export const Filter: FC = () => {
 
         <div className={style.categories}>
           <ul className={style.subcategory_wrapper}>
-            {categories.map((subcategory) => (
+            {categories.map((subcategory: string) => (
               <li
                 onClick={() => handleCategoryChange(subcategory)}
                 className={clsx(style.subcategory, {
@@ -99,7 +86,9 @@ export const Filter: FC = () => {
           <div style={{ width: '225px', padding: '5px' }}>
             <Slider
               value={range}
-              onChange={handlePriceChanges}
+              onChange={() => {
+                handlePriceChanges;
+              }}
               color="secondary"
               min={0}
               max={200}
