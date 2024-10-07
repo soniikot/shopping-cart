@@ -97,6 +97,13 @@ const productsSlice = createSlice({
             return sizeArray.includes(action.payload);
           });
         }
+      )
+
+      .addMatcher(
+        (action) => action.type === 'filter/resetFilter',
+        (state) => {
+          state.filteredProducts = [];
+        }
       );
   },
 });

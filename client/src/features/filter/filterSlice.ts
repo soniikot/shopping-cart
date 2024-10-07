@@ -29,10 +29,16 @@ const filterSlice = createSlice({
     setSizes(state, action) {
       state.size = action.payload;
     },
+    resetFilter(state) {
+      state.category = initialState.category;
+      state.price = initialState.price;
+      state.color = initialState.color;
+      state.size = initialState.size;
+    },
   },
 });
 
-export const { setCategory, setPriceRange, setColor, setSizes } =
+export const { setCategory, setPriceRange, setColor, setSizes, resetFilter } =
   filterSlice.actions;
 
 export default filterSlice.reducer;

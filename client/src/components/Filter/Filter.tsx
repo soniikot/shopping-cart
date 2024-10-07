@@ -10,7 +10,7 @@ import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/store';
-import { setCategory } from '@/features/filter/filterSlice';
+import { resetFilter, setCategory } from '@/features/filter/filterSlice';
 import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
 import { categories } from './constants';
@@ -49,7 +49,12 @@ export const Filter: FC = () => {
     dispatch(setCategory(category));
   };
 
-  const handlePriceChanges = (newValue: number[]) => {
+  const handleResetFilter = () => {
+    dispatch(resetFilter());
+    console.log('hello');
+  };
+
+  const handlePriceChanges = (event, newValue: number[]) => {
     setRange(newValue);
     dispatch(setPriceRange(newValue));
   };
@@ -61,6 +66,9 @@ export const Filter: FC = () => {
           <h4>Filter </h4>
           <img src={filter} alt="filter" />
         </div>
+        <button className={style.reset} onClick={() => handleResetFilter()}>
+          Reset All Filters
+        </button>
 
         <div className={style.categories}>
           <ul className={style.subcategory_wrapper}>
@@ -86,9 +94,7 @@ export const Filter: FC = () => {
           <div style={{ width: '225px', padding: '5px' }}>
             <Slider
               value={range}
-              onChange={() => {
-                handlePriceChanges;
-              }}
+              onChange={handlePriceChanges}
               color="secondary"
               min={0}
               max={200}
