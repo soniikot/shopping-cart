@@ -50,10 +50,10 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
-      })
+      });
   },
 });
-
+/*
 const filterColorType = (filterColor: string, product: Product) => {
   return product.attributes.category.includes(filterColor);
 };
@@ -69,25 +69,28 @@ const filterSizeType = (filterSize: string[], product: Product) => {
 
   return filterSize.some((size) => size === product.attributes.size)
 };
-
+*/
 const filterSearch = (searchQuery: string, product: Product) => {
-  return product.attributes.title.toLowerCase().includes(searchQuery.trim().toLowerCase());
+  return product.attributes.title
+    .toLowerCase()
+    .includes(searchQuery.trim().toLowerCase());
 };
-
 export const selectProducts = createAppSelector(
   (state: RootState) => state.search.searchQuery,
+  /*
   (state: RootState) => state.filters.category,
   (state: RootState) => state.filters.color,
   // (state: RootState) => state.filters.size,
-  // add other selectors as needed and add them in function below in the same order
+  */
   (state: RootState) => state.products.products,
-  (searchQuery, filterCategory, filterColor, filterSize, products) => {
-    return products
-      .filter((product) => filterSearch(searchQuery, product))
+  (searchQuery, /*filterCategory, filterColor, filterSize,*/ products) => {
+    return products.filter((product) => filterSearch(searchQuery, product));
+    /*
       .filter((product) => filterCategoryType(filterCategory, product))
       .filter((product) => filterColorType(filterColor, product))
       // .filter((product) => filterSizeType(filterSize, product));
-  },
+      */
+  }
 );
 
 export default productsSlice.reducer;
