@@ -9,7 +9,8 @@ import { RootState } from '@/app/store';
 
 export const ProductsPage: FC = () => {
   const { products } = useSelector((state: RootState) => state.products);
-  console.log(products);
+  console.log(products.length > 0 && products[1].attributes.color);
+
   return (
     <div className="container">
       <div className={style.product_header}>

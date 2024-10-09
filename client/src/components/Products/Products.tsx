@@ -9,16 +9,8 @@ export interface ProductsTypeProps {
 }
 
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
-  // const products = useSelector((state: RootState) => state.products.products);
-
-  // const filteredProducts = useSelector(
-  //   (state: RootState) => state.products.filteredProducts
-  // );
-
   const filteredProducts = useAppSelector(selectProducts);
-
-  // const productsToDisplay =
-  //   filteredProducts.length > 0 ? filteredProducts : products;
+  console.log(filteredProducts);
 
   return (
     <div className="container">
