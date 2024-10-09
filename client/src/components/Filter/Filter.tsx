@@ -51,7 +51,6 @@ export const Filter: FC = () => {
 
   const handleResetFilter = () => {
     dispatch(resetFilter());
-    console.log('hello');
   };
 
   const handlePriceChanges = (event, newValue: number[]) => {
