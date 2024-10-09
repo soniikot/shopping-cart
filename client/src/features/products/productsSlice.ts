@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { ProductData } from '@/types/interfaces';
+import { RootState } from '@/app/store';
+import { createAppSelector } from '@/app/selectors';
 
 export interface ProductsState {
   products: ProductData[];
@@ -49,63 +51,43 @@ const productsSlice = createSlice({
         state.loading = false;
         state.error = action.error.message || 'Failed to fetch';
       })
-      .addMatcher(
-        (action) => action.type === 'search/setSearch',
-        (state, action) => {
-          state.filteredProducts = state.products.filter((product) => {
-            const title = product.attributes.title;
-            return title.includes(action.payload);
-          });
-        }
-      )
-      .addMatcher(
-        (action) => action.type === 'filter/setCategory',
-        (state, action) => {
-          state.filteredProducts = state.products.filter((product) => {
-            const subcategories = product.attributes.subcategories.data;
-            return subcategories.some(
-              (subcategory) => subcategory.attributes.title === action.payload
-            );
-          });
-        }
-      )
-      .addMatcher(
-        (action) => action.type === 'filter/setPriceRange',
-        (state, action) => {
-          const [min, max] = action.payload;
-          state.filteredProducts = state.products.filter((product) => {
-            const price = product.attributes.price;
-            return price >= min && price <= max;
-          });
-        }
-      )
-
-      .addMatcher(
-        (action) => action.type === 'filter/setColor',
-        (state, action) => {
-          state.filteredProducts = state.products.filter((product) => {
-            const color = product.attributes.color;
-            return color === action.payload.toLowerCase();
-          });
-        }
-      )
-      .addMatcher(
-        (action) => action.type === 'filter/setSizes',
-        (state, action) => {
-          state.filteredProducts = state.products.filter((product) => {
-            const sizeArray = product.attributes.size;
-            return sizeArray.includes(action.payload);
-          });
-        }
-      )
-
-      .addMatcher(
-        (action) => action.type === 'filter/resetFilter',
-        (state) => {
-          state.filteredProducts = [];
-        }
-      );
   },
 });
+
+const filterColorType = (filterColor: string, product: Product) => {
+  return product.attributes.category.includes(filterColor);
+};
+
+const filterCategoryType = (filterCategory: string, product: Product) => {
+  return product.attributes.category.includes(filterCategory);
+};
+
+const filterSizeType = (filterSize: string[], product: Product) => {
+  if (filterSize.length === 0) {
+    return true;
+  }
+
+  return filterSize.some((size) => size === product.attributes.size)
+};
+
+const filterSearch = (searchQuery: string, product: Product) => {
+  return product.attributes.title.toLowerCase().includes(searchQuery.trim().toLowerCase());
+};
+
+export const selectProducts = createAppSelector(
+  (state: RootState) => state.search.searchQuery,
+  (state: RootState) => state.filters.category,
+  (state: RootState) => state.filters.color,
+  // (state: RootState) => state.filters.size,
+  // add other selectors as needed and add them in function below in the same order
+  (state: RootState) => state.products.products,
+  (searchQuery, filterCategory, filterColor, filterSize, products) => {
+    return products
+      .filter((product) => filterSearch(searchQuery, product))
+      .filter((product) => filterCategoryType(filterCategory, product))
+      .filter((product) => filterColorType(filterColor, product))
+      // .filter((product) => filterSizeType(filterSize, product));
+  },
+);
 
 export default productsSlice.reducer;

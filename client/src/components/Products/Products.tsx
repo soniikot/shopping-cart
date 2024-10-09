@@ -1,27 +1,29 @@
 import style from './styles.module.scss';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { FC } from 'react';
-import { RootState } from '@/app/store';
+// import { RootState } from '@/app/store';
+import { useAppSelector } from '@/app/hooks';
 
 export interface ProductsTypeProps {
   numberOfProducts: number;
 }
 
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
-  const products = useSelector((state: RootState) => state.products.products);
+  // const products = useSelector((state: RootState) => state.products.products);
 
-  const filteredProducts = useSelector(
-    (state: RootState) => state.products.filteredProducts
-  );
+  // const filteredProducts = useSelector(
+  //   (state: RootState) => state.products.filteredProducts
+  // );
 
-  const productsToDisplay =
-    filteredProducts.length > 0 ? filteredProducts : products;
+  const filteredProducts = useAppSelector(selectProducts);
+
+  // const productsToDisplay =
+  //   filteredProducts.length > 0 ? filteredProducts : products;
 
   return (
     <div className="container">
       <div className={style.wrapper}>
-        {productsToDisplay.length > 0 &&
-          productsToDisplay.slice(0, numberOfProducts).map((product) => (
+        {filteredProducts.slice(0, numberOfProducts).map((product) => (
             <div key={product.id} className={style.card}>
               <img
                 className={style.img}
