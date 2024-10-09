@@ -89,4 +89,16 @@
   .second_row {
     display: grid;
   }
+
+  .limited {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+  }
+}
+
+@media (max-width: $small) {
+  .second_row .item {
+    padding-inline: 10px 10px;
+  }
 }

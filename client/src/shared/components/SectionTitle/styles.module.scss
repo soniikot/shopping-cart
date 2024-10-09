@@ -1,7 +1,6 @@
 @import '../../../styles/variables.scss';
 .wrapper {
   display: flex;
-
   padding-left: 20px;
   border-left: 5px solid $--purple-color;
 }
@@ -9,4 +8,10 @@
 .title {
   margin-top: 10px;
   letter-spacing: 2.5px;
+}
+
+@media (max-width: $small) {
+  .wrapper {
+    margin-left: 20px;
+  }
 }

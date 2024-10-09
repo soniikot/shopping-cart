@@ -38,3 +38,10 @@
     place-items: center;
   }
 }
+
+@media (max-width: $small) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+}

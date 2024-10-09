@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .sales_card {
   min-width: 400px;
   height: 360px;
@@ -20,4 +22,12 @@
   margin-top: 44px;
   text-decoration-line: underline;
   cursor: pointer;
+}
+
+@media (max-width: $small) {
+  .sales_card {
+    width: 100px;
+    background-position: center;
+    padding: 73px 100px 30px 30px;
+  }
 }
