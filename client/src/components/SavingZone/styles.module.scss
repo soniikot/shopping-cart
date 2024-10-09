@@ -84,9 +84,24 @@
 
 @media (max-width: $medium) {
   .first_row {
-    display: grid;
+    flex-wrap: wrap;
   }
   .second_row {
-    display: grid;
+    flex-wrap: wrap;
+  }
+
+  .item {
+    flex-grow: auto;
+  }
+  .limited {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+  }
+}
+
+@media (max-width: $small) {
+  .second_row .item {
+    padding-inline: 10px 10px;
   }
 }

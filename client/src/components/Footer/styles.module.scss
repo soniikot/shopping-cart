@@ -1,7 +1,9 @@
 @import '../../styles/variables.scss';
 .wrapper {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 40px;
+
   background-color: $--dark-grey-text-color;
   padding: 60px 90px;
   font-size: 18px;
@@ -51,4 +53,11 @@
 .app_title {
   position: absolute;
   top: -55px;
+}
+
+@media (max-width: $small) {
+  .social_media {
+    flex-direction: column;
+    gap: 80px;
+  }
 }
