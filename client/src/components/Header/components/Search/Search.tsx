@@ -5,18 +5,19 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setSearch } from '../../../../features/Search/SearchSlice';
 import { useSelector } from 'react-redux';
+import { ChangeEvent } from 'react';
 
 export const Search: FC = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const searchQuery = useSelector((state) => state.search.searchQuery);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: ChangeEvent) => {
     event.preventDefault();
     navigate(`/products?search=${searchQuery}`);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent) => {
     dispatch(setSearch(event.target.value));
   };
 

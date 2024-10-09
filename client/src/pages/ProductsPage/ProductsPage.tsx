@@ -5,7 +5,7 @@ import { Table } from '@/components/Filter/components/Table/Table';
 import style from './styles.module.scss';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '@reduxjs/toolkit/query';
+import { RootState } from '@/app/store';
 
 export const ProductsPage: FC = () => {
   const { products } = useSelector((state: RootState) => state.products);
@@ -23,7 +23,7 @@ export const ProductsPage: FC = () => {
       </div>
       <div className={style.wrapper}>
         <div className={style.filter}>
-          <Filter products={products} />
+          <Filter />
         </div>
         <div className={style.products_wrapper}>
           <Products numberOfProducts={100} />
