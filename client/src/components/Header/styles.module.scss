@@ -11,8 +11,15 @@
   border-bottom: 1px solid $--grey-border-color;
 }
 
+.burger_menu {
+  display: none;
+}
 @media (max-width: $large) {
   .header {
     margin: 10px;
+  }
+
+  .burger_menu {
+    display: block;
   }
 }

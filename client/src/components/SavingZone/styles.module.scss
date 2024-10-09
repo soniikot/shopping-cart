@@ -84,12 +84,15 @@
 
 @media (max-width: $medium) {
   .first_row {
-    display: grid;
+    flex-wrap: wrap;
   }
   .second_row {
-    display: grid;
+    flex-wrap: wrap;
   }
 
+  .item {
+    flex-grow: auto;
+  }
   .limited {
     position: absolute;
     top: -10px;

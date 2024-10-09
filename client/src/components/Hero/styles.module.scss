@@ -32,7 +32,9 @@
   }
 
   .wrapper {
-    width: 60%;
+    display: flex;
+    background-position: center;
+    justify-content: center;
   }
 }
 
