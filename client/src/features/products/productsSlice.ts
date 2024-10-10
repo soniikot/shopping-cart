@@ -54,33 +54,49 @@ const productsSlice = createSlice({
   },
 });
 
-const filterCategoryType = (filterCategory: string, product: Product) => {
+const filterCategoryType = (filterCategory: string, product: ProductData) => {
   return (
     product.attributes.subcategories.data[0]?.attributes.title ===
     filterCategory
   );
 };
 
-const filterColorType = (filterColor: string, product: Product) => {
+const filterColorType = (filterColor: string, product: ProductData) => {
   return product.attributes.color === filterColor.toLowerCase();
 };
 
-const filterSizeType = (filterSize: string[], product: Product) => {
+const filterSizeType = (filterSize: string, product: ProductData) => {
   return product.attributes.size.includes(filterSize);
 };
 
-const filterSearch = (searchQuery: string, product: Product) => {
+const filterSearch = (searchQuery: string, product: ProductData) => {
   return product.attributes.title
     .toLowerCase()
     .includes(searchQuery.trim().toLowerCase());
 };
+
+const filterPriceType = (filterPrice: number[], product: ProductData) => {
+  return (
+    product.attributes.price >= filterPrice[0] &&
+    product.attributes.price <= filterPrice[1]
+  );
+};
+
 export const selectProducts = createAppSelector(
   (state: RootState) => state.search.searchQuery,
   (state: RootState) => state.filter.category,
   (state: RootState) => state.filter.color,
   (state: RootState) => state.filter.size,
+  (state: RootState) => state.filter.price,
   (state: RootState) => state.products.products,
-  (searchQuery, filterCategory, filterColor, filterSize, products) => {
+  (
+    searchQuery,
+    filterCategory,
+    filterColor,
+    filterSize,
+    filterPrice,
+    products
+  ) => {
     let filteredProducts = products;
 
     if (searchQuery) {
@@ -104,6 +120,12 @@ export const selectProducts = createAppSelector(
     if (filterSize && filterSize.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
         filterSizeType(filterSize, product)
+      );
+    }
+
+    if (filterPrice) {
+      filteredProducts = filteredProducts.filter((product) =>
+        filterPriceType(filterPrice, product)
       );
     }
 
