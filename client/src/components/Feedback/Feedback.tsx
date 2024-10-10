@@ -7,7 +7,7 @@ export const Feedback: FC = () => {
     <div className="container">
       <div className={style.wrapper}>
         {REVIEWS.map((review) => (
-          <div className={style.card}>
+          <div className={style.card} key={review.id}>
             <div className={style.header}>
               <img src={review.img} alt="person_photo" />
               <img src={review.stars} alt="stars" />

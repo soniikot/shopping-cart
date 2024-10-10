@@ -27,19 +27,26 @@
 
 @media (max-width: $medium) {
   .text {
-    padding: 80px;
+    text-align: center;
     color: white;
   }
 
   .wrapper {
-    width: 60%;
+    display: flex;
+    background-position: center;
+    justify-content: center;
   }
 }
 
 @media (max-width: $small) {
   .text {
-    padding: 50px;
+    padding: 10px;
+    text-align: center;
     color: white;
     max-width: 900px;
+  }
+
+  .wrapper {
+    width: 100%;
   }
 }

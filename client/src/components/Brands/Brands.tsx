@@ -15,11 +15,11 @@ export const Brands: FC = () => {
           Up To <span className={style.yellow}>60% </span>off on brands
         </p>
         <div className={style.brands_container}>
-          <img src={nike} alt="" />
-          <img src={handm} alt="" />
-          <img src={levi} alt="" />
-          <img src={polo} alt="" />
-          <img src={puma} alt="" />
+          <img src={nike} alt="nike" />
+          <img src={handm} alt="H&M" />
+          <img src={levi} alt="Levi" />
+          <img src={polo} alt="Polo" />
+          <img src={puma} alt="Puma" />
         </div>
       </div>
     </div>
