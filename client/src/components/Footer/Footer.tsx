@@ -58,8 +58,8 @@ export const Footer: FC = () => {
               Download The App
             </span>
             <div className={style.apps}>
-              <img src={google} alt="google" />
-              <img src={app_store} alt="AppStore" />
+              <img src={google} alt="" />
+              <img src={app_store} alt="" />
             </div>
           </div>
         </div>

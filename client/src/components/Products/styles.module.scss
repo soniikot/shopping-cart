@@ -43,16 +43,3 @@
   align-items: center;
   justify-content: space-between;
 }
-
-@media (max-width: $medium) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-  }
-}
-
-@media (max-width: $small) {
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
-}
