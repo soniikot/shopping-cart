@@ -8,7 +8,6 @@ export interface ProductsTypeProps {
 
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
   const filteredProducts = useAppSelector(selectProducts);
-  console.log(filteredProducts);
 
   return (
     <div className="container">

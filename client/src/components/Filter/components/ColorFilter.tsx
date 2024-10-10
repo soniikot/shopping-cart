@@ -1,11 +1,11 @@
 import style from './styles.module.scss';
 import { COLORS } from '@/shared/constants/constants';
 import { FC } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '@/app/hooks';
 import { setColor } from '@/features/filter/filterSlice';
 
 export const ColorFilter: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleColorChange = (color: string) => {
     dispatch(setColor(color));

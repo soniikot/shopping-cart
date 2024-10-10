@@ -2,22 +2,25 @@ import style from './styles.module.scss';
 import search from '@/assets/search.svg';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '@/app/hooks';
 import { setSearch } from '../../../../features/Search/SearchSlice';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/app/hooks';
 import { ChangeEvent } from 'react';
+import { RootState } from '@/app/store';
 
 export const Search: FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const searchQuery = useSelector((state) => state.search.searchQuery);
+  const dispatch = useAppDispatch();
+  const searchQuery = useAppSelector(
+    (state: RootState) => state.search.searchQuery
+  );
 
-  const handleSubmit = (event: ChangeEvent) => {
+  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     navigate(`/products?search=${searchQuery}`);
   };
 
-  const handleChange = (event: ChangeEvent) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearch(event.target.value));
   };
 

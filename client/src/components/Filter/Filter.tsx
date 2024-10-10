@@ -1,19 +1,19 @@
 import style from './styles.module.scss';
 import filter from '@assets/filter.svg';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import linkArrow from '@/assets/link-arrow.svg';
 import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
 import { ColorFilter } from './components/ColorFilter';
 import { Sizes } from './components/Sizes/Sizes';
 import { FC } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useAppDispatch } from '@/app/hooks';
+import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
 import { resetFilter, setCategory } from '@/features/filter/filterSlice';
 import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
-import { categories } from './constants';
+import { CATEGORIES } from './constants';
 
 export interface CategoryType {
   numberOfCategories: number;
@@ -35,15 +35,15 @@ export interface CategoryData {
 }
 
 export const Filter: FC = () => {
-  const priceRange = useSelector((state: RootState) => state.filter.price);
+  const priceRange = useAppSelector((state: RootState) => state.filter.price);
 
   const [range, setRange] = useState(priceRange);
 
-  const filteredCategory = useSelector(
+  const filteredCategory = useAppSelector(
     (state: RootState) => state.filter.category
   );
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleCategoryChange = (category: string) => {
     dispatch(setCategory(category));
@@ -53,7 +53,10 @@ export const Filter: FC = () => {
     dispatch(resetFilter());
   };
 
-  const handlePriceChanges = (event, newValue: number[]) => {
+  const handlePriceChanges = (
+    event: ChangeEvent<HTMLFormElement>,
+    newValue: number[]
+  ) => {
     setRange(newValue);
     dispatch(setPriceRange(newValue));
   };
@@ -71,7 +74,7 @@ export const Filter: FC = () => {
 
         <div className={style.categories}>
           <ul className={style.subcategory_wrapper}>
-            {categories.map((subcategory: string) => (
+            {CATEGORIES.map((subcategory: string) => (
               <li
                 onClick={() => handleCategoryChange(subcategory)}
                 className={clsx(style.subcategory, {

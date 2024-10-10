@@ -1,11 +1,11 @@
 import style from './styles.module.scss';
 import { FC } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
 import { Link } from 'react-router-dom';
 
 export const NewArrival: FC = () => {
-  const { categories } = useSelector((state: RootState) => state.categories);
+  const { categories } = useAppSelector((state: RootState) => state.categories);
 
   return (
     <div className="container">

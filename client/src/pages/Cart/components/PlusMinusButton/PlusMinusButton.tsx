@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '@/app/hooks';
 import { increaseCount, decreaseCount } from '@/features/cart/cartSlice';
 import style from './styles.module.scss';
 import { FC } from 'react';
@@ -9,7 +9,7 @@ interface PlusMinusButtonProps {
 }
 
 export const PlusMinusButton: FC<PlusMinusButtonProps> = ({ id, count }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const incrementCount = (id: number) => {
     dispatch(increaseCount({ id }));

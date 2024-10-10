@@ -6,7 +6,7 @@ import { ProductsDescription } from '@/components/ProductDescription/ProductsDes
 import { BottomDescription } from '@/components/BottomDescription/BottomDescription';
 import { SectionTitle } from '@/shared/components/SectionTitle/SectionTitle';
 import { Products } from '@/components/Products/Products';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
 import { useParams } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export const ProductPage = () => {
 
   const id = Number(idString);
 
-  const { products } = useSelector((state: RootState) => state.products);
+  const { products } = useAppSelector((state: RootState) => state.products);
 
   return (
     <>

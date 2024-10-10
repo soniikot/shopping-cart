@@ -1,6 +1,6 @@
 import style from './styles.module.scss';
 import arrow from '@/assets/arrow-left.svg';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
 import { FC } from 'react';
 import { CategoryData } from '@/components/Filter/Filter';
@@ -10,7 +10,7 @@ interface CategoryProps {
   type: any;
 }
 export const Category: FC<CategoryProps> = ({ numberOfCategories, type }) => {
-  const { categories } = useSelector((state: RootState) => state.categories);
+  const { categories } = useAppSelector((state: RootState) => state.categories);
 
   return (
     <div className="container">

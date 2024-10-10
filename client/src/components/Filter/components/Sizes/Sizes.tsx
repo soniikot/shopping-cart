@@ -1,11 +1,12 @@
 import style from './styles.module.scss';
 import { FC } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '@/app/hooks';
 import { setSizes } from '@/features/filter/filterSlice';
 import { useState } from 'react';
 import clsx from 'clsx';
+
 export const Sizes: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [selectedSize, setSelectedSize] = useState('');
 
   const handleSizeChange = (size: string) => {

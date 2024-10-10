@@ -4,11 +4,11 @@ import { Filter } from '@/components/Filter/Filter';
 import { Table } from '@/components/Filter/components/Table/Table';
 import style from './styles.module.scss';
 import { FC } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
 
 export const ProductsPage: FC = () => {
-  const { products } = useSelector((state: RootState) => state.products);
+  const { products } = useAppSelector((state: RootState) => state.products);
   console.log(products.length > 0 && products[1].attributes.color);
 
   return (

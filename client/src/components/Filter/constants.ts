@@ -1,4 +1,4 @@
-export const categories = [
+export const CATEGORIES = [
   'Printed T-Shirts',
   'Plain T-shirt',
   'Polo T-Shirt',
