@@ -1,7 +1,5 @@
 import style from './styles.module.scss';
-// import { useSelector } from 'react-redux';
 import { FC } from 'react';
-// import { RootState } from '@/app/store';
 import { useAppSelector } from '@/app/hooks';
 import { selectProducts } from '@/features/products/productsSlice';
 export interface ProductsTypeProps {
