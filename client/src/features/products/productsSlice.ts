@@ -64,17 +64,11 @@ const filterCategoryType = (filterCategory: string, product: Product) => {
 const filterColorType = (filterColor: string, product: Product) => {
   return product.attributes.color === filterColor.toLowerCase();
 };
-/*
-
 
 const filterSizeType = (filterSize: string[], product: Product) => {
-  if (filterSize.length === 0) {
-    return true;
-  }
-
-  return filterSize.some((size) => size === product.attributes.size)
+  return product.attributes.size.includes(filterSize);
 };
-*/
+
 const filterSearch = (searchQuery: string, product: Product) => {
   return product.attributes.title
     .toLowerCase()
@@ -84,9 +78,9 @@ export const selectProducts = createAppSelector(
   (state: RootState) => state.search.searchQuery,
   (state: RootState) => state.filter.category,
   (state: RootState) => state.filter.color,
-  // (state: RootState) => state.filters.size,
+  (state: RootState) => state.filter.size,
   (state: RootState) => state.products.products,
-  (searchQuery, filterCategory, filterColor, /*filterSize,*/ products) => {
+  (searchQuery, filterCategory, filterColor, filterSize, products) => {
     let filteredProducts = products;
 
     if (searchQuery) {
@@ -107,9 +101,11 @@ export const selectProducts = createAppSelector(
       );
     }
 
-    // if (filterSize && filterSize.length > 0) {
-    //   filteredProducts = filteredProducts.filter((product) => filterSizeType(filterSize, product));
-    // }
+    if (filterSize && filterSize.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        filterSizeType(filterSize, product)
+      );
+    }
 
     return filteredProducts;
   }
