@@ -1,14 +1,19 @@
 import style from './styles.module.scss';
 import filter from '@assets/filter.svg';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import linkArrow from '@/assets/link-arrow.svg';
 import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
 import { ColorFilter } from './components/ColorFilter';
 import { Sizes } from './components/Sizes/Sizes';
-import { DRESS_STYLES } from '@/components/Filter/constants';
 import { FC } from 'react';
+import { useAppDispatch } from '@/app/hooks';
+import { useAppSelector } from '@/app/hooks';
+import { RootState } from '@/app/store';
+import { resetFilter, setCategory } from '@/features/filter/filterSlice';
+import { setPriceRange } from '@/features/filter/filterSlice';
+import clsx from 'clsx';
+import { CATEGORIES } from './constants';
 
 export interface CategoryType {
   numberOfCategories: number;
@@ -30,44 +35,53 @@ export interface CategoryData {
 }
 
 export const Filter: FC = () => {
-  const [subcategories, setSubcategories] = useState<CategoryData[]>([]);
-  const [range, setRange] = useState([0, 900]);
+  const priceRange = useAppSelector((state: RootState) => state.filter.price);
 
-  function handleChanges(event, newValue: number[]) {
+  const [range, setRange] = useState(priceRange);
+
+  const filteredCategory = useAppSelector(
+    (state: RootState) => state.filter.category
+  );
+
+  const dispatch = useAppDispatch();
+
+  const handleCategoryChange = (category: string) => {
+    dispatch(setCategory(category));
+  };
+
+  const handleResetFilter = () => {
+    dispatch(resetFilter());
+  };
+
+  const handlePriceChanges = (
+    event: ChangeEvent<HTMLFormElement>,
+    newValue: number[]
+  ) => {
     setRange(newValue);
-  }
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL + '/subcategories'}`,
-          {
-            headers: {
-              Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
-            },
-          }
-        );
-        response.data.data && setSubcategories(response.data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
+    dispatch(setPriceRange(newValue));
+  };
 
   return (
     <aside>
       <div className={style.wrapper}>
         <div className={style.header}>
           <h4>Filter </h4>
-          <img src={filter} alt="" />
+          <img src={filter} alt="filter" />
         </div>
+        <button className={style.reset} onClick={() => handleResetFilter()}>
+          Reset All Filters
+        </button>
 
         <div className={style.categories}>
           <ul className={style.subcategory_wrapper}>
-            {subcategories.slice(0, 9).map((subcategory) => (
-              <li className={style.subcategory}>
-                {subcategory.attributes.title}
+            {CATEGORIES.map((subcategory: string) => (
+              <li
+                onClick={() => handleCategoryChange(subcategory)}
+                className={clsx(style.subcategory, {
+                  [style.active]: filteredCategory === subcategory,
+                })}
+              >
+                {subcategory}
                 <img src={linkArrow} alt="" />
               </li>
             ))}
@@ -82,10 +96,10 @@ export const Filter: FC = () => {
           <div style={{ width: '225px', padding: '5px' }}>
             <Slider
               value={range}
-              onChange={handleChanges}
+              onChange={handlePriceChanges}
               color="secondary"
               min={0}
-              max={900}
+              max={200}
             />
             <div className={style.range}>
               <button className={style.button}>{range[0]}</button>
@@ -95,7 +109,7 @@ export const Filter: FC = () => {
         </div>
         <div className={style.header}>
           <h4>Colors </h4>
-          <img src={arrowUp} alt="" />
+          <img src={arrowUp} alt="arrowUp" />
         </div>
         <ColorFilter />
         <div className={style.header}>
@@ -103,21 +117,6 @@ export const Filter: FC = () => {
           <img src={arrowUp} alt="" />
         </div>
         <Sizes />
-        <div className={style.header}>
-          <h4>Dress Style </h4>
-          <img src={arrowUp} alt="" />
-        </div>
-
-        <div className={style.categories}>
-          <ul className={style.subcategory_wrapper}>
-            {DRESS_STYLES.map((item) => (
-              <li className={style.subcategory}>
-                {item}
-                <img src={linkArrow} alt="" />
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </aside>
   );

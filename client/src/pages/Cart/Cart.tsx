@@ -4,9 +4,9 @@ import { PlusMinusButton } from './components/PlusMinusButton/PlusMinusButton';
 import iconDelete from '@/assets/deleteicon.svg';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import clsx from 'clsx';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '@/app/hooks';
 import { removeItem } from '../../features/cart/cartSlice';
 import { FC } from 'react';
 
@@ -21,9 +21,11 @@ export interface CartData {
 }
 
 export const Cart: FC = () => {
-  const cart: CartData[] = useSelector((state: RootState) => state.cart.cart);
+  const cart: CartData[] = useAppSelector(
+    (state: RootState) => state.cart.cart
+  );
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleDeleteItem = (id: number) => {
     dispatch(removeItem(id));

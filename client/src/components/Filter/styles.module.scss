@@ -44,3 +44,13 @@
   border: 1px solid $--grey-border-color;
   padding: 3px 30px;
 }
+
+.subcategory.active {
+  color: black;
+}
+
+.reset {
+  background-color: white;
+  border: 1px solid black;
+  margin: 10px 85px;
+}

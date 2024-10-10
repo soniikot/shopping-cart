@@ -21,9 +21,9 @@ export const Homepage = () => {
         <SavingZone />
         <Banner />
         <SectionTitle text="Categories for Men" />
-        <Category numberOfCategories={8} />
+        <Category numberOfCategories={8} type="men" />
         <SectionTitle text="Categories for Women" />
-        <Category numberOfCategories={4} />
+        <Category numberOfCategories={4} type="women" />
         <Brands />
         <SectionTitle text="In The LimeLight " />
         <Products numberOfProducts={4} />
