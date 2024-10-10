@@ -14,7 +14,6 @@ export const Header: FC = () => {
           <img src={logo} alt="logo" />
         </Link>
         <Menu />
-
         <Search />
         <Form />
         <div className={style.burger_menu}>

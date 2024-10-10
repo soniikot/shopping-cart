@@ -17,6 +17,13 @@
   left: 20px;
 }
 
+.button {
+  display: none;
+}
+
+.icon {
+  display: block;
+}
 @media (max-width: $small) {
   .search {
     display: none;

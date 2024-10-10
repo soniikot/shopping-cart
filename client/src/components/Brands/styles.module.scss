@@ -27,13 +27,7 @@
 }
 
 .brands_container img {
-  width: 40px;
-}
-
-@media (max-width: $medium) {
-  .brands_container img {
-    width: 100px;
-  }
+  width: 100px;
 }
 
 @media (max-width: $small) {

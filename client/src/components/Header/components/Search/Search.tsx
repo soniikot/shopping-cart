@@ -33,9 +33,8 @@ export const Search: FC = () => {
         value={searchQuery}
         onChange={handleChange}
       />
-      <button className={style.button} type="submit">
-        <img className={style.icon} src={search} alt="search" />
-      </button>
+      <img className={style.icon} src={search} alt="search" />
+      <button className={style.button} type="submit"></button>
     </form>
   );
 };
