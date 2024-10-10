@@ -2,16 +2,18 @@ import { configureStore } from '@reduxjs/toolkit';
 import productReducer from '../features/products/productsSlice';
 import cartReducer from '../features/cart/cartSlice';
 import categoryReducer from '../features/categories/categoriesSlice';
+import searchReducer from '../features/Search/SearchSlice';
+import filterReducer from '../features/filter/filterSlice';
 
 export const store = configureStore({
   reducer: {
     products: productReducer,
     cart: cartReducer,
     categories: categoryReducer,
+    search: searchReducer,
+    filter: filterReducer,
   },
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;

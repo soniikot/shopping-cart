@@ -1,15 +1,31 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ProductData } from '@/types/interfaces';
 
 export interface CategoriesState {
-  categories: ProductData[];
+  categories: {
+    men: CategoryData[];
+    women: CategoryData[];
+  };
   loading: boolean;
   error: null | string;
 }
 
+interface CategoryData {
+  id: string;
+  attributes: {
+    title: string;
+    img: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+}
+
 const initialState: CategoriesState = {
-  categories: [],
+  categories: { men: [], women: [] },
   loading: false,
   error: null,
 };
@@ -18,7 +34,7 @@ export const fetchCategories = createAsyncThunk(
   'categories/fetchCategories',
   async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL + '/subcategories?populate=*'}`,
+      `${import.meta.env.VITE_API_URL + '/categories?populate=subcategories.img'}`,
       {
         headers: {
           Authorization: `bearer ${import.meta.env.VITE_API_TOKEN}`,
@@ -41,7 +57,9 @@ const categoriesSlice = createSlice({
       })
       .addCase(fetchCategories.fulfilled, (state, action) => {
         state.loading = false;
-        state.categories = action.payload;
+        state.categories.men = action.payload[1].attributes.subcategories.data;
+        state.categories.women =
+          action.payload[0].attributes.subcategories.data;
       })
       .addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false;

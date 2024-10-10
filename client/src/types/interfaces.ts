@@ -7,7 +7,13 @@ export interface ProductData {
     color: string;
     quantity: number;
     size: string;
-
+    subcategories: {
+      data: {
+        attributes: {
+          title: string;
+        };
+      };
+    };
     img: {
       data: {
         attributes: {
