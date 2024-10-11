@@ -4,13 +4,13 @@ interface FilterState {
   category: string;
   price: number[];
   color: string;
-  size: string[];
+  size: string;
 }
 const initialState: FilterState = {
   category: '',
   price: [0, 200],
   color: '',
-  size: [],
+  size: '',
 };
 
 const filterSlice = createSlice({

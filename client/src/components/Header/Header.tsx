@@ -6,7 +6,30 @@ import style from './styles.module.scss';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { BurgerMenu } from './components/BurgerMenu/BurgerMenu';
+
 export const Header: FC = () => {
+  //TODO
+  /**
+   *
+   * get path
+   *
+   * const { pathname } = useLocation();
+   *
+   * pathname
+   *
+   * /...
+   *
+   **/
+
+  // useEffect(() => {
+  //   // if(currentPath !== products) {
+  // resetFilters
+  // reducer
+  // clearSearch
+
+  //in search    // }
+  // }, [pathname])
+
   return (
     <div className="container">
       <header className={style.header}>

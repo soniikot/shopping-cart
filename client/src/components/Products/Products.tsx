@@ -9,6 +9,13 @@ export interface ProductsTypeProps {
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
   const filteredProducts = useAppSelector(selectProducts);
 
+  //TODO
+  /**
+   * add not found products message
+   *
+   *
+   **/
+
   return (
     <div className="container">
       <div className={style.wrapper}>

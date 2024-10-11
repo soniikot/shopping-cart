@@ -117,7 +117,7 @@ export const selectProducts = createAppSelector(
       );
     }
 
-    if (filterSize && filterSize.length > 0) {
+    if (filterSize) {
       filteredProducts = filteredProducts.filter((product) =>
         filterSizeType(filterSize, product)
       );
