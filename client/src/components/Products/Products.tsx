@@ -2,6 +2,7 @@ import style from './styles.module.scss';
 import { FC } from 'react';
 import { useAppSelector } from '@/app/hooks';
 import { selectProducts } from '@/features/products/productsSlice';
+import { EmptyList } from '../EmptyList/EmptyList';
 export interface ProductsTypeProps {
   numberOfProducts: number;
 }
@@ -9,14 +10,9 @@ export interface ProductsTypeProps {
 export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
   const filteredProducts = useAppSelector(selectProducts);
 
-  //TODO
-  /**
-   * add not found products message
-   *
-   *
-   **/
-
-  return (
+  return filteredProducts.length === 0 ? (
+    <EmptyList />
+  ) : (
     <div className="container">
       <div className={style.wrapper}>
         {filteredProducts.slice(0, numberOfProducts).map((product) => (

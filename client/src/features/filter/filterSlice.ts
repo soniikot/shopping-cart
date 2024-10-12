@@ -5,9 +5,11 @@ interface FilterState {
   price: number[];
   color: string;
   size: string;
+  gender: string;
 }
 const initialState: FilterState = {
   category: '',
+  gender: '',
   price: [0, 200],
   color: '',
   size: '',

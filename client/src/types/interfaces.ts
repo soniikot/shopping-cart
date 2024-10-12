@@ -8,11 +8,13 @@ export interface ProductData {
     quantity: number;
     size: string;
     subcategories: {
-      data: {
-        attributes: {
-          title: string;
-        };
-      };
+      data: [
+        {
+          attributes: {
+            title: string;
+          };
+        },
+      ];
     };
     img: {
       data: {

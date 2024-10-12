@@ -1,25 +1,24 @@
-import type { RenderOptions } from "@testing-library/react"
-import { render } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
-import type { PropsWithChildren, ReactElement } from "react"
-import { Provider } from "react-redux"
-import type { AppStore, RootState } from "../app/store"
-import { makeStore } from "../app/store"
-
+import type { RenderOptions } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import type { PropsWithChildren, ReactElement } from 'react';
+import { Provider } from 'react-redux';
+import type { AppStore, RootState } from '../app/store';
+import { configureStore } from '@reduxjs/toolkit';
 /**
  * This type extends the default options for
  * React Testing Library's render function. It allows for
  * additional configuration such as specifying an initial Redux state and
  * a custom store instance.
  */
-interface ExtendedRenderOptions extends Omit<RenderOptions, "queries"> {
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   /**
    * Defines a specific portion or the entire initial state for the Redux store.
    * This is particularly useful for initializing the state in a
    * controlled manner during testing, allowing components to be rendered
    * with predetermined state conditions.
    */
-  preloadedState?: Partial<RootState>
+  preloadedState?: Partial<RootState>;
 
   /**
    * Allows the use of a specific Redux store instance instead of a
@@ -28,9 +27,9 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, "queries"> {
    * tests from a global store state. The custom store should be configured
    * to match the structure and middleware of the store used by the application.
    *
-   * @default makeStore(preloadedState)
+   * @default configureStore(preloadedState)
    */
-  store?: AppStore
+  store?: AppStore;
 }
 
 /**
@@ -43,23 +42,23 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, "queries"> {
  */
 export const renderWithProviders = (
   ui: ReactElement,
-  extendedRenderOptions: ExtendedRenderOptions = {},
+  extendedRenderOptions: ExtendedRenderOptions = {}
 ) => {
   const {
     preloadedState = {},
     // Automatically create a store instance if no store was passed in
-    store = makeStore(preloadedState),
+    store = configureStore(preloadedState),
     ...renderOptions
-  } = extendedRenderOptions
+  } = extendedRenderOptions;
 
   const Wrapper = ({ children }: PropsWithChildren) => (
     <Provider store={store}>{children}</Provider>
-  )
+  );
 
   // Return an object with the store and all of RTL's query functions
   return {
     store,
     user: userEvent.setup(),
     ...render(ui, { wrapper: Wrapper, ...renderOptions }),
-  }
-}
+  };
+};

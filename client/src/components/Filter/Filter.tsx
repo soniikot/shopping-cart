@@ -53,10 +53,7 @@ export const Filter: FC = () => {
     dispatch(resetFilter());
   };
 
-  const handlePriceChanges = (
-    event: ChangeEvent<HTMLFormElement>,
-    newValue: number[]
-  ) => {
+  const handlePriceChanges = (event: Event, newValue: number[]) => {
     setRange(newValue);
     dispatch(setPriceRange(newValue));
   };
