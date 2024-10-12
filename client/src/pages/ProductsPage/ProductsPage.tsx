@@ -4,13 +4,8 @@ import { Filter } from '@/components/Filter/Filter';
 import { Table } from '@/components/Filter/components/Table/Table';
 import style from './styles.module.scss';
 import { FC } from 'react';
-import { useAppSelector } from '@/app/hooks';
-import { RootState } from '@/app/store';
 
 export const ProductsPage: FC = () => {
-  const { products } = useAppSelector((state: RootState) => state.products);
-  console.log(products.length > 0 && products[1].attributes.color);
-
   return (
     <div className="container">
       <div className={style.product_header}>

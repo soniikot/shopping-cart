@@ -79,7 +79,7 @@ export const Filter: FC = () => {
                 })}
               >
                 {subcategory}
-                <img src={linkArrow} alt="" />
+                <img src={linkArrow} alt="link" />
               </li>
             ))}
           </ul>
