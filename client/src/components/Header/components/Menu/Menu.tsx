@@ -1,21 +1,16 @@
 import style from './styles.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { FC } from 'react';
-import { useAppSelector } from '@/app/hooks';
-import { RootState } from '@/app/store';
 import { useAppDispatch } from '@/app/hooks';
 import { setGender } from '@/features/filter/filterSlice';
 import { resetFilter } from '@/features/filter/filterSlice';
 
 export const Menu: FC = () => {
-  const gender = useAppSelector((state: RootState) => state.filter.gender);
-  console.log(gender);
-
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
   const handleGenderChange = (gender: string) => {
-    navigate('/products/1');
+    navigate('/products/');
     dispatch(setGender(gender));
   };
 
@@ -27,7 +22,7 @@ export const Menu: FC = () => {
     <ul className={style.header_menu}>
       <li>
         <Link
-          to={'/products/1'}
+          to={'/products/'}
           className={style.link}
           onClick={handleShopAllClick}
         >
