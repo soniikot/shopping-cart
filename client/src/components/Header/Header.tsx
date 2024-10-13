@@ -15,9 +15,10 @@ export const Header: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(resetFilter());
+    if (pathname !== '/products/') {
+      dispatch(resetFilter());
+    }
   }, [pathname]);
-
   return (
     <div className="container">
       <header className={style.header}>
