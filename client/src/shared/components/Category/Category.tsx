@@ -7,6 +7,7 @@ import { CategoryData } from '@/components/Filter/Filter';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/app/hooks';
 import { setCategory } from '@/features/filter/filterSlice';
+import { setGender } from '@/features/filter/filterSlice';
 
 interface CategoryProps {
   numberOfCategories: number;
@@ -21,6 +22,7 @@ export const Category: FC<CategoryProps> = ({ numberOfCategories, type }) => {
   const handleCategoryClick = (category: string) => {
     navigate('/products/');
     dispatch(setCategory(category));
+    dispatch(setGender(type));
   };
   return (
     <div className="container">
