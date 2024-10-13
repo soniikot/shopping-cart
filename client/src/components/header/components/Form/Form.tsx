@@ -2,16 +2,15 @@ import style from './styles.module.scss';
 import heart from '@/assets/heart.svg';
 import user from '@/assets/user.svg';
 import shoppingCart from '@/assets/shopping-cart.svg';
+import shoppingCartWhite from '@/assets/shopping-cart-white.svg';
 import { IconButton } from '@/shared/components/IconButton/IconButton';
-import { FC, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { FC } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Form: FC = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const location = useLocation();
 
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
+  const isActive = location.pathname === '/cart';
 
   return (
     <div className={style.form}>
@@ -19,9 +18,8 @@ export const Form: FC = () => {
       <IconButton icon={user} />
       <Link to="/cart">
         <IconButton
-          icon={shoppingCart}
-          onClick={handleClick}
-          isActive={isClicked}
+          icon={isActive ? shoppingCartWhite : shoppingCart}
+          isActive={isActive}
         />
       </Link>
     </div>

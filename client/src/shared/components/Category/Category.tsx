@@ -4,21 +4,35 @@ import { useAppSelector } from '@/app/hooks';
 import { RootState } from '@/app/store';
 import { FC } from 'react';
 import { CategoryData } from '@/components/Filter/Filter';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '@/app/hooks';
+import { setCategory } from '@/features/filter/filterSlice';
 
 interface CategoryProps {
   numberOfCategories: number;
   type: any;
 }
 export const Category: FC<CategoryProps> = ({ numberOfCategories, type }) => {
+  const navigate = useNavigate();
   const { categories } = useAppSelector((state: RootState) => state.categories);
 
+  const dispatch = useAppDispatch();
+
+  const handleCategoryClick = (category: string) => {
+    navigate('/products/');
+    dispatch(setCategory(category));
+  };
   return (
     <div className="container">
       <div className={style.wrapper}>
         {categories[type]
           ?.slice(0, numberOfCategories)
           .map((category: CategoryData) => (
-            <div key={category.id} className={style.card}>
+            <div
+              key={category.id}
+              className={style.card}
+              onClick={() => handleCategoryClick(category.attributes.title)}
+            >
               <img
                 className={style.img}
                 src={
