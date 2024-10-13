@@ -4,27 +4,48 @@ import { ProductPage } from '../pages/ProductPage/ProductPage';
 import { ProductsPage } from '../pages/ProductsPage/ProductsPage';
 import { Layout } from './Layout';
 import { Cart } from '@/pages/Cart/Cart';
+import ScrollToTop from '@/helpers/ScrollToTop';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <ScrollToTop>
+        <Layout />
+      </ScrollToTop>
+    ),
     children: [
       {
         path: '/',
-        element: <Homepage />,
+        element: (
+          <ScrollToTop>
+            <Homepage />
+          </ScrollToTop>
+        ),
       },
       {
         path: '/products/',
-        element: <ProductsPage />,
+        element: (
+          <ScrollToTop>
+            <ProductsPage />
+          </ScrollToTop>
+        ),
       },
       {
         path: '/product/:id',
-        element: <ProductPage />,
+        element: (
+          <ScrollToTop>
+            <ProductPage />
+          </ScrollToTop>
+        ),
       },
       {
         path: '/cart/',
-        element: <Cart />,
+        element: (
+          <ScrollToTop>
+            <Cart />
+          </ScrollToTop>
+        ),
       },
     ],
   },
