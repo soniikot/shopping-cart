@@ -9,6 +9,7 @@ import { RootState } from '@/app/store';
 import { useAppDispatch } from '@/app/hooks';
 import { removeItem } from '../../features/cart/cartSlice';
 import { FC } from 'react';
+import { EmptyList } from '@/components/EmptyList/EmptyList';
 
 export interface CartData {
   id: number;
@@ -66,6 +67,9 @@ export const Cart: FC = () => {
           <div className={style.header_text}>SUBTOTAL</div>
           <div className={style.header_text}>ACTION</div>
         </div>
+        {cart.length === 0 && (
+          <EmptyList text="You haven't chose anything yet" />
+        )}
         {cart.length > 0 &&
           cart.map((product) => (
             <div key={product.id} className={clsx(style.grid_row, 'container')}>
@@ -116,7 +120,11 @@ export const Cart: FC = () => {
               value="Apply Coupon"
             />
           </form>
-          <TextButton text="Continue Shopping" buttonColor="white" />
+          <TextButton
+            text="Continue Shopping"
+            buttonColor="white"
+            link="/products/"
+          />
         </div>
         <div className={style.total}>
           <div className={style.text}>

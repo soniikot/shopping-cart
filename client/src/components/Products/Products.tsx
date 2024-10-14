@@ -13,7 +13,7 @@ export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
   const filteredProducts = useAppSelector(selectProducts);
 
   return filteredProducts.length === 0 ? (
-    <EmptyList />
+    <EmptyList text={'Sorry. Nothing found'} />
   ) : (
     <div className="container">
       <div className={style.wrapper}>

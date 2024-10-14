@@ -2,16 +2,16 @@ import { FC } from 'react';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import style from './styles.module.scss';
 
-export const EmptyList: FC = () => {
+interface EmptyList {
+  text: string;
+}
+
+export const EmptyList: FC<EmptyList> = ({ text }) => {
   return (
     <div className={style.wrapper}>
-      <h2>Sorry, nothing found</h2>
-      <p>Try again </p>
-      <TextButton
-        text="Continue Shopping"
-        buttonColor="purple"
-        link="/products/"
-      />
+      <h2>{text}</h2>
+
+      <TextButton text="Continue Shopping" buttonColor="purple" link="/" />
     </div>
   );
 };

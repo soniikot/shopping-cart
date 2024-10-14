@@ -8,10 +8,6 @@
   margin: 55px 0px 90px 0px;
 }
 
-.title {
-  margin-top: 20px;
-}
-
 .subtitle {
   color: $--grey-text-color;
 }
@@ -42,6 +38,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 10px 0;
+}
+
+.card {
+  max-width: 280px;
 }
 
 @media (max-width: $medium) {
