@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export interface TextButtonProps {
   text: string;
   buttonColor: 'purple' | 'white';
-  link: string;
+  link?: string;
 }
 
 export const TextButton: FC<TextButtonProps> = ({
