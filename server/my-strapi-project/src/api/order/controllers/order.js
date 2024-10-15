@@ -47,12 +47,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
 
       return { stripeSession: session };
     } catch (error) {
-      console.error("Error creating order:", error); // Log the error
       ctx.response.status = 500;
-      return { error: error.message }; // Return a more user-friendly error message
+      return { error };
     }
   },
 }));
-
-console.log("Stripe Key:", process.env.STRIPE_KEY);
-console.log("Client URL:", process.env.CLIENT_URL);
