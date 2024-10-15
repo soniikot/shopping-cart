@@ -18,7 +18,7 @@ export const Category: FC<CategoryProps> = ({ numberOfCategories, type }) => {
   const { categories } = useAppSelector((state: RootState) => state.categories);
 
   const dispatch = useAppDispatch();
-
+  //how can I use category[type] without getting an error
   const handleCategoryClick = (category: string) => {
     navigate('/products/');
     dispatch(setCategory(category));

@@ -7,6 +7,8 @@ import product_table from '@assets/product_table.png';
 export const ProductTabs: FC = () => {
   const [value, setValue] = useState('1');
 
+  //error on change Bottom description line 22
+
   const handleTabChange = (event: MouseEvent, newValue: string) => {
     setValue(newValue);
   };

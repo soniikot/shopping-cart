@@ -15,6 +15,7 @@ import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
 import { CATEGORIES } from './constants';
 
+//error on change line 98
 export interface CategoryType {
   numberOfCategories: number;
   filter: string;
