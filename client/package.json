@@ -20,6 +20,8 @@
     "@mui/lab": "^6.0.0-beta.10",
     "@mui/material": "^6.1.0",
     "@reduxjs/toolkit": "^2.0.1",
+    "@stripe/react-stripe-js": "^2.8.1",
+    "@stripe/stripe-js": "^4.8.0",
     "@types/module-alias": "^2.0.4",
     "@types/npm": "^7.19.3",
     "axios": "^1.7.7",

@@ -10,6 +10,8 @@ import { useAppDispatch } from '@/app/hooks';
 import { removeItem } from '../../features/cart/cartSlice';
 import { FC } from 'react';
 import { EmptyList } from '@/components/EmptyList/EmptyList';
+import { loadStripe } from '@stripe/stripe-js';
+import { makeRequest } from '@/makeRequest';
 
 export interface CartData {
   id: number;
@@ -28,6 +30,23 @@ export const Cart: FC = () => {
 
   const dispatch = useAppDispatch();
 
+  const handlePayment = async () => {
+    try {
+      const stripe = await stripePromise;
+
+      const res = await makeRequest.post('/orders', { cart });
+
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const stripePromise = loadStripe(
+    'pk_test_51Q9wuPAoB7FsfDJTAWmTQwiO12bwE2ipelQqXrw65HsfYgorAJC9APIjY9KF67q6W5HnKzlniB2qfyAgNqTGr05t00hIIn4Jpx'
+  );
   const handleDeleteItem = (id: number) => {
     dispatch(removeItem(id));
   };
@@ -141,7 +160,7 @@ export const Cart: FC = () => {
               <span className={style.price}>${subTotalPrice()}</span>
             </h4>
           </div>
-          <TextButton text="Proceed To Checkout" buttonColor="purple" />
+          <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </>
