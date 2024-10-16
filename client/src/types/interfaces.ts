@@ -16,6 +16,15 @@ export interface ProductData {
         },
       ];
     };
+    categories: {
+      data: [
+        {
+          attributes: {
+            title: string;
+          };
+        },
+      ];
+    };
     img: {
       data: {
         attributes: {

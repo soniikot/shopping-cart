@@ -50,10 +50,32 @@
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
   }
+
+  .img {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .card {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: $small) {
   .wrapper {
     grid-template-columns: 1fr;
   }
+
+  .img {
+    width: 100px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+* {
+  outline: 1px solid black;
 }

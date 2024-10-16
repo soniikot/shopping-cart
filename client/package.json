@@ -36,6 +36,7 @@
     "reselect": "^5.1.1"
   },
   "devDependencies": {
+    "@mui/types": "^7.2.18",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
