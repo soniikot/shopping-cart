@@ -54,10 +54,17 @@ export const Filter: FC = () => {
     dispatch(resetFilter());
   };
 
-  const handlePriceChanges = (event: Event, newValue: number[]) => {
+  const handlePriceChanges = (event: Event, newValue: number[] | number) => {
+    if (!Array.isArray(newValue)) {
+      throw new Error('price range is not a number array');
+      // return;
+    }
+
     setRange(newValue);
     dispatch(setPriceRange(newValue));
   };
+
+  throw new Error();
 
   return (
     <aside>
@@ -94,7 +101,7 @@ export const Filter: FC = () => {
           <div style={{ width: '225px', padding: '5px' }}>
             <Slider
               value={range}
-              onChange={handlePriceChanges}
+              onChange={(event, value) => handlePriceChanges(event, value)}
               color="secondary"
               min={0}
               max={200}
