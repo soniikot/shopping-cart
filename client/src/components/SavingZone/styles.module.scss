@@ -19,8 +19,7 @@
 }
 .item {
   padding-top: 60px;
-  height: 400px;
-  flex-basis: 33%;
+
   background-size: cover;
   border-radius: 10px;
   padding-left: 22px;
@@ -91,7 +90,7 @@
   }
 
   .item {
-    flex-grow: auto;
+    flex-grow: 1;
   }
   .limited {
     position: absolute;
