@@ -4,12 +4,16 @@ import { useAppSelector } from '@/app/hooks';
 import { selectProducts } from '@/features/products/productsSlice';
 import { EmptyList } from '../EmptyList/EmptyList';
 import { Link } from 'react-router-dom';
-
+import clsx from 'clsx';
 export interface ProductsTypeProps {
   numberOfProducts: number;
+  isProductPage?: boolean;
 }
 
-export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
+export const Products: FC<ProductsTypeProps> = ({
+  numberOfProducts,
+  isProductPage,
+}) => {
   const filteredProducts = useAppSelector(selectProducts);
 
   return filteredProducts.length === 0 ? (
@@ -21,7 +25,9 @@ export const Products: FC<ProductsTypeProps> = ({ numberOfProducts }) => {
           <Link to={`/product/${product.id - 1}`} key={product.id}>
             <div key={product.id} className={style.card}>
               <img
-                className={style.img}
+                className={clsx(style.img, {
+                  [style.productImg]: isProductPage, // Apply productImg class if isProductPage is true
+                })}
                 src={
                   import.meta.env.VITE_API_UPLOAD_URL +
                   product.attributes.img.data.attributes.url
