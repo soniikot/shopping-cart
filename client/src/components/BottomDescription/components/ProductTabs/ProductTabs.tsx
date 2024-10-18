@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { type ChangeEvent, type SyntheticEvent } from 'react';
+import { type SyntheticEvent } from 'react';
 import style from './styles.module.scss';
 import { Tab, Box } from '@mui/material';
 import { TabPanel, TabContext, TabList } from '@mui/lab';
@@ -7,7 +7,7 @@ import product_table from '@assets/product_table.png';
 
 export const ProductTabs: FC = () => {
   const [value, setValue] = useState('1');
-
+  // @ts-ignore
   const handleTabChange = (event: SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };

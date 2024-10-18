@@ -1,6 +1,6 @@
 import style from './styles.module.scss';
 import filter from '@assets/filter.svg';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import linkArrow from '@/assets/link-arrow.svg';
 import arrowUp from '@/assets/arrow-up.svg';
 import Slider from '@mui/material/Slider';
@@ -15,7 +15,6 @@ import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
 import { CATEGORIES } from './constants';
 
-//error on change line 98
 export interface CategoryType {
   numberOfCategories: number;
   filter: string;
@@ -53,18 +52,15 @@ export const Filter: FC = () => {
   const handleResetFilter = () => {
     dispatch(resetFilter());
   };
-
+  // @ts-ignore
   const handlePriceChanges = (event: Event, newValue: number[] | number) => {
     if (!Array.isArray(newValue)) {
       throw new Error('price range is not a number array');
-      // return;
     }
 
     setRange(newValue);
     dispatch(setPriceRange(newValue));
   };
-
-  throw new Error();
 
   return (
     <aside>
