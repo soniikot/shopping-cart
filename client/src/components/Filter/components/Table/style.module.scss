@@ -33,3 +33,9 @@ td:first-child {
     margin: 0px;
   }
 }
+
+@media (max-width: $small) {
+  .table {
+    display: none;
+  }
+}

@@ -48,3 +48,17 @@
     margin-inline: 10px;
   }
 }
+
+@media (max-width: $small) {
+  .left {
+    display: none;
+  }
+
+  .product_header {
+    margin-left: 30px;
+  }
+}
+
+* {
+  outline: 1px solid black;
+}
