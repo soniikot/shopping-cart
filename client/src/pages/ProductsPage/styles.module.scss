@@ -42,3 +42,9 @@
 .products_wrapper {
   flex-grow: 1;
 }
+
+@media (max-width: $medium) {
+  .wrapper {
+    margin-inline: 10px;
+  }
+}
