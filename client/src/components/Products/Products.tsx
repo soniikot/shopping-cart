@@ -26,7 +26,7 @@ export const Products: FC<ProductsTypeProps> = ({
             <div key={product.id} className={style.card}>
               <img
                 className={clsx(style.img, {
-                  [style.productImg]: isProductPage, // Apply productImg class if isProductPage is true
+                  [style.productImg]: isProductPage,
                 })}
                 src={
                   import.meta.env.VITE_API_UPLOAD_URL +

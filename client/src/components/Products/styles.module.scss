@@ -39,6 +39,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 10px 0;
+  height: 2em;
 }
 
 .card {
@@ -58,8 +59,16 @@
     border-radius: 5px;
   }
 
-  .card {
-    font-size: 10px;
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
   }
 }
 
@@ -70,8 +79,20 @@
 
   .productImg {
     width: 100px;
-    height: 280px;
+    height: 180px;
     object-fit: cover;
     border-radius: 5px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 10px;
   }
 }
