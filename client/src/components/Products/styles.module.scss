@@ -39,6 +39,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 10px 0;
+  height: 2em;
 }
 
 .card {
@@ -51,31 +52,47 @@
     place-items: center;
   }
 
-  .img {
+  .productImg {
     width: 200px;
     height: 280px;
     object-fit: cover;
     border-radius: 5px;
   }
 
-  .card {
-    font-size: 10px;
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
   }
 }
 
 @media (max-width: $small) {
   .wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .img {
+  .productImg {
     width: 100px;
-    height: 280px;
+    height: 180px;
     object-fit: cover;
     border-radius: 5px;
   }
-}
 
-* {
-  outline: 1px solid black;
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .title {
+    font-size: 10px;
+  }
+
+  .price {
+    font-size: 10px;
+  }
 }

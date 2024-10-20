@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  width: 295px;
+  max-width: 295px;
   border: 1px solid $--grey-border-color;
   margin: 50px;
   color: $--grey-text-color;
@@ -16,14 +16,14 @@
 }
 
 .categories {
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 16px;
 }
 
 .subcategory {
   display: flex;
   justify-content: space-between;
-  margin: 13px 30px;
+  margin: 13px 20px;
 }
 
 .slider {
@@ -52,5 +52,25 @@
 .reset {
   background-color: white;
   border: 1px solid black;
-  margin: 10px 85px;
+  margin: 20px 85px;
+}
+
+@media (max-width: $small) {
+  .wrapper {
+    max-width: 200px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .categories {
+    font-size: 14px;
+  }
+  .reset {
+    font-size: 10px;
+    margin: 5px 45px;
+  }
+
+  .wrapper {
+    display: none;
+  }
 }

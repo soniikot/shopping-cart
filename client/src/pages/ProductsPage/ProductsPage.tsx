@@ -22,7 +22,7 @@ export const ProductsPage: FC = () => {
           <Filter />
         </div>
         <div className={style.products_wrapper}>
-          <Products numberOfProducts={100} />
+          <Products numberOfProducts={100} isProductPage={true} />
         </div>
       </div>
       <div className={style.text}>

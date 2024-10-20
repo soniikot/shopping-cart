@@ -1,5 +1,10 @@
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 0px;
+}
+
+@media (max-width: $medium) {
+  .container {
+    margin: 15px;
+  }
 }

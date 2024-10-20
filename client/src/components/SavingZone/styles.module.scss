@@ -104,4 +104,8 @@
   .second_row .item {
     padding-inline: 10px 10px;
   }
+
+  .item {
+    flex-basis: 100%;
+  }
 }

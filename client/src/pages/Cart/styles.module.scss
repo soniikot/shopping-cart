@@ -21,6 +21,12 @@
   border-radius: 0px 10px 10px 0px;
 }
 
+.button_checkout {
+  border-radius: 10px;
+  padding-inline: 50px;
+  color: white;
+  background-color: $--purple-color;
+}
 .form {
   padding: 20px 30px 37px 0px;
   display: flex;
