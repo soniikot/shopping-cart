@@ -37,3 +37,31 @@
   width: 520px;
   height: 785px;
 }
+
+@media (max-width: $medium) {
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $small) {
+  .photo_wrapper {
+    width: 320px;
+    height: 485px;
+  }
+
+  .photo_wrapper img {
+    object-fit: cover;
+    width: 320px;
+    height: 485px;
+  }
+
+  .images {
+    justify-content: center;
+  }
+
+  .side_images {
+    display: none;
+  }
+}
