@@ -23,7 +23,7 @@ export const Products: FC<ProductsTypeProps> = ({
     <div className="container">
       <div
         className={clsx(style.wrapper, {
-          [style.productPageWrapper]: isProductPage,
+          [style.product_page_wrapper]: isProductPage,
         })}
       >
         {filteredProducts.slice(0, numberOfProducts).map((product) => (
@@ -31,7 +31,7 @@ export const Products: FC<ProductsTypeProps> = ({
             <div key={product.id} className={style.card}>
               <img
                 className={clsx(style.img, {
-                  [style.productPageImg]: isProductPage,
+                  [style.product_page_img]: isProductPage,
                 })}
                 src={
                   import.meta.env.VITE_API_UPLOAD_URL +
@@ -43,14 +43,14 @@ export const Products: FC<ProductsTypeProps> = ({
               <div className={style.text_wrapper}>
                 <p
                   className={clsx(style.title, {
-                    [style.productPageTitle]: isProductPage,
+                    [style.product_page_title]: isProductPage,
                   })}
                 >
                   {product.attributes.title}
                 </p>
                 <p
                   className={clsx(style.subtitle, {
-                    [style.productPageSubtitle]: isProductPage,
+                    [style.product_page_subtitle]: isProductPage,
                   })}
                 >
                   {product.attributes.disc}
@@ -58,7 +58,7 @@ export const Products: FC<ProductsTypeProps> = ({
               </div>
               <div
                 className={clsx(style.price, {
-                  [style.productPagePrice]: isProductPage,
+                  [style.product_page_price]: isProductPage,
                 })}
               >
                 ${product.attributes.price}

@@ -77,26 +77,26 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .productPageWrapper {
+  .product_page_wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .productPageImg {
+  .product_page_img {
     width: 100px;
     height: 180px;
     object-fit: cover;
     border-radius: 5px;
   }
 
-  .productPageSubtitle {
+  .product_page_subtitle {
     font-size: 10px;
   }
 
-  .productPageTitle {
+  .product_page_title {
     font-size: 10px;
   }
 
-  .productPagePrice {
+  .product_page_price {
     font-size: 10px;
   }
 }

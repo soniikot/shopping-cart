@@ -5,11 +5,6 @@
   max-width: 1220px;
 }
 
-.filter {
-  margin-top: -130px;
-  margin-left: -50px;
-}
-
 .products {
   margin-top: 50px;
   width: 895px;
@@ -17,18 +12,6 @@
 
 .purple_text {
   color: $--purple-color;
-}
-
-.product_header {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 350px;
-  padding-top: 50px;
-}
-
-.left {
-  display: flex;
-  gap: 10px;
 }
 
 .text {
@@ -50,11 +33,7 @@
 }
 
 @media (max-width: $small) {
-  .left {
-    display: none;
-  }
-
-  .product_header {
-    margin-left: 30px;
+  .wrapper {
+    flex-direction: column;
   }
 }
