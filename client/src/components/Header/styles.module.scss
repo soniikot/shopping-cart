@@ -23,3 +23,9 @@
     display: block;
   }
 }
+
+@media (max-width: $small) {
+  .header {
+    gap: 4%;
+  }
+}

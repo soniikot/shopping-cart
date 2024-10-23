@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setGender } from '@/features/filter/filterSlice';
+import { type MouseEvent } from 'react';
 
 export function BurgerMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -12,7 +13,8 @@ export function BurgerMenu() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -49,11 +51,21 @@ export function BurgerMenu() {
         <MenuItem onClick={handleClose}>
           <Link to="/products">Shop</Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <li onClick={() => handleGenderChange('men')}>Men</li>
+        <MenuItem
+          onClick={() => {
+            handleGenderChange('men');
+            handleClose();
+          }}
+        >
+          <li>Men</li>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <li onClick={() => handleGenderChange('women')}>Women</li>
+        <MenuItem
+          onClick={() => {
+            handleGenderChange('women');
+            handleClose();
+          }}
+        >
+          <li>Women</li>
         </MenuItem>
       </Menu>
     </div>
