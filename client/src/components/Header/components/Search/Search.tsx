@@ -15,17 +15,13 @@ export const Search: FC = () => {
     (state: RootState) => state.search.searchQuery
   );
 
-  const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearch(event.target.value));
     navigate(`/products?search=${searchQuery}`);
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearch(event.target.value));
-  };
-
   return (
-    <form className={style.wrapper} onSubmit={handleSubmit}>
+    <form className={style.wrapper}>
       <input
         className={style.search}
         type="search"

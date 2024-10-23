@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -9,4 +11,11 @@
   width: 36px;
   height: 36px;
   border-radius: 12px;
+}
+
+@media (max-width: $medium) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
+  }
 }

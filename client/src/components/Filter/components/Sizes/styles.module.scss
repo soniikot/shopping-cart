@@ -17,3 +17,9 @@
 .buttonActive {
   border: 1px solid black;
 }
+
+@media (max-width: $medium) {
+  .wrapper {
+    margin: 10px;
+  }
+}
