@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import style from './styles.module.scss';
 import message from '@/assets/message.svg';
 import stars from '@/assets/3and5stars.png';
-import { COLORS } from '@/shared/constants/constants';
 import { TextButton } from '@/shared/components/TextButton/TextButton';
 import { IconButtonWithText } from '@/shared/components/IconButtonWIthText/IconButtonWithText';
 import cart from '@/assets/shopping-cart-white.svg';
@@ -17,6 +17,7 @@ import { useAppDispatch } from '@/app/hooks';
 import { addToCart } from '@/features/cart/cartSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import clsx from 'clsx';
 
 interface ProductDescriptionProps {
   id: number;
@@ -24,10 +25,25 @@ interface ProductDescriptionProps {
 
 export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
   const { products } = useAppSelector((state: RootState) => state.products);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
+  const handleSizeSelect = (size: string) => {
+    setSelectedSize(size);
+  };
   const dispatch = useAppDispatch();
 
   const handleAddToCart = () => {
+    if (!selectedSize) {
+      toast.error('Please select a size before adding to cart', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      return;
+    }
     dispatch(
       addToCart({
         id: id,
@@ -36,7 +52,7 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
         price: products[id].attributes.price,
         img: products[id].attributes.img.data.attributes.url,
         color: products[id].attributes.color,
-        size: products[id].attributes.size,
+        size: selectedSize,
       })
     );
     toast.success('Product added to cart!');
@@ -64,11 +80,18 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
         </h5>
 
         <div className={style.sizes}>
-          <button className={style.size_button}>XS</button>
-          <button className={style.size_button}>S</button>
-          <button className={style.size_button}>M</button>
-          <button className={style.size_button}>L</button>
-          <button className={style.size_button}>XL</button>
+          {products.length > 0 &&
+            products[id].attributes.size.map((size: string) => (
+              <button
+                key={size}
+                className={clsx(style.size_button, {
+                  [style.selected_button]: size === selectedSize,
+                })}
+                onClick={() => handleSizeSelect(size)}
+              >
+                {size}
+              </button>
+            ))}
         </div>
 
         <div className={style.buttons}>
