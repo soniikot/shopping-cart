@@ -70,21 +70,6 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
           <button className={style.size_button}>L</button>
           <button className={style.size_button}>XL</button>
         </div>
-        <div className={style.colors}>
-          <h5>Colors Available</h5>
-          <div>
-            {COLORS &&
-              COLORS.slice(0, 4).map((color) => (
-                <button
-                  key={color.id}
-                  className={style.color}
-                  style={{ backgroundColor: color.color }}
-                >
-                  &nbsp;
-                </button>
-              ))}
-          </div>
-        </div>
 
         <div className={style.buttons}>
           <IconButtonWithText
