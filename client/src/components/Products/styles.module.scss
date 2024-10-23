@@ -74,25 +74,29 @@
 
 @media (max-width: $small) {
   .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .productPageWrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .productImg {
+  .productPageImg {
     width: 100px;
     height: 180px;
     object-fit: cover;
     border-radius: 5px;
   }
 
-  .subtitle {
+  .productPageSubtitle {
     font-size: 10px;
   }
 
-  .title {
+  .productPageTitle {
     font-size: 10px;
   }
 
-  .price {
+  .productPagePrice {
     font-size: 10px;
   }
 }

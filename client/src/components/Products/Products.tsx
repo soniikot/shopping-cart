@@ -21,13 +21,17 @@ export const Products: FC<ProductsTypeProps> = ({
     <EmptyList text={'Sorry. Nothing found'} />
   ) : (
     <div className="container">
-      <div className={style.wrapper}>
+      <div
+        className={clsx(style.wrapper, {
+          [style.productPageWrapper]: isProductPage,
+        })}
+      >
         {filteredProducts.slice(0, numberOfProducts).map((product) => (
           <Link to={`/product/${product.id - 1}`} key={product.id}>
             <div key={product.id} className={style.card}>
               <img
                 className={clsx(style.img, {
-                  [style.productImg]: isProductPage,
+                  [style.productPageImg]: isProductPage,
                 })}
                 src={
                   import.meta.env.VITE_API_UPLOAD_URL +
@@ -37,10 +41,28 @@ export const Products: FC<ProductsTypeProps> = ({
               />
 
               <div className={style.text_wrapper}>
-                <p className={style.title}>{product.attributes.title}</p>
-                <p className={style.subtitle}>{product.attributes.disc}</p>
+                <p
+                  className={clsx(style.title, {
+                    [style.productPageTitle]: isProductPage,
+                  })}
+                >
+                  {product.attributes.title}
+                </p>
+                <p
+                  className={clsx(style.subtitle, {
+                    [style.productPageSubtitle]: isProductPage,
+                  })}
+                >
+                  {product.attributes.disc}
+                </p>
               </div>
-              <div className={style.price}>${product.attributes.price}</div>
+              <div
+                className={clsx(style.price, {
+                  [style.productPagePrice]: isProductPage,
+                })}
+              >
+                ${product.attributes.price}
+              </div>
             </div>
           </Link>
         ))}
