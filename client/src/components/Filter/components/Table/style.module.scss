@@ -27,3 +27,15 @@ th:first-child,
 td:first-child {
   border-right: 1px solid $--grey-border-color;
 }
+
+@media (max-width: $medium) {
+  .table {
+    margin: 0px;
+  }
+}
+
+@media (max-width: $small) {
+  .table {
+    display: none;
+  }
+}

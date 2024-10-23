@@ -8,21 +8,12 @@ import { FC } from 'react';
 export const ProductsPage: FC = () => {
   return (
     <div className="container">
-      <div className={style.product_header}>
-        <h4>Clothing</h4>
-        <div className={style.left}>
-          <h4>
-            <span className={style.purple_text}>New</span>
-          </h4>
-          <h4>Recommended</h4>
-        </div>
-      </div>
       <div className={style.wrapper}>
         <div className={style.filter}>
           <Filter />
         </div>
         <div className={style.products_wrapper}>
-          <Products numberOfProducts={100} />
+          <Products numberOfProducts={100} isProductPage={true} />
         </div>
       </div>
       <div className={style.text}>

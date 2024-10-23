@@ -167,7 +167,9 @@ export const Cart: FC = () => {
               <span className={style.price}>${subTotalPrice()}</span>
             </h4>
           </div>
-          <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
+          <button className={style.button_checkout} onClick={handlePayment}>
+            PROCEED TO CHECKOUT
+          </button>
         </div>
       </div>
     </>
