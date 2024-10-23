@@ -14,6 +14,10 @@ import { resetFilter, setCategory } from '@/features/filter/filterSlice';
 import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
 import { CATEGORIES } from './constants';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export const Filter: FC = () => {
   const priceRange = useAppSelector((state: RootState) => state.filter.price);
@@ -53,52 +57,84 @@ export const Filter: FC = () => {
         <button className={style.reset} onClick={() => handleResetFilter()}>
           Reset All Filters
         </button>
-
-        <div className={style.categories}>
-          <ul className={style.subcategory_wrapper}>
-            {CATEGORIES.map((subcategory: string) => (
-              <li
-                onClick={() => handleCategoryChange(subcategory)}
-                className={clsx(style.subcategory, {
-                  [style.active]: filteredCategory === subcategory,
-                })}
-              >
-                {subcategory}
-                <img src={linkArrow} alt="link" />
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={style.header}>
-          <h4>Price </h4>
-          <img src={arrowUp} alt="" />
-        </div>
-        <div className={style.slider}>
-          <div style={{ width: '225px', padding: '5px' }}>
-            <Slider
-              value={range}
-              onChange={(_event, value) => handlePriceChanges(value)}
-              color="secondary"
-              min={0}
-              max={200}
-            />
-            <div className={style.range}>
-              <button className={style.button}>{range[0]}</button>
-              <button className={style.button}>{range[1]}</button>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            {' '}
+            <h4 className={style.header}>Categories </h4>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className={style.categories}>
+              <ul className={style.subcategory_wrapper}>
+                {CATEGORIES.map((subcategory: string) => (
+                  <li
+                    onClick={() => handleCategoryChange(subcategory)}
+                    className={clsx(style.subcategory, {
+                      [style.active]: filteredCategory === subcategory,
+                    })}
+                  >
+                    {subcategory}
+                    <img src={linkArrow} alt="link" />
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-        </div>
-        <div className={style.header}>
-          <h4>Colors </h4>
-          <img src={arrowUp} alt="arrowUp" />
-        </div>
-        <ColorFilter />
-        <div className={style.header}>
-          <h4>Size</h4>
-          <img src={arrowUp} alt="" />
-        </div>
-        <Sizes />
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <h4 className={style.header}>Price </h4>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className={style.slider}>
+              <div style={{ width: '225px', padding: '5px' }}>
+                <Slider
+                  value={range}
+                  onChange={(_event, value) => handlePriceChanges(value)}
+                  color="secondary"
+                  min={0}
+                  max={200}
+                />
+                <div className={style.range}>
+                  <button className={style.button}>{range[0]}</button>
+                  <button className={style.button}>{range[1]}</button>
+                </div>
+              </div>
+            </div>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <h4 className={style.header}>Colors </h4>
+          </AccordionSummary>
+
+          <AccordionDetails>
+            <ColorFilter />
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <h4 className={style.header}>Size</h4>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Sizes />
+          </AccordionDetails>
+        </Accordion>
       </div>
     </aside>
   );
