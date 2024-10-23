@@ -15,25 +15,6 @@ import { setPriceRange } from '@/features/filter/filterSlice';
 import clsx from 'clsx';
 import { CATEGORIES } from './constants';
 
-export interface CategoryType {
-  numberOfCategories: number;
-  filter: string;
-}
-
-export interface CategoryData {
-  id: number;
-  attributes: {
-    title: string;
-    img: {
-      data: {
-        attributes: {
-          url: string;
-        };
-      };
-    };
-  };
-}
-
 export const Filter: FC = () => {
   const priceRange = useAppSelector((state: RootState) => state.filter.price);
 
@@ -52,8 +33,8 @@ export const Filter: FC = () => {
   const handleResetFilter = () => {
     dispatch(resetFilter());
   };
-  // @ts-ignore
-  const handlePriceChanges = (event: Event, newValue: number[] | number) => {
+
+  const handlePriceChanges = (newValue: number[] | number) => {
     if (!Array.isArray(newValue)) {
       throw new Error('price range is not a number array');
     }
@@ -97,7 +78,7 @@ export const Filter: FC = () => {
           <div style={{ width: '225px', padding: '5px' }}>
             <Slider
               value={range}
-              onChange={(event, value) => handlePriceChanges(event, value)}
+              onChange={(_event, value) => handlePriceChanges(value)}
               color="secondary"
               min={0}
               max={200}
@@ -114,7 +95,7 @@ export const Filter: FC = () => {
         </div>
         <ColorFilter />
         <div className={style.header}>
-          <h4>Size </h4>
+          <h4>Size</h4>
           <img src={arrowUp} alt="" />
         </div>
         <Sizes />

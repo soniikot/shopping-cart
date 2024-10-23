@@ -27,7 +27,15 @@
 
 @media (max-width: $medium) {
   .wrapper {
+    justify-content: center;
+    margin: 20px;
+  }
+}
+
+@media (max-width: $small) {
+  .wrapper {
     flex-wrap: wrap;
     justify-content: center;
+    margin: 20px;
   }
 }

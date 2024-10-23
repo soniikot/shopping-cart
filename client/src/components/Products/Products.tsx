@@ -5,6 +5,7 @@ import { selectProducts } from '@/features/products/productsSlice';
 import { EmptyList } from '../EmptyList/EmptyList';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
+
 export interface ProductsTypeProps {
   numberOfProducts: number;
   isProductPage?: boolean;
