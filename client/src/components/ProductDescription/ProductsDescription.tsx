@@ -18,6 +18,7 @@ import { addToCart } from '@/features/cart/cartSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import clsx from 'clsx';
+import { Links } from './components/Links/Links';
 
 interface ProductDescriptionProps {
   id: number;
@@ -61,7 +62,9 @@ export const ProductsDescription: FC<ProductDescriptionProps> = ({ id }) => {
   return (
     <>
       <div className={style.details}>
-        <h5>Shop &gt; Women &gt; Top </h5>
+        <h5>
+          <Links id={id} />
+        </h5>
         <h2 className={style.title}>
           {products.length > 0 && products[id].attributes.title}
         </h2>

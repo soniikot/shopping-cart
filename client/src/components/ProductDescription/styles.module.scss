@@ -49,11 +49,11 @@
 
 .rating {
   align-items: center;
+  flex-wrap: wrap;
 }
 .buttons {
   display: flex;
   gap: 30px;
-  align-items: center;
   padding-bottom: 30px;
   border-bottom: 1px solid $--grey-border-color;
 }
@@ -67,5 +67,11 @@
 .selected_button {
   background-color: $--purple-color;
   color: white;
-  border: 1px solid #007bff;
+  border: 1px solid $--purple-color;
+}
+
+@media (max-width: $small) {
+  .details {
+    padding: 30px 20px;
+  }
 }

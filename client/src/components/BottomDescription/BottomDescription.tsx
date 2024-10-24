@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { SectionTitle } from '@/shared/components/SectionTitle/SectionTitle';
 import style from './styles.module.scss';
 import { ProductTabs } from './components/ProductTabs/ProductTabs';
-import video from '@/assets/video.png';
 
 export const BottomDescription: FC = () => {
   return (
