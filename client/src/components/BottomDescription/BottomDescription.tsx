@@ -12,9 +12,6 @@ export const BottomDescription: FC = () => {
           <SectionTitle text="Product Description" />
           <ProductTabs />
         </div>
-        <div className={style.video}>
-          <img src={video} alt="product video" />
-        </div>
       </div>
     </div>
   );

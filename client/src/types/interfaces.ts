@@ -6,7 +6,7 @@ export interface ProductData {
     price: number;
     color: string;
     quantity: number;
-    size: string;
+    size: string[];
     subcategories: {
       data: [
         {
